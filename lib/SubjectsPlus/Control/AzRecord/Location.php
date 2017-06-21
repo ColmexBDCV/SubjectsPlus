@@ -26,7 +26,6 @@ class Location implements LocationInterface,OutputInterface
     private $helpguide;
     private $citation_guide;
     private $ctags;
-    private $record_status;
 
     /**
      * @return mixed
@@ -187,23 +186,6 @@ class Location implements LocationInterface,OutputInterface
     {
         $this->ctags = $ctags;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getRecordStatus() {
-        return $this->record_status;
-    }
-
-    /**
-     * @param mixed $record_status
-     */
-    public function setRecordStatus($record_status) {
-        $this->record_status = $record_status;
-    }
-
-
-
 
     public function toArray(){
         return get_object_vars($this);

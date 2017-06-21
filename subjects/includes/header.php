@@ -36,7 +36,7 @@ if (!isset ($noheadersearch)) {
             <div class="autoC" id="autoC">
                 <form id="sp_admin_search" class="pure-form" method="post" action="' . getSubjectsURL() . 'search.php">
                 <input type="text" placeholder="Search" autocomplete="off" name="searchterm" size="" id="sp_search" class="ui-autocomplete-input autoC"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-                <input type="submit" alt="Search" name="submitsearch" id="topsearch_button" class="pure-button pure-button-topsearch" value="Go">
+                <input type="submit" alt="Search" name="submitsearch" id="topsearch_button" class="pure-button pure-button-topsearch" value="Ir">
                 </form>
             </div>    ';
 } else {
@@ -60,7 +60,7 @@ $v2styles = TRUE;
     <div id="header_inner_wrap">
         <div class="pure-g">
             <div class="pure-u-1 pure-u-md-1-5">
-                <a href="<?php print $PublicPath; ?>"><img class="main_logo" src="<?php print $AssetPath; ?>images/public/logo.png" alt="Home Page" /></a>
+                <a href="<?php print $PublicPath; ?>"><img class="main_logo" src="<?php print $AssetPath; ?>/images/public/logo.png" alt="Home Page" /></a>
                 
             </div>
             <div class="pure-u-1 pure-u-md-4-5">

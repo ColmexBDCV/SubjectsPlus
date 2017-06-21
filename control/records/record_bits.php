@@ -40,7 +40,7 @@ switch ($_POST["type"]) {
         $subject_name = Truncate($_POST["our_sub_text"], 25, '');
         $source_name = Truncate($_POST["our_source_text"], 15, '');
 
-        echo "<div class=\"selected_item_wrapper\"><div class=\"selected_item\" id=\"root-" . $_POST["our_source_id"] . "\"><input type=\"hidden\" name=\"rank[]\" value=\"0\" /><input name=\"dbbysub_active[]\" value=\"1\" type=\"hidden\"/><input type=\"hidden\" name=\"subject[]\" value=\"" . $_POST["our_sub_id"] . "\" /><input type=\"hidden\" id=\"hidden_source-" . $_POST["our_sub_id"] . "-" . $_POST["our_source_id"] . "\" name=\"source[]\" value=\"" . $_POST["our_source_id"] . "\" />" . $subject_name . "<span class=\"small_extra\"> " . $source_name . " </span><br />
+        echo "<div class=\"selected_item_wrapper\"><div class=\"selected_item\" id=\"root-" . $_POST["our_source_id"] . "\"><input type=\"hidden\" name=\"rank[]\" value=\"0\" /><input type=\"hidden\" name=\"subject[]\" value=\"" . $_POST["our_sub_id"] . "\" /><input type=\"hidden\" id=\"hidden_source-" . $_POST["our_sub_id"] . "-" . $_POST["our_source_id"] . "\" name=\"source[]\" value=\"" . $_POST["our_source_id"] . "\" />" . $subject_name . "<span class=\"small_extra\"> " . $source_name . " </span><br />
         <textarea class=\"desc_override desc-area\" name=\"description_override[]\" rows=\"4\" cols=\"35\"></textarea></div>
         <div class=\"selected_item_options\"><i class=\"fa fa-lg fa-trash delete_sub clickable\" alt=\"" . _("remove subject") . "\" title=\"" . _("remove subject") . "\"></i>
         <i class=\"fa fa-book fa-lg\"></i>
@@ -64,13 +64,13 @@ switch ($_POST["type"]) {
     case "new_record_label":
         switch ($_POST["format_type_id"]) {
             case 1:
-                $label_text = _("Location (Enter URL)");
+                $label_text = _("Ubicación (Inserte URL)");
                 break;
             case 2:
-                $label_text = _("Location (Enter Call Number)");
+                $label_text = _("Ubicación (Inserte Número telefónico)");
                 break;
             case 3:
-                $label_text = _("Location (Enter Persistent Catalog URL--include http://)");
+                $label_text = _("Ubicación (Introduzca la URL del catálogo persistente--incluya http: //)");
                 break;
         }
 
@@ -90,17 +90,17 @@ switch ($_POST["type"]) {
     	$lobjError = $lobjLinkChecker->checkUrl($_REQUEST["checkurl"]);
 
         if ($lobjError['message'] == "") {
-            $feedback = _("This URL looks OK to me");
+            $feedback = _("Esta URL me parece bien");
             print "<i class=\"fa fa-check fa-2x\" alt=\"check url\" border=\"0\" id=\"check_url\" alt=\"$feedback\" title=\"$feedback\" ></i> ";
         } else {
-            $feedback = _("This URL looks dodgy; better check it");
+            $feedback = _("Esta URL se ve desagradable; Mejor comprobarlo");
             print "<i class=\"fa fa-exclamation-triangle fa-2x alert-colour\" alt=\"check url\" border=\"0\" id=\"check_url\" alt=\"$feedback\" title=\"$feedback\" /></i> ";
         }
 
         break;
     case "recommend_delete":
         $del_record = $CpanelPath . "records/record.php?record_id=" . $_POST["our_id"];
-        $message_body = "<p>" . _("The following record is recommended for delete") . ":</p>
+        $message_body = "<p>" . _("Se recomienda el siguiente registro para eliminar") . ":</p>
             <p><a href=\"$del_record\">$del_record</a></p>";
         $messageParams = array('from' => $_SESSION['email'],
             'to' => $administrator_email,
@@ -109,7 +109,7 @@ switch ($_POST["type"]) {
         $message = new MailMessage($messageParams);
         $mailer = new Mailer();
         $mailer->send($message);
-        echo "<div class=\"rec_delete_confirm\">" . _("Delete request sent to ") . "$administrator_email</div>";
+        echo "<div class=\"rec_delete_confirm\">" . _("Borrar solicitud enviada a ") . "$administrator_email</div>";
         break;
 }
 ?>

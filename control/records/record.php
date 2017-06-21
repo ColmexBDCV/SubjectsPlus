@@ -18,7 +18,7 @@ use SubjectsPlus\Control\LinkChecker;
 use SubjectsPlus\Control\Querier;
 
 $subcat = "records";
-$page_title = "Edit AZRecord";
+$page_title = "Editar AZRegistros";
 $wintype = "";
 
 // Suppress header if it is to be shown in colorbox or popup window
@@ -60,7 +60,7 @@ if (isset($_POST["delete_record"]) || isset($_GET["delete_record"])) {
         // Show feedbck
         $feedback = $record->getMessage();
     } else {
-        $feedback = "There is no record by that ID.";
+        $feedback = "No hay registro por ese ID.";
     }
 }
 
@@ -70,7 +70,7 @@ if (isset($_POST["submit_record"])) {
     // 1a. Make sure there is a title, location, and subject
     if ($_POST["title"] == "" || $_POST["location"][0] == "" || $_POST["subject"][0] == "") {
 
-        echo "<div class=\"feedback\">" . _("You must have a title, location, and subject.  Please go back and fix these omissions.  And turn on JavaScript, for goodness sakes!") . "</div><br /><br />";
+        echo "<div class=\"feedback\">" . _("Debe tener un título, ubicación y asunto. Vuelva por favor y corrija estas omisiones. Y activar JavaScript, por amor de Dios!") . "</div><br /><br />";
 
         exit;
     }
@@ -83,7 +83,7 @@ if (isset($_POST["submit_record"])) {
         $dupetitleArray = $db->query($qDupe);
      
         if ($dupetitleArray) {
-            echo _("There is already a record with this title: ") . "<a href=\"record.php?record_id=" . $dupetitleArray[0] . "\">" . $dupetitleArray[1] . "</a>.  " . _("Maybe do a search and make sure it doesn't already exist?");
+            echo _("Ya hay un disco con este título: ") . "<a href=\"record.php?record_id=" . $dupetitleArray[0] . "\">" . $dupetitleArray[1] . "</a>.  " . _("Tal vez hacer una búsqueda y asegurarse de que ya no existe?");
             return FALSE;
         }
     }
@@ -177,7 +177,7 @@ print "</div>"; // close #maincontent
                 $(this).parents('.new_location').remove();
                 $(this).parents('.location_box').remove();
             } else {
-                alert("Thwarted!  You must have at least one location for a record.");
+                alert("Frustrado! Debe tener al menos una ubicación para un registro.");
             }
         });
 
@@ -451,7 +451,7 @@ print "</div>"; // close #maincontent
                 $(this).hide().load("record_bits.php", {type: 'check_url', checkurl: checkurl, useProxy: useProxy}).fadeIn(1600);
 
             } else {
-                alert("You must enter a location first!");
+                alert("¡Debe ingresar una ubicación primero!");
             }
 
         });
@@ -517,7 +517,7 @@ print "</div>"; // close #maincontent
             var numsub = $(".selected_item_wrapper").length;
 
             if (numsub < 1) {
-                alert("<?php print _("You must have at least one subject."); ?>");
+                alert("<?php print _("Debe tener al menos un tema."); ?>");
                 return false;
             };
 

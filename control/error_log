@@ -1,0 +1,1 @@
+[12-Jun-2017 20:13:51 UTC] PHP Warning:  PDO::__construct(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/alberto5/public_html/sp/lib/SubjectsPlus/Control/Config.php on line 219

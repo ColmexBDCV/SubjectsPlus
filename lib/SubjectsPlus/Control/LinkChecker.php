@@ -20,7 +20,7 @@ class LinkChecker {
 		//set timeout to zero because link checker can take a very long time
 		ini_set('max_execution_time', '0' );
 
-		if (!function_exists('curl_exec')) throw new \Exception('CURL extension required to create an sp_LinkChecker object');
+		if (!function_exists('curl_exec')) throw new \Exception('La extensión CURL necesaria para crear un objeto sp_LinkChecker');
 
 		$this->_proxy = $lstrProxy;
 		$this->_timeout = $lintTimeout;
@@ -54,7 +54,7 @@ class LinkChecker {
 
   			    <div class="pluslet">
 			      <div class="titlebar">
-			        <div class="titlebar_text"><?php print _("Link Checker"); ?></div>
+			        <div class="titlebar_text"><?php print _("Comprobador de vínculos"); ?></div>
 			        <div class="titlebar_options"></div>
 			      </div>
 			      <div class="pluslet_body">
@@ -62,15 +62,15 @@ class LinkChecker {
 		if ($lstrType == 'record')
 		{
 			?>
-			<span class="record_label"><?php print _("Records"); ?>: (<em style="font-style: italic; font-size: smaller;"><?php echo _( "This may take a while. Be patient." ); ?></em>)</span><br />
+			<span class="record_label"><?php print _("Archivos"); ?>: (<em style="font-style: italic; font-size: smaller;"><?php echo _( "Esto puede tardar un rato. Se paciente." ); ?></em>)</span><br />
 				<form method="post">
-					<input type="submit" class="button" name="LinkCheckRecords" value="<?php print _("Check Links In Records"); ?>" />
+					<input type="submit" class="button" name="LinkCheckRecords" value="<?php print _("Comprobar enlaces en los registros"); ?>" />
 			<?php
 		}
 		if ($lstrType == 'subject')
 		{
 			?>
-			<span class="record_label"><?php print _("Select Guide"); ?>:</span><br />
+			<span class="record_label"><?php print _("Seleccionar guía"); ?>:</span><br />
 				<form method="post">
 			<?php
 			if($_SESSION['admin'] == 1)
@@ -100,7 +100,7 @@ class LinkChecker {
 			echo $lobjDropDown->display();
 			?>
 					
-					<input type="submit" class="button pure-button pure-button-primary" value="<?php print _("Check Links In Guide"); ?>" />
+					<input type="submit" class="button pure-button pure-button-primary" value="<?php print _("Revisar Enlaces en la Guía"); ?>" />
 			<?php
 		}
 		?>
@@ -117,8 +117,8 @@ class LinkChecker {
         <div class="titlebar_options"></div>
       </div>
       <div class="pluslet_body">
-				<i class="fa fa-check" title="<?php print _("Image: OK") ?>\"></i> = <?php print _("Link is good!"); ?><br /><br />
-				<i class="fa fa-exclamation-triangle" title="<?php print _("Image: Uh oh") ?>\"></i> = <?php print _("<i>Possible</i> problem with link; click on link to open in new window."); ?><br />
+				<i class="fa fa-check" title="<?php print _("Image: OK") ?>\"></i> = <?php print _("El enlace es bueno!"); ?><br /><br />
+				<i class="fa fa-exclamation-triangle" title="<?php print _("Image: Uh oh") ?>\"></i> = <?php print _("<I> Posible </ i> problema con el enlace; Haga clic en el enlace para abrir en otra ventana."); ?><br />
 			</div>
 
 			    </div>
@@ -155,12 +155,12 @@ class LinkChecker {
   			<div class="pure-u-2-3">
 		  			    <div class="pluslet">
 			      <div class="titlebar">
-			        <div class="titlebar_text"><?php print _("Results"); ?></div>
+			        <div class="titlebar_text"><?php print _("Resultados"); ?></div>
 			        <div class="titlebar_options"></div>
 			      </div>
 			      <div class="pluslet_body">
 			<div id="loading" style="clear:both">
-				<p><?php print _("Please wait while the links in your guide are being checked. This will vary depending on how many links are in your guide."); ?></p>
+				<p><?php print _("Espere mientras se comprueban los enlaces de su guía. Esto variará dependiendo de cuántos enlaces están en su guía."); ?></p>
 				<img src="<?php echo $AssetPath; ?>images/loading.gif" />
 			</div>
 			<div id="email_content">
@@ -178,9 +178,9 @@ class LinkChecker {
 								 "ORDER BY source.rs ASC, source.source ASC, rank.rank ASC, title.title ASC";
 			$links_result = $db->query($links_select);
 			?>
-			<h3 style="clear:both;"><?php print _("Checking 'All Items By Source' Box:"); ?></h3>
+			<h3 style="clear:both;"><?php print _("Comprobación de la casilla 'Todos los artículos por fuente':"); ?></h3>
 			<?php if(!count($links_result)): ?>
-				<p><?php print _("This guide does not have an 'All Items By Source' box."); ?></p>
+				<p><?php print _("Esta guía no tiene un cuadro 'Todos los artículos por fuente'."); ?></p>
 			<?php else: ?>
 				<table class="striper" style="width: 100%; margin: 20px 0 40px 0;">
 					<thead>
@@ -226,14 +226,14 @@ class LinkChecker {
 			$box_result = $db->query($box_select);
 			?>
 			<?php if(!count($box_result)): ?>
-				<p style="margin: 20px 0 40px 0;">This guide does not have any other pluslets.</p>
+				<p style="margin: 20px 0 40px 0;">Esta guía no tiene otros pluslets.</p>
 			<?php else:
 
 					$link_list = array();
 					foreach($box_result as $box_data)
 					{
 						?>
-						<h3><?php print _("Checking"); ?> "<?php print $box_data['title']; ?>" <?php print _("Box:"); ?></h3>
+						<h3><?php print _("Checando"); ?> "<?php print $box_data['title']; ?>" <?php print _("Box:"); ?></h3>
 						<?php
 
 						if($box_data['type'] == 'Basic')

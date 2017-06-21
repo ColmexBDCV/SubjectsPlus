@@ -34,7 +34,6 @@ function LinkList(id,idSelector) {
         var myRecord = new Record({
             recordId: li.recordId,
             title: li.title,
-            prefix: li.prefix,
             location: li.location,
             showIcons : li.showIcons,
             showDescription : li.showDescription,
@@ -117,7 +116,7 @@ function LinkList(id,idSelector) {
             var descriptionOverride = $("li[data-record-id='"+obj.recordId+"']").find("textarea").val();
 
             $.ajax({
-                url: '../records/helpers/subject_databases_helper.php',
+                url: '../admin/helpers/subject_databases_helper.php',
                 type: "GET",
                 dataType: "json",
                 async: false,
@@ -154,7 +153,6 @@ function LinkList(id,idSelector) {
 
             var existingRecord = new Record({
                 title: $(this).data().title,
-                prefix: $(this).data().prefix,
                 recordId : $(this).data().recordId,
                 showIcons : $(this).data().showIcons,
                 showDescription : $(this).data().showDescription,
@@ -177,7 +175,6 @@ function LinkList(id,idSelector) {
             //console.log(li);
             var record = new Record({
                 title: $(this).data().title,
-                prefix: $(this).data().prefix,
                 recordId : $(this).data().recordId,
                 showIcons : $(this).data().showIcons,
                 showDescription : $(this).data().showDescription,
@@ -390,26 +387,25 @@ function LinkList(id,idSelector) {
 
             // Insert the record object
             createRecord.insertRecord({
-                    "title_id": null,
-                    "title": $('#record-title').val(),
-                    "alternate_title": $('#alternate-title').val(),
-                    "description":  CKEDITOR.instances.description.getData(),
-                    "pre": null,
-                    "last_modified_by": "",
-                    "last_modified": "",
-                    "subjects": [{ 'subject_id': $('#guide-parent-wrap').data().subjectId }],
-                    "locations": [{
-                    "location_id": "",
-                    "format": "1",
-                    "call_number": "",
-                    "location": $('#location').val(),
-                    "access_restrictions": "1",
-                    "eres_display": "N",
-                    "display_note": "",
-                    "helpguide": "",
-                    "citation_guide": "",
-                    "ctags": "",
-                     "record_status": "Active"
+                "title_id": null,
+                "title": $('#record-title').val(),
+                "alternate_title": $('#alternate-title').val(),
+                "description":  CKEDITOR.instances.description.getData(),
+                "pre": null,
+                "last_modified_by": "",
+                "last_modified": "",
+                "subjects": [{ 'subject_id': $('#guide-parent-wrap').data().subjectId }],
+                "locations": [{
+                "location_id": "",
+                "format": "1",
+                "call_number": "",
+                "location": $('#location').val(),
+                "access_restrictions": "1",
+                "eres_display": "N",
+                "display_note": "",
+                "helpguide": "",
+                "citation_guide": "",
+                "ctags": ""
                 }]
             }, function(res){
                 var record = new Record({

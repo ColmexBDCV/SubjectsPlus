@@ -17,7 +17,7 @@ if( isset($_GET['type']) && strtolower( $_GET['type'] ) == 'records' )
 {
 	//set header variables and include header file
 	$subcat = "records";
-	$page_title = "Records Link Checker";
+	$page_title = "Comprobador de vínculos de registros";
 	$use_jquery = array("ui_styles");
 	include("../includes/header.php");
 
@@ -34,7 +34,7 @@ if( isset($_GET['type']) && strtolower( $_GET['type'] ) == 'records' )
 {
 	//set header variables and include header file
 	$subcat = "guides";
-	$page_title = "Guide Link Checker";
+	$page_title = "Guía de comprobación de vínculos";
 	$use_jquery = array("ui_styles");
 	include("../includes/header.php");
 

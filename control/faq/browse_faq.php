@@ -31,7 +31,7 @@ print "
 
 if ($postvar_type == "holding") {
 
-  $browse_box = "<p>" . _("If you wish to edit a FAQ, click the link.") . "</p>";
+  $browse_box = "<p>" . _("Si desea modificar un FAQ, haga clic en el enlace.") . "</p>";
 
   $q = "SELECT fp.faqpage_id, fp.name FROM faq f, faq_faqpage ff, faqpage fp WHERE f.faq_id = ff.faq_id AND fp.faqpage_id = ff.faqpage_id GROUP BY fp.name";
 
@@ -66,11 +66,11 @@ if ($postvar_type == "holding") {
     $row_count++;
   }
 
-  makePluslet(_("Browse FAQs by Collection"), $browse_box, "no_overflow");
+  makePluslet(_("Examinar las preguntas frecuentes por colección"), $browse_box, "no_overflow");
 
 } else {
 
-  $browse_subject_box = "<p>" . _("If you wish to edit a FAQ, click the link.") . "</p>";
+  $browse_subject_box = "<p>" . _("Si desea modificar un FAQ, haga clic en el enlace.") . "</p>";
 
   $q = "SELECT faq_id, question, answer, keywords, last_revised, last_revised_by
 FROM faq
@@ -105,7 +105,7 @@ ORDER BY faq_id DESC";
     $row_count++;
   }
 
-  makePluslet(_("Browse FAQs by Subject Area"), $browse_subject_box, "no_overflow");
+  makePluslet(_("Examinar las preguntas frecuentes por área temática"), $browse_subject_box, "no_overflow");
 
 }
 

@@ -69,7 +69,7 @@ class Talkback {
         $this->_debug .= "<p>TB query: $q1";
         // Test if these exist, otherwise go to plan B
         if ($guideArray == FALSE) {
-          $this->_message = _("There is no active record with that ID.  Weird.");
+          $this->_message = _("No hay ningún registro activo con ese ID. Extraño.");
         } else {
           $this->_question = $guideArray[0]["question"];
           $this->_q_from = $guideArray[0]["q_from"];
@@ -135,13 +135,13 @@ class Talkback {
       </div>
       <div class=\"pluslet_body\">
 
-<label for=\"question\">" . _("Question") . "</label>
+<label for=\"question\">" . _("Pregunta") . "</label>
 <textarea name=\"question\" rows=\"4\" cols=\"50\" class=\"required_field\">" . stripslashes($this->_question) . "</textarea>
 
-<label for=\"a_from\">" . _("Question By") . "</label>
+<label for=\"a_from\">" . _("Preguntado por:") . "</label>
 <input type=\"text\" name=\"q_from\" size=\"20\" class=\"required_field\" value=\"" . $this->_q_from . "\">
 
-<label for=\"answer\">" . _("Answer") . "</label>";
+<label for=\"answer\">" . _("Respuesta") . "</label>";
 
     if ($wysiwyg_desc == 1) {
     	include($CKPath);
@@ -175,7 +175,7 @@ class Talkback {
       $selected_user = $this->_a_from;
     }
 
-    $staffMe = new Dropdown("a_from", $staffArray, $selected_user, "50", "--Select--");
+    $staffMe = new Dropdown("a_from", $staffArray, $selected_user, "50", "--Seleccionar--");
     $staff_string = $staffMe->display();
 
     $answerer = "<label=\"record_label\"></label>
@@ -265,25 +265,25 @@ $last_mod = _("Last modified: ") . lastModded("talkback", $this->_talkback_id);
         <div class=\"titlebar_options\"></div>
       </div>
       <div class=\"pluslet_body\">
-    <input type=\"submit\" name=\"submit_record\" class=\"button pure-button pure-button-primary\" value=\"" . _("Save Now") . "\" />";
+    <input type=\"submit\" name=\"submit_record\" class=\"button pure-button pure-button-primary\" value=\"" . _("Guardar") . "\" />";
 
     // if a) it's not a new record, and  b) we're an admin or c) we are listed as a librarian for this guide, show delete button
     if ($this->_talkback_id != "") {
       if (isset($_SESSION["admin"]) && $_SESSION["admin"] == "1") {
-        echo "<input type=\"submit\" name=\"delete_record\" class=\"button pure-button delete_button  pure-button-warning\" value=\"" . _("Delete Forever!") . "\" />";
+        echo "<input type=\"submit\" name=\"delete_record\" class=\"button pure-button delete_button  pure-button-warning\" value=\"" . _("Eliminar!") . "\" />";
       } 
 
     }
 
     echo "</div></div>";
 
-makePluslet(_("Answered By"), $answerer, "no_overflow");
+makePluslet(_("Respondido por"), $answerer, "no_overflow");
 
-makePluslet(_("Is this comment live?"), $is_live, "no_overflow");
+makePluslet(_("¿Es este comentario en vivo?"), $is_live, "no_overflow");
 
-makePluslet(_("Site Tags (relevant library sites)"), $tb_tags, "no_overflow");
+makePluslet(_("Etiquetas del sitio (sitios de bibliotecas relevantes)"), $tb_tags, "no_overflow");
 
-makePluslet(_("Topic Tags (relevant topics)"), $cat_tags, "no_overflow");
+makePluslet(_("Tags del tema (temas relevantes)"), $cat_tags, "no_overflow");
 
 
   }
@@ -307,9 +307,9 @@ makePluslet(_("Topic Tags (relevant topics)"), $cat_tags, "no_overflow");
     if (isset($delete_result)) {
       // message
       if (isset($_GET["wintype"]) && $_GET["wintype"] == "pop") {
-        $this->_message = _("Thy will be done.  Offending Talkback deleted.  Close window to continue.");
+        $this->_message = _("Hágase tu voluntad. Offending Talkback eliminado. Cierre la ventana para continuar.");
       } else {
-        $this->_message = _("Thy will be done.  Offending Talkback deleted.");
+        $this->_message = _("Hágase tu voluntad. Offending Talkback eliminado");
       }
 
       // /////////////////////
@@ -322,7 +322,7 @@ makePluslet(_("Topic Tags (relevant topics)"), $cat_tags, "no_overflow");
       return TRUE;
     } else {
       // message
-      $this->_message = _("There was a problem with your delete.");
+      $this->_message = _("Se ha producido un problema con la eliminación.");
       return FALSE;
     }
   }
@@ -403,7 +403,7 @@ makePluslet(_("Topic Tags (relevant topics)"), $cat_tags, "no_overflow");
     $updateChangeTable = changeMe("talkback", "update", $this->_talkback_id, $this->_question, $_SESSION['staff_id']);
 
     // message
-    $this->_message = _("Thy Will Be Done.  Updated.");
+    $this->_message = _("Hágase Tu Voluntad. Actualizado.");
   }
 
   function getMessage() {

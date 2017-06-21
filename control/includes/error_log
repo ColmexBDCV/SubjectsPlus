@@ -1,0 +1,5 @@
+[16-Jun-2017 18:44:59 UTC] PHP Fatal error:  Call to a member function bindParam() on a non-object in /home/alberto5/public_html/sp/lib/SubjectsPlus/Control/Autocomplete.php on line 274
+[16-Jun-2017 18:45:37 UTC] PHP Warning:  preg_match(): Compilation failed: invalid range in character class at offset 7 in /home/alberto5/public_html/sp/control/includes/upload/class.upload.php on line 2899
+[16-Jun-2017 18:45:37 UTC] PHP Warning:  preg_match(): Compilation failed: invalid range in character class at offset 7 in /home/alberto5/public_html/sp/control/includes/upload/class.upload.php on line 2966
+[16-Jun-2017 18:45:37 UTC] PHP Warning:  preg_match(): Compilation failed: invalid range in character class at offset 7 in /home/alberto5/public_html/sp/control/includes/upload/class.upload.php on line 2993
+[16-Jun-2017 18:45:37 UTC] PHP Warning:  preg_match(): Compilation failed: invalid range in character class at offset 7 in /home/alberto5/public_html/sp/control/includes/upload/class.upload.php on line 3011

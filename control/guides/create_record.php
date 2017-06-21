@@ -3,29 +3,29 @@
 <form id="create-record-from" class="pure-form pure-form-stacked">
     <fieldset>
 
-        <label for="record-title"><?php echo _('Record Title'); ?>
+        <label for="record-title"><?php echo _('Título del registro'); ?>
             <input id="record-title" type="text" required/>
         </label>
 
 
-        <label for="alternate-title"><?php echo _('Alternate Title'); ?>
+        <label for="alternate-title"><?php echo _('Título alternativo'); ?>
             <input id="alternate-title" type="text"/>
         </label>
-        <label for="location"><?php echo _('Location (Enter URL)'); ?>
+        <label for="location"><?php echo _('Ubicación (Inserte URL)'); ?>
             <input id="location" type="text" required/>
         </label>
 
-        <label for="checkurl">
-            <span id="checkurl" class="checkurl_img_wrapper"><i alt="Check URL" title="Check URL" border="0"
+        <label for="URL de comprobación">
+            <span id="checkurl" class="checkurl_img_wrapper"><i alt="Check URL" title="URL de comprobación" border="0"
                                                                 class="fa fa-globe fa-2x clickable"></i></span>
         </label>
 
-        <label for="description"><?php echo _('Description'); ?>
+        <label for="description"><?php echo _('Descripción'); ?>
             <textarea id="description"></textarea>
         </label>
 
         <button id="add-record" class="pure-button pure-button-primary"
-                type="submit"><?php echo _('Create Record'); ?></button>
+                type="submit"><?php echo _('Crear registro'); ?></button>
     </fieldset>
     <div class="notify"></div>
 </form>
@@ -49,7 +49,7 @@
                 if (res.response !== "error") {
                     $('.notify').html("<a href='" + res.response + "'>" + record.title + "</a>")
                 } else {
-                    $('.notify').html("<?php echo _('There was an error inserting the record'); ?>")
+                    $('.notify').html("<?php echo _('Se ha producido un error al insertar el registro'); ?>")
                 }
             });
         }

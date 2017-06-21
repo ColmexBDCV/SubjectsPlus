@@ -154,9 +154,9 @@ $tb_yes_answer = genTalkBacks($tbArrayYes, 1);
 ////////////////
 
 $tb_body = "
-  <p>" . _("Show:") . $show_links ."</p>
-  <p>" . _("Site Filter:") . $filters ."</p>
-  <p>" . _("Topic Filter:") . $cat_filters ."</p>
+  <p>" . _("Mostrar:") . $show_links ."</p>
+  <p>" . _("Filtro del sitio:") . $filters ."</p>
+  <p>" . _("Filtro de tema:") . $cat_filters ."</p>
   <br /><br />
    $tb_yes_answer
 ";
@@ -169,7 +169,7 @@ $about_tb_body = "
 <p>" . _("TalkBack questions come via the web form on the public TalkBack page. An email should be sent to the admin when a new one arrives, and they may be answered here.") . "</p>
 <br />
     <ul>
-    <li><a target=\"_blank\" href=\"$TalkBackPath\">" . _("TalkBack Public Page") ."</a></li>
+    <li><a target=\"_blank\" href=\"$TalkBackPath\">" . _("Página pública de TalkBack") ."</a></li>
 </ul>
 ";
 
@@ -177,12 +177,12 @@ print "
 <div class=\"pure-g\">
   <div class=\"pure-u-2-3\">  
   ";
-makePluslet(_("View and Answer TalkBacks"), $tb_body, "no_overflow");
+makePluslet(_("Ver y Responder TalkBacks"), $tb_body, "no_overflow");
 
 print "</div>"; // close pure-u-2-3
 print "<div class=\"pure-u-1-3\">";
 
-makePluslet(_("About TalkBack"), $about_tb_body, "no_overflow");
+makePluslet(_("Acerca de  TalkBack"), $about_tb_body, "no_overflow");
 
 print "</div>"; // close pure-u-1-3
 print "</div>"; // close pure-g
@@ -205,7 +205,7 @@ function genTalkBacks($tbArray, $show_response = 1) {
   $tb_answer = "";
 
   if (!is_array($tbArray)) {
-    return "<strong>" . _("Alas, there are no items with this tag.") . "</strong>";
+    return "<strong>" . _("Hola, no hay elementos con esta etiqueta.") . "</strong>";
   }
 
   foreach ($tbArray as $key=>$value) {
@@ -251,7 +251,7 @@ function genTalkBacks($tbArray, $show_response = 1) {
 
     $tb_answer .= "
             <div style=\"clear: both; float: left;  padding: 3px 5px; width: 98%;\" class=\"striper $row_colour\">
-                <div style=\"float: left; width: 32px; max-width: 5%;\"><a class=\"showmedium-reloader\" style=\"color: #333;\" href=\"talkback.php?talkback_id=$value[0]&amp;wintype=pop\"><i class=\"fa fa-pencil fa-lg\" alt=\"" . _("Edit") . "\"></i></a></div>
+                <div style=\"float: left; width: 32px; max-width: 5%;\"><a class=\"showmedium-reloader\" style=\"color: #333;\" href=\"talkback.php?talkback_id=$value[0]&amp;wintype=pop\"><i class=\"fa fa-pencil fa-lg\" alt=\"" . _("Editar") . "\"></i></a></div>
                 <div style=\"float: left; width: $first_div_width;\">
                  $tb_tagger<strong>Q:</strong> $short_question <span style=\"color: #666; font-size: 10px;\">($q_from, $value[date_formatted])</span>
                  $cattags

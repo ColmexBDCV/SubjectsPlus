@@ -14,10 +14,6 @@
  *   @author adarby
  *   @date update aug 2014
  *   @todo
-
-//[url=http://100mgcheapest-price-viagra.com/]100mgcheapest-price-viagra.com.ankor[/url] tadalafil-buy-5mg.com.ankor http://20mgprednisone-order.com/
-$_POST['the_suggestion'] = "[url=http://100mgcheapest-pricecom/]100mgcheapest-price-nkor[/url] tadalafil-buy-5mg.com.ankor http://20mgprednisone-order.com";
-$_POST['skill'] = "13";
 */
 
 use SubjectsPlus\Control\Querier;
@@ -33,8 +29,8 @@ $page_description = _("Share your comments and suggestions about the library");
 $page_keywords = _("library, comments, suggestions, complaints");
 
 // Skill testing question + answer
-$stk = _("8 plus 5 = ");
-$stk_answer = "13";
+$stk = _("5 times 5 = ");
+$stk_answer = "25";
 
 // Show headshots
 $show_talkback_face = 1;
@@ -170,16 +166,7 @@ $this_year = date("Y");
 
 $todaycomputer = date('Y-m-d H:i:s');
 
-// let's do the blacklister first
-
-if (BlackLister($this_comment) == TRUE && ($_POST['skill'] == $stk_answer)) {
-		// we'll pretend it was an okay submission	
-		$feedback = $submission_feedback;
-		$this_name = "";
-		$this_comment = "";
-		$stage_two = "ok";
-
-} elseif (isset($_POST['the_suggestion']) && ($_POST['skill'] == $stk_answer)) {
+if (isset($_POST['the_suggestion']) && ($_POST['skill'] == $stk_answer)) {
 
 // clean submission and enter into db!  Don't show page again.
 
@@ -558,7 +545,7 @@ include("includes/header_um.php");
 </div> <!--end panel-container-->
 
 			
-<?php
+			<?php
 
 ///////////////////////////
 // Load footer file
@@ -566,22 +553,4 @@ include("includes/header_um.php");
 
 			include("includes/footer_um.php");
 
-
-
-///////////////////
-// Blacklister Function
-/////////////////////
-
-function BlackLister($checkstring) {
-	$blacklist_terms = "viagra|cialis";
-
-	if (preg_match("/$blacklist_terms/i",$checkstring)) {
-		// found naughtiness
-		return TRUE;
-	} else {
-		return FALSE;
-	}
-
-}
-
-?>
+			?>

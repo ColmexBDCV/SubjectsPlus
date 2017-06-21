@@ -9,7 +9,7 @@
  */
 
 $subcat = "analytics";
-$page_title = "SubjectsPlus Usage Statistics";
+$page_title = "Estadísticas";
 
 include("../includes/header.php");
 
@@ -36,7 +36,7 @@ $total_external_link_clicks = $stats->getTopExternalLinks();
     <div class="pure-u-1-3">
 	<div class="pluslet no_overlflow">
 	    <div class="titlebar">
-		<div class="titlebar_text">Total Views Last Month</div>
+		<div class="titlebar_text">Total de vistas el mes pasado</div>
 	    </div>
 	    <div class="pluslet_body total-views">
 		<?php print_r($total_views[0]['total_views_last_month']); ?>
@@ -50,7 +50,7 @@ $total_external_link_clicks = $stats->getTopExternalLinks();
     <div class="pure-u-3-3">
 	<div class="pluslet no_overlflow">
 	    <div class="titlebar">
-		<div class="titlebar_text">Total Views Per Guide Last Month</div>
+		<div class="titlebar_text">Total de vistas por guía el mes pasado</div>
 	    </div>
 	    <div class="pluslet_body">
 		<table class="stats-table">
@@ -84,15 +84,15 @@ $total_external_link_clicks = $stats->getTopExternalLinks();
     <div class="pure-u-3-3">
 	<div class="pluslet no_overlflow">
 	    <div class="titlebar">
-		<div class="titlebar_text">Tab Clicks Per Guide Last Month</div>
+		<div class="titlebar_text">Haga clic en clics por guía el mes pasado</div>
 	    </div>
 	    <div class="pluslet_body">
 		<table class="stats-table">
 		    <thead>
 			<tr>
-			    <td>Tab Name</td>
-			    <td>Guide Shortform</td>
-			    <td>Number of Clicks</td>
+			    <td>Nombre de la pestaña</td>
+			    <td>Guía de forma corta</td>
+			    <td>Número de clicks</td>
 			</tr>
 		    </thead>
 		    <tbody>
@@ -121,15 +121,15 @@ $total_external_link_clicks = $stats->getTopExternalLinks();
     <div class="pure-u-3-3">
 	<div class="pluslet no_overlflow">
 	    <div class="titlebar">
-		<div class="titlebar_text">Total Link Clicks Per Guide Last Month</div>
+		<div class="titlebar_text">Total de clics de enlace por guía el mes pasado</div>
 	    </div>
 	    <div class="pluslet_body">
 		<table class="stats-table">
 		    <thead>
 			<tr>
-			    <td>Guide Name</td>
+			    <td>Nombre de la Guía</td>
 			    <td>Link URL</td>
-			    <td>Number of Clicks</td>
+			    <td>Número de Clicks</td>
 			    
 			</tr>
 		    </thead>

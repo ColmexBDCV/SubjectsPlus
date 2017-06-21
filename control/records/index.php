@@ -15,7 +15,7 @@ use SubjectsPlus\Control\Querier;
 
 $subcat = "records";
 $subsubcat = "index.php";
-$page_title = "Browse Items";
+$page_title = "Registros";
 
 // init some vars
 $atoz = "";
@@ -65,11 +65,11 @@ foreach ($alpha_result as $myletter) {
 }
 
 $atoz .= "<a href=\"index.php?letter=Num\">Num</a>&nbsp;";
-$atoz .= "<a href=\"index.php?letter=all\">[all]</a>";
+$atoz .= "<a href=\"index.php?letter=all\">[todos]</a>";
 
 // end A-Z header for now
 
-$results = "<p>" . _("Please select a letter or tag to browse.") . "</p>";
+$results = "<p>" . _("Por favor seleccione una letra o etiqueta para navegar.") . "</p>";
 
 if (isset($_GET["ctag"])) {
     $alpha_id = $_GET["ctag"];
@@ -82,16 +82,16 @@ if (isset($_GET["ctag"])) {
     $alpha_id = "Num";
     $full_query = "select distinct title, description, location, restrictions_id, title.title_id as 'this_record', eres_display, ctags from title, restrictions, location, location_title, source where title.title_id = location_title.title_id and location.location_id = location_title.location_id and restrictions_id = access_restrictions and title REGEXP '^[[:digit:]]'order by title.title";
 }elseif ($_GET['letter'] == "all") {
-    $alpha_id = "All Records";
+    $alpha_id = "Todos los registros";
     $full_query = "select distinct title, description, location, restrictions_id, title.title_id as 'this_record', eres_display, ctags, record_status from title, restrictions, location, location_title, source where title.title_id = location_title.title_id and location.location_id = location_title.location_id and restrictions_id = access_restrictions order by title.title";
 } elseif ($_GET['letter'] == "restricted") {
-    $alpha_id = _("Restricted Items");
+    $alpha_id = _("Artículos restringidos");
     $full_query = "select distinct title, description, location, restrictions_id, title.title_id as 'this_record', eres_display, ctags, record_status from title, restrictions, location, location_title, source where title.title_id = location_title.title_id and location.location_id = location_title.location_id and restrictions_id = access_restrictions and restrictions_id != '1' order by title.title";
 } elseif ($_GET['letter'] == "unrestricted") {
-    $alpha_id = _("Unrestricted Items");
+    $alpha_id = _("Artículos sin restricción");
     $full_query = "select distinct title, description, location, restrictions_id, title.title_id as 'this_record', eres_display, ctags, record_status from title, restrictions, location, location_title, source where title.title_id = location_title.title_id and location.location_id = location_title.location_id and restrictions_id = access_restrictions and restrictions_id = '1' order by title.title";
 } elseif ($_GET['letter'] == "az") {
-    $alpha_id = _("A-Z List Items");
+    $alpha_id = _("Lista de los artículos de A-Z");
     $full_query = "select distinct title, description, location, restrictions_id, title.title_id as 'this_record', eres_display, ctags, record_status from title, restrictions, location, location_title, source where title.title_id = location_title.title_id and location.location_id = location_title.location_id and restrictions_id = access_restrictions and eres_display = 'Y' order by title.title";    
 } else {
     $alpha_id = $_GET['letter'];
@@ -110,21 +110,21 @@ if (isset($_GET["letter"]) && $_GET["letter"] == "az") {
 } else {
     $tag_list .= "ctag-off";
 }
-$tag_list .= "\"><a href=\"index.php?letter=az\">" . _("A-Z List") . "</a></span>
+$tag_list .= "\"><a href=\"index.php?letter=az\">" . _("Listar A-Z") . "</a></span>
 <span class=\"";
-if (isset($_GET["letter"]) && $_GET["letter"] == "restricted") {
+if (isset($_GET["letter"]) && $_GET["letter"] == "restringido") {
     $tag_list .= "ctag-on";
 } else {
     $tag_list .= "ctag-off";
 }
-$tag_list .= "\"><a href=\"index.php?letter=restricted\">" . _("Restricted") . "</a></span>
+$tag_list .= "\"><a href=\"index.php?letter=restricted\">" . _("Restringido") . "</a></span>
 <span class=\"";
-if (isset($_GET["letter"]) && $_GET["letter"] == "unrestricted") {
+if (isset($_GET["letter"]) && $_GET["letter"] == "sin restricción") {
     $tag_list .= "ctag-on";
 } else {
     $tag_list .= "ctag-off";
 }
-$tag_list .= "\"><a href=\"index.php?letter=unrestricted\">" . _("Free") . "</a></span>";
+$tag_list .= "\"><a href=\"index.php?letter=unrestricted\">" . _("libre") . "</a></span>";
 
 // init the ctag
 $selected_ctag = "";
@@ -208,19 +208,19 @@ $results
 ";
  $new_record_body = " 
   <ol>
-    <li>" . _("Make sure the item doesn't already exist!") . "</li>
-    <li><a href=\"record.php\">" . _("Create new item") . "</a></li>
+    <li>" . _("Asegúrese de que el elemento ya no existe!") . "</li>
+    <li><a href=\"record.php\">" . _("Crear nuevo item") . "</a></li>
   </ol>";
 print "
 <div class=\"pure-g\">
   <div class=\"pure-u-2-3\">  
   ";
-makePluslet(_("Browse Records"), $letter_header_body, "no_overflow");
+makePluslet(_("Buscar registros"), $letter_header_body, "no_overflow");
 
 print "</div>"; // close pure-u-2-3
 print "<div class=\"pure-u-1-3\">";
 
-makePluslet(_("New AZRecord"), $new_record_body, "no_overflow");
+makePluslet(_("Nuevo AZRecord"), $new_record_body, "no_overflow");
 
 print "</div>"; // close pure-u-1-3
 print "</div>"; // close pure-g

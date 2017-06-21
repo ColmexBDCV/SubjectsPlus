@@ -12,7 +12,7 @@ use SubjectsPlus\Control\Querier;
 
 $subsubcat = "";
 $subcat = "guides";
-$page_title = "Manage Files, Record Associations, etc.";
+$page_title = "Administrar archivos, asociaciones de registros, etc..";
 
 include("../includes/header.php");
 
@@ -70,11 +70,11 @@ $querier = new Querier;
 
 $file_list = "<table width=\"98%\" class=\"striper\">
     <tr>
-    <th>" . _("File") . "</th>
-    <th>" . _("Size") . "</th>
-    <th>" . _("Owner") . "</th>
-    <th>" . _("Guides") . "</th>
-    <th>" . _("Delete") . "</th>
+    <th>" . _("Archivo") . "</th>
+    <th>" . _("Tamaño") . "</th>
+    <th>" . _("Propietario") . "</th>
+    <th>" . _("Guías") . "</th>
+    <th>" . _("Eliminar") . "</th>
     </tr>";
 
 if ($userFiles) {
@@ -174,12 +174,12 @@ if ($userFiles) {
             }
 
             $file_list .= "</td>
-            <td><a id=\"delete-$rowcount\" name=\"file-$rowcount-$location_hint-" . urlencode($shortName) . "\"><i class=\"fa fa-trash fa-lg\" alt=\"" . _("Delete Item") . "\"></i></a></td></tr>";
+            <td><a id=\"delete-$rowcount\" name=\"file-$rowcount-$location_hint-" . urlencode($shortName) . "\"><i class=\"fa fa-trash fa-lg\" alt=\"" . _("Eliminar Item") . "\"></i></a></td></tr>";
         }
         $rowcount++;
     }
 } else {
-    $file_list .="<tr><td colspan=\"5\">" . _("No files found.") . "</td></tr>";
+    $file_list .="<tr><td colspan=\"5\">" . _("No se encontraron archivos.") . "</td></tr>";
 }
 $file_list .= '</table>';
 
@@ -191,22 +191,22 @@ $file_list .= '</table>';
 
 $subs_option_boxes = getSubBoxes("", "", 1);
 
-$dropdown_intro_text = _("Please check with the guide's owner before modifying");
+$dropdown_intro_text = _("Consulte con el propietario de la guía antes de modificarlo.");
 
 $all_guides .= "
 <form method=\"get\" action=\"manage_items.php\" name=\"form\">
 <select name=\"subject_id\" size=\"1\">
-<option value=\"\">" . _("-- Choose Guide --") . "</option>
+<option value=\"\">" . _("-- Elegir Guía --") . "</option>
 $subs_option_boxes
 </select>
 <br /><br />
 <input type=\"submit\" name=\"submit\" value=\"" . _("Submit") . "\" />
 </form>";
 
-$manage_all_box = "<p>" . _("Use this to organize which items are associated with a record, and thus displayed in 'All Items by Source' box.") . "</p>
+$manage_all_box = "<p>" . _("Utilice esto para organizar qué elementos están asociados con un registro y, por lo tanto, se muestran en el cuadro 'Todos los artículos por origen'.") . "</p>
 $all_guides
 <br />
-<p><i class=\"fa fa-pencil fa-lg\" alt=\"" . _("Edit icon") . "\"></i> " . _("Note: You can also do this in a guide, by clicking on the pencil icon for an 'All Items by Source' box.") . "</p>
+<p><i class=\"fa fa-pencil fa-lg\" alt=\"" . _("Editar icono") . "\"></i> " . _("Nota: También puede hacer esto en una guía, haciendo clic en el icono de lápiz para un cuadro 'Todos los artículos por origen'.") . "</p>
 <div id=\"test_url\"></div>";
 
 // Uploads Box //
@@ -226,12 +226,12 @@ print "
   <div class=\"pure-u-1-2\">  
   ";
 
-makePluslet(_("Manage your Uploads"), $uploads_box, "no_overflow");
+makePluslet(_("Administrar tus subidas"), $uploads_box, "no_overflow");
 
 print "</div>"; // close pure-u-
 print "<div class=\"pure-u-1-2\">";
 
-makePluslet(_("Manage All Items by Source"), $manage_all_box, "no_overflow");
+makePluslet(_("Administrar todos los artículos por origen"), $manage_all_box, "no_overflow");
 
 print "</div>"; // close pure-u-
 print "</div>"; // close pure

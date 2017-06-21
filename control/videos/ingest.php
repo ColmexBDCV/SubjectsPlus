@@ -36,11 +36,11 @@ if (isset($_POST['ingest_source'])) {
 // our form //
 ////////////
 
-$ingest_form = "<p>" . _("Select a source you wish to pull in video metadata from.  Enter the name of the user account, followed by the source.") . "</p><br />";
+$ingest_form = "<p>" . _("Seleccione una fuente que desee extraer de los metadatos de vídeo. Introduzca el nombre de la cuenta de usuario, seguido del origen.") . "</p><br />";
 
 $ingest_form .= "<form method=\"post\" action=\"\">
   <p><strong>" .
-        _("Account username") . "</strong>
+        _("nombre de usuario") . "</strong>
   <input type=\"text\" name=\"username\" size=\"30\" value= \"$vid_user_name\" /> 
   
   <select id=\"ingest_source\" name=\"ingest_source\">
@@ -63,7 +63,7 @@ $ingest_form .= ">YouTube</option>
 if (isset($vid_user_name) && $vid_user_name != "") {
   $content = seekVids($ingest_source, $vid_user_name);
 } else {
-  $content = "<p>" . _("Enter an account username to begin.") . "</p>";
+  $content = "<p>" . _("Introduzca un nombre de usuario de cuenta para comenzar.") . "</p>";
 }
 
 print "<br />
@@ -267,7 +267,7 @@ function seekVids($source, $vid_user_name, $start_index=1, $vid_count=0) {
   $videos = simplexml_load_string(curl_get($vid_data));
 
   if ($videos == NULL) {
-  	$message = _("Error loading the video feed. It's possible there is no channel by that name.");
+  	$message = _("Error al cargar el feed de vídeo. Es posible que no haya ningún canal con ese nombre.");
     print "<div class=\"master-feedback\" style=\"display:block;\">$message</div>";
   	exit;
   }
@@ -281,7 +281,7 @@ function seekVids($source, $vid_user_name, $start_index=1, $vid_count=0) {
     print "</pre>";
 
    */
-  $content = "<h3>Videos from $source for user $vid_user_name</h3>
+  $content = "<h3>Videos de $source for user $vid_user_name</h3>
   <table width=\"98%\" class=\"item_listing\">";
 
   $row_count = 0;
@@ -347,10 +347,10 @@ function seekVids($source, $vid_user_name, $start_index=1, $vid_count=0) {
 
     if (count($rcheck) == 0) {
       $is_new = "";
-      $add_string = "<a class=\"button add\" id=\"ingest---$this_vid_id\">" . _("INSERT Video Metadata") . "</a>";
+      $add_string = "<a class=\"button add\" id=\"ingest---$this_vid_id\">" . _("INSERT Metadato del video") . "</a>";
     } else {
       $is_new = _("Note:  You already have metadata for this video.  Click UPDATE to overwrite.");
-      $add_string = "<a class=\"button save\" id=\"ingest---$this_vid_id\">" . _("UPDATE Video Metadata") . "</a>";
+      $add_string = "<a class=\"button save\" id=\"ingest---$this_vid_id\">" . _("UPDATE Metadato del video") . "</a>";
     }
 
 

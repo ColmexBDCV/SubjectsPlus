@@ -12,7 +12,7 @@
 use SubjectsPlus\Control\Video;
 
 $subcat = "video";
-$page_title = "Manage Video";
+$page_title = "Administrar video";
 
 // Suppress header if it is to be shown in colorbox or popup window
 if (isset($_REQUEST["wintype"]) && $_REQUEST["wintype"] == "pop") {
@@ -57,7 +57,7 @@ if (isset($_POST["delete_record"]) || isset($_GET["delete_record"])) {
         // don't display the form again
         $no_form = TRUE;
     } else {
-        $feedback = "There is no record by that ID.";
+        $feedback = "No hay registro por ese ID.";
     }
 }
 
@@ -180,7 +180,7 @@ include("../includes/footer.php");
 
 
             if (alerter == 1) {
-                alert("<?php print _("You must complete all required form fields."); ?>");
+                alert("<?php print _("Debe completar todos los campos de formulario necesarios."); ?>");
                 return false;
             } 
 

@@ -84,7 +84,7 @@ class FAQ {
         $this->_debug .= "<p>FAQ query: $q1";
         // Test if these exist, otherwise go to plan B
         if ($faqArray == FALSE) {
-          $this->_message = _("There is no active record with that ID.  Weird.  Why not make one?");
+          $this->_message = _("No hay ningún registro activo con ese ID. Extraño. ¿Por qué no hacer uno?");
         } else {
           $this->_question = $faqArray[0]["question"];
           $this->_answer = $faqArray[0]["answer"];
@@ -142,7 +142,7 @@ class FAQ {
     }
 
 
-    $faq_title_line = _("Edit FAQ") . " <span class=\"smallgrey\">{$this->_faq_id}</span>
+    $faq_title_line = _("Editar FAQ") . " <span class=\"smallgrey\">{$this->_faq_id}</span>
         <div style=\"float: right; margin-left: 2em;font-size: 12px;\"><a href=\"" . $PublicPath . "faq.php?faq_id=$this->_faq_id\" target=\"_blank\">" . _("see live") . "</a></div>";
 
     echo "
@@ -157,10 +157,10 @@ class FAQ {
       </div>
       <div class=\"pluslet_body\">
 
-<label for=\"question\">" . _("Question") . "</label>
+<label for=\"question\">" . _("Pregunta") . "</label>
 <textarea name=\"question\" rows=\"4\" cols=\"50\" class=\"required_field\">" . stripslashes($this->_question) . "</textarea>
 
-<label for=\"answer\">" . _("Answer") . "</label>";
+<label for=\"answer\">" . _("Respuesta") . "</label>";
 
     if ($wysiwyg_desc == 1) {
 	   	include ($CKPath);
@@ -179,14 +179,14 @@ class FAQ {
     }
 
     echo "
-<label for=\"keywords\">" . _("Keywords (comma separated please)") . "</label>
+<label for=\"keywords\">" . _("Palabras clave (separadas por coma por favor)") . "</label>
 <input type=\"text\" name=\"keywords\"  size=\"40\" value=\"" . $this->_keywords . "\" />
 </div>
 </div>
 </div>
 <!-- right hand column -->    ";
 
-$last_mod = _("Last modified: ") . lastModded("faq", $this->_faq_id);
+$last_mod = _("Última modificación: ") . lastModded("faq", $this->_faq_id);
       $title_save_box = "<div id=\"last_edited\">$last_mod</div>";
 
   echo"<div class=\"pure-u-1-3\">
@@ -196,14 +196,14 @@ $last_mod = _("Last modified: ") . lastModded("faq", $this->_faq_id);
         <div class=\"titlebar_options\"></div>
       </div>
       <div class=\"pluslet_body\">
-		<input type=\"submit\" name=\"submit_record\" class=\"button pure-button pure-button-primary save-button\" value=\"" . _("Save Now") . "\" />";
+		<input type=\"submit\" name=\"submit_record\" class=\"button pure-button pure-button-primary save-button\" value=\"" . _("Guardar") . "\" />";
 
     // if a) it's not a new record, and  b) we're an admin or c) we are listed as a librarian for this guide, show delete button
     if ($this->_faq_id != "") {
       if (isset($_SESSION["admin"]) && $_SESSION["admin"] == "1") {
-        echo "<input type=\"submit\" name=\"delete_record\" class=\"button pure-button pure-button-warning delete-button\" value=\"" . _("Delete Forever!") . "\" />";
+        echo "<input type=\"submit\" name=\"delete_record\" class=\"button pure-button pure-button-warning delete-button\" value=\"" . _("Eliminar!") . "\" />";
       } else {
-        echo "<input type=\"submit\" name=\"recommend_delete\" class=\"button pure-button pure-button-warning\" value=\"" . _("Recommend Delete") . "\" />";
+        echo "<input type=\"submit\" name=\"recommend_delete\" class=\"button pure-button pure-button-warning\" value=\"" . _("Recomendar Eliminar") . "\" />";
       }
 
 
@@ -265,26 +265,26 @@ $last_mod = _("Last modified: ") . lastModded("faq", $this->_faq_id);
     echo "
     <div class=\"pluslet\">
       <div class=\"titlebar\">
-        <div class=\"titlebar_text\">" . _("Relevant Subjects") . "</div>
+        <div class=\"titlebar_text\">" . _("Temas Relevantes") . "</div>
         <div class=\"titlebar_options\"></div>
       </div>
       <div class=\"pluslet_body\">
 
-        <select name=\"subject_id[]\"><option value=\"\">-- " . _("Select") . " --</option>
+        <select name=\"subject_id[]\"><option value=\"\">-- " . _("Seleccionar") . " --</option>
             $subject_string
         </select>
-	     <div id=\"subject_list\">$subject_list</div> <!-- subjects inserted here -->
+	     <div id=\"subject_list\">$subject_list</div> <!-- Temas insertados aquí -->
        <br />
         </div></div>
 
     <div class=\"pluslet\">
       <div class=\"titlebar\">
-        <div class=\"titlebar_text\">" . _("Relevant Collections") . "</div>
+        <div class=\"titlebar_text\">" . _("Colecciones relevantes") . "</div>
         <div class=\"titlebar_options\"></div>
       </div>
       <div class=\"pluslet_body\">
 
-        <select name=\"collection_id[]\"><option value=\"\">-- " . _("Select") . " --</option>
+        <select name=\"collection_id[]\"><option value=\"\">-- " . _("Seleccionar") . " --</option>
             $collection_string
         </select>
         <div id=\"collection_list\">$collection_list</div> <!-- subjects inserted here -->
@@ -305,7 +305,7 @@ $last_mod = _("Last modified: ") . lastModded("faq", $this->_faq_id);
                 $subject_name
             </div>
             <div class=\"selected_item_options\">
-                <i class=\"fa fa-times delete_sub\" alt=\"" . ("delete") . "\" title=\"" . ("remove subject") . "\"></i>
+                <i class=\"fa fa-times delete_sub\" alt=\"" . ("delete") . "\" title=\"" . ("Eliminar asunto") . "\"></i>
             </div>
         </div>";
 
@@ -324,7 +324,7 @@ $last_mod = _("Last modified: ") . lastModded("faq", $this->_faq_id);
                 $collection_name
             </div>
             <div class=\"selected_item_options\">
-                <i class=\"fa fa-times delete_sub\" alt=\"" . ("delete") . "\" title=\"" . ("remove subject") . "\"></i>
+                <i class=\"fa fa-times delete_sub\" alt=\"" . ("delete") . "\" title=\"" . ("Eliminar asunto") . "\"></i>
             </div>
         </div>";
 
@@ -351,14 +351,14 @@ $last_mod = _("Last modified: ") . lastModded("faq", $this->_faq_id);
 
     } else {
       // message
-      $this->_message = _("There was a problem with your delete (stage 1 of 2).");
+      $this->_message = _("Hubo un problema con su eliminación (etapa 1 de 2).");
       return FALSE;
     }
 
       if (isset($_GET["wintype"]) && $_GET["wintype"] == "pop") {
-        $this->_message = _("Thy will be done.  Offending FAQ deleted.  Close window to continue.");
+        $this->_message = _("Hágase tu voluntad. Preguntas frecuentes de infracción eliminadas. Cierre la ventana para continuar.");
       } else {
-        $this->_message = _("Thy will be done.  Offending FAQ deleted.");
+        $this->_message = _("Hágase tu voluntad. Preguntas frecuentes de infracción eliminadas.");
       }
 
       // /////////////////////
@@ -412,7 +412,7 @@ $last_mod = _("Last modified: ") . lastModded("faq", $this->_faq_id);
     $updateChangeTable = changeMe("faq", "insert", $this->_faq_id, $this->_question, $_SESSION['staff_id']);
 
     // message
-    $this->_message = _("Thy Will Be Done.");
+    $this->_message = _("Hágase Tu Voluntad.");
   }
 
   public function updateRecord() {

@@ -63,8 +63,8 @@ if ($vidArray) {
     $vid_list .= "
             <div style=\"clear: both; float: left;  padding: 3px 5px; width: 98%;\" class=\"striper $row_colour1\">
                 <div style=\"pluslet_body\">
-                <a  class=\"showmedium\" href=\"video.php?video_id=$value[0]&amp;wintype=pop\"><i class=\"fa fa-pencil fa-lg\" alt=\"" . _("Edit") . "\"></i></a>
-                &nbsp; &nbsp;<a href=\"" . $VideoPath . "?video_id=$value[0]\" target=\"_blank\"><i class=\"fa fa-eye fa-lg\" alt=\"" . _("View") . "\"></i></a>
+                <a  class=\"showmedium\" href=\"video.php?video_id=$value[0]&amp;wintype=pop\"><i class=\"fa fa-pencil fa-lg\" alt=\"" . _("Editar") . "\"></i></a>
+                &nbsp; &nbsp;<a href=\"" . $VideoPath . "?video_id=$value[0]\" target=\"_blank\"><i class=\"fa fa-eye fa-lg\" alt=\"" . _("Ver") . "\"></i></a>
                 </div>
                 <div style=\"float: left; width: 90%;\">
                  $short_title <span style=\"color: #666; font-size: 10px;\">($last_revised_line)</span> $activity
@@ -75,13 +75,13 @@ if ($vidArray) {
   }
 } else {
 
-  $vid_list = "<p>" . _("No Videos yet.  Grab your camera.") . "</p>";
+  $vid_list = "<p>" . _("No hay videos todavía. Toma tu cámara.") . "</p>";
 }
 
-$ingest_body_text = "<a href=\"ingest.php\">" . _("FIND VIDEOS") . "</a>";
-$add_metadata_text = "<a href=\"video.php\">" . _("ENTER VIDEO") . "</a>";
-$about_videos_text = "<p><i class=\"fa fa-pencil fa-lg\" alt=\"" . _("Edit") . "\"></i> = " . _("Edit") . "</p>
-    <p><i class=\"fa fa-eye fa-lg\" alt=\"" . _("View") . "\"></i> = " . _("View Video on Public Site") . "</p>";
+$ingest_body_text = "<a href=\"ingest.php\">" . _("Encontar videos") . "</a>";
+$add_metadata_text = "<a href=\"video.php\">" . _("Subir video") . "</a>";
+$about_videos_text = "<p><i class=\"fa fa-pencil fa-lg\" alt=\"" . _("Editar") . "\"></i> = " . _("Editar") . "</p>
+    <p><i class=\"fa fa-eye fa-lg\" alt=\"" . _("Ver") . "\"></i> = " . _("Ver video en sitio público") . "</p>";
 
 
 
@@ -91,10 +91,10 @@ print "<br />
   <div class=\"pure-u-2-3\">  
 
     <div class=\"pluslet no_overflow\" id=\"answered\">
-    <div class=\"titlebar\">" . _("Collected Videos") . "</div>
+    <div class=\"titlebar\">" . _("Colección de videos") . "</div>
     <p class=\"pluslet_body\"><strong>$row_count1 " . _("Videos visible") . "</strong> ";
 if (!isset($_GET["limit"]) || $_GET["limit"] != "all") {
-  print "(<a href=\"index.php?limit=all\">" . _("See All") . "</a>)";
+  print "(<a href=\"index.php?limit=all\">" . _("Ver todos") . "</a>)";
 }
 print "</p><br />
 <div class=\"pluslet_body\">    
@@ -107,9 +107,9 @@ print "<div class=\"pure-u-1-3\">";
 
 makePluslet(_("Ingest Video Metadata"), $ingest_body_text, "no_overflow");
 
-makePluslet(_("Add Metadata by Hand"), $add_metadata_text, "no_overflow");
+makePluslet(_("Añadir metadatos a mano"), $add_metadata_text, "no_overflow");
 
-makePluslet(_("About Videos"), $about_videos_text, "no_overflow");
+makePluslet(_("Acerca de los videos"), $about_videos_text, "no_overflow");
 
 print "</div>"; // close pure-u-1-3
 print "</div>"; // close pure-g

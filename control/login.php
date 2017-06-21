@@ -49,7 +49,7 @@ if (isset($use_shibboleth) && $use_shibboleth == TRUE) {
     <p>" . _("If you are seeing this page, please contact the")  . " <a href=\"mailto:$administrator_email\">" .("SubjectsPlus Admin") . "</a>.</p>
     <p>" . _("Perhaps you have not yet been entered as a user into SubjectsPlus, or your email address has changed since you were entered.") . "</p>";
 
-$logo = "<img src=\"$AssetPath" . "images/admin/logo_v3_full.png\" border=\"0\" />\n
+$logo = "<img src=\"$AssetPath" . "images/admin/logo.png\" border=\"0\" />\n
 <br />";
 
 ?>
@@ -164,7 +164,7 @@ if ($postvar_username == "") {
 $success = "no";
 
 $introtext = "
-<br />" . _("Please enter your <strong>credentials</strong> to proceed.") . "</p>";
+<br />" . _("Por favor introduce tus <strong>credenciales</strong> para proceder.") . "</p>";
 
 $login_form = "<div align=\"center\">\n
 
@@ -172,18 +172,18 @@ $login_form = "<div align=\"center\">\n
 <input type=\"hidden\" name=\"thecount\" value=\"" . $postvar_thecount . "\" />
 <table cellpadding=\"7\" cellspacing=\"0\" border=\"0\" class=\"striped_data\">\n
 <tr>\n
-<td valign=\"top\" class=\"odd\"><strong>" . _("Login") . "</strong></td>\n
+<td valign=\"top\" class=\"odd\"><strong>" . _("iniciar sesión") . "</strong></td>\n
 <td valign=\"top\" class=\"odd\" align=\"left\"><input name=\"username\" type=\"text\" value=\"$postvar_username\" size=\"20\" /></td>\n
 </tr>\n
 <tr>\n
-<td valign=\"top\" class=\"even\"><strong>" . _("Password") . "</strong></td>\n
+<td valign=\"top\" class=\"even\"><strong>" . _("Contraseña") . "</strong></td>\n
 <td valign=\"top\" class=\"even\" align=\"left\"><input name=\"password\" type=\"password\" value=\"$postvar_password\" size=\"20\" /></td>\n
 </tr>\n
 <tr>\n
 <td valign=\"top\" class=\"odd\" colspan=\"2\"><div align=\"center\"><input class=\"button\"  type=\"submit\" value=\"login\" /></div></td>\n
 </tr>\n
 <tr>\n
-<td valign=\"top\" class=\"even\" colspan=\"2\"><div align=\"right\"><a href=\"forgotpassword.php\">" . _("Forgot Password") ."</a></div></td>\n
+<td valign=\"top\" class=\"even\" colspan=\"2\"><div align=\"right\"><a href=\"forgotpassword.php\">" . _("olvidé mi contraseña") ."</a></div></td>\n
 </tr>\n
 </table>\n
 </form>\n
@@ -219,7 +219,7 @@ if (($postvar_username != "") AND (isset($postvar_password))) {
         }
     } else {
         // Bad credentials, try again.  Only 3 tries before you get bumped
-        $introtext = "<p align=\"center\"><strong>" . _("Please check your email and password and try again.  (Note that login attempts are logged.)") . "</strong></p><br />";
+        $introtext = "<p align=\"center\"><strong>" . _("por favor, revisa tu usuario o contraseña.  (Note that login attempts are logged.)") . "</strong></p><br />";
         $success = "no";
     }
 
@@ -236,26 +236,26 @@ $login_form = $introtext . '
     <fieldset>
     
         <div class="pure-control-group">
-            <label for="email">' . _("Email") . '</label>
-            <input id="email" type="email" name="username" value="' . $postvar_username . '" placeholder="' . _("Email Address") . '">
+            <label for="email">' . _("correo") . '</label>
+            <input id="email" type="email" name="username" value="' . $postvar_username . '" placeholder="' . _("Dirección de correo ") . '">
         </div>
 
         <div class="pure-control-group">
-            <label for="password">' . _("Password") . '</label>
-            <input id="password" name="password" type="password" placeholder="' . _("Password") . '">
+            <label for="password">' . _("contraseña") . '</label>
+            <input id="password" name="password" type="password" placeholder="' . _("contraseña") . '">
         </div>
         <br />
         <div class="pure-controls">
 
-            <button type="submit" class="pure-button pure-button-primary">' . _("Submit") . '</button>
+            <button type="submit" class="pure-button pure-button-primary">' . _("entrar") . '</button>
         </div>
     </fieldset>
     <br />
-    <div align="center"><a href="forgotpassword.php">' . _("I have forgotten my password") . '</a></div>
+    <div align="center"><a href="forgotpassword.php">' . _("olvidé mi contraseña") . '</a></div>
 </form>
 ';
 
-$logo = "<img src=\"$AssetPath" . "images/admin/logo_v3_full.png\" border=\"0\" />\n
+$logo = "<img src=\"$AssetPath" . "images/admin/logo.png\" border=\"0\" />\n
 <br />";
 
 
@@ -266,7 +266,7 @@ $logo = "<img src=\"$AssetPath" . "images/admin/logo_v3_full.png\" border=\"0\" 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" href="<?php echo getControlURL(); ?>includes/css.php" type="text/css" media="all" />
-        <title>Login</title>
+        <title>Iniciar sesión</title>
     </head>
 
 <body id="controlpage">

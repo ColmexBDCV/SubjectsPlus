@@ -31,13 +31,13 @@ class BuildNav {
     
     print "
       <ul id=\"topnav\">
-      <li id=\"logospot\"><a href=\"$CpanelPath" . "index.php\"><img src=\"$AssetPath" . "images/admin/logo_v3_full.png\" /></a>
+      <li id=\"logospot\"><a href=\"$CpanelPath" . "index.php\"><img src=\"$AssetPath" . "images/admin/logo.png\" /></a>
       <div>$headshot_lg
-      <p> Hi $name </p>
+      <p> Hola $name </p>
       <br style=\"clear: both\" />
       <ul>
-      <li><a href=\"$staff_page\">" . _("Edit Your Profile") . "</a></li>
-      <li><a href=\"$CpanelPath" . "logout.php\">" . _("Log Out") . "</a></li>
+      <li><a href=\"$staff_page\">" . _("Editar Perfil") . "</a></li>
+      <li><a href=\"$CpanelPath" . "logout.php\">" . _("Cerrar Sesión") . "</a></li>
       </ul>
       </div>
       </li>
@@ -53,17 +53,12 @@ class BuildNav {
       if ($subcat == "records") {
         print " class=\"selected\"";
       }
-      print "><a href=\"$CpanelPath" . "records/\">" . _("Records") . "</a>
+      print "><a href=\"$CpanelPath" . "records/\">" . _("Registros") . "</a>
         <div>
          <ul>
-            <li><a href=\"$CpanelPath" . "records/record.php\">" . _("New Record") . "</a></li>
-            <li><a href=\"$CpanelPath" . "records/index.php\">" . _("Browse Items") . "</a></li>";
-
-      if (isset($_SESSION["admin"]) || (isset($_SESSION["records"]))) {
-          print "<li><a href=\"$CpanelPath" . "records/subject_databases.php\">" . _("Databases by Subject") . "</a></li>";
-      }
-
-         print "</ul>
+            <li><a href=\"$CpanelPath" . "records/record.php\">" . _("Nuevo Registro") . "</a></li>
+            <li><a href=\"$CpanelPath" . "records/index.php\">" . _("Navegar por los artículos") . "</a></li>
+         </ul>
 		  </div></li>";
 
       ///////////////
@@ -74,15 +69,15 @@ class BuildNav {
         print " class=\"selected\"";
       }
 
-      print "><a href=\"$CpanelPath" . "guides/\">" . _("Guides") . "</a>
+      print "><a href=\"$CpanelPath" . "guides/\">" . _("Guías") . "</a>
       <div>
        <ul>
-          <li><a href=\"$CpanelPath" . "guides/metadata.php\">" . _("New Guide") . "</a></li>
-          <li><a href=\"$CpanelPath" . "guides/\">" . _("Browse Guides") . "</a></li>
-          <li><a href=\"$CpanelPath" . "guides/manage.php\">" . _("Manage Files") . "</a></li>
+          <li><a href=\"$CpanelPath" . "guides/metadata.php\">" . _("Nueva Guía") . "</a></li>
+          <li><a href=\"$CpanelPath" . "guides/\">" . _("Ver Guías") . "</a></li>
+          <li><a href=\"$CpanelPath" . "guides/manage.php\">" . _("Administrar archivos") . "</a></li>
           <!--<li><a href=\"$CpanelPath" . "guides/delish_url.php\">" . _("Delicious Builder") . "</a></li>-->
-          <li><a href=\"$CpanelPath" . "guides/link_checker.php\">" . _("Link Checker") . "</a></li>
- <li><a href=\"$CpanelPath" . "guides/stats.php\">" . _("Stats") . "</a></li> 
+          <li><a href=\"$CpanelPath" . "guides/link_checker.php\">" . _("Comprobador de vínculos") . "</a></li>
+ <li><a href=\"$CpanelPath" . "guides/stats.php\">" . _("Estadísticas") . "</a></li> 
        </ul>
       </div></li>";
     }
@@ -96,12 +91,12 @@ class BuildNav {
       if ($subcat == "faq") {
         print " class=\"selected\"";
       }
-      print"><a href=\"$CpanelPath" . "faq/\">" . _("FAQs") . "</a>
+      print"><a href=\"$CpanelPath" . "faq/\">" . _("Preguntas Frecuentes") . "</a>
       <div>
         <ul>
-          <li><a href=\"$CpanelPath" . "faq/faq.php\">" . _("New FAQ") . "</a></li>
-          <li><a href=\"$CpanelPath" . "faq/browse_faq.php?type=subject\">" . _("Browse by Subject") . "</a></li>
-          <li><a href=\"$CpanelPath" . "faq/browse_faq.php?type=holding\">" . _("Browse by Collection") . "</a></li>
+          <li><a href=\"$CpanelPath" . "faq/faq.php\">" . _("Nueva pregunta frecuente") . "</a></li>
+          <li><a href=\"$CpanelPath" . "faq/browse_faq.php?type=subject\">" . _("Examinar por tema") . "</a></li>
+          <li><a href=\"$CpanelPath" . "faq/browse_faq.php?type=holding\">" . _("Buscar por colección") . "</a></li>
         </ul>
       </div>
       </li>";
@@ -128,9 +123,9 @@ class BuildNav {
       print ">" . _("Videos") . "</a>
       <div>
         <ul>
-          <li><a href=\"$CpanelPath" . "videos/\">" . _("List Current") . "</a></li>
-          <li><a href=\"$CpanelPath" . "videos/ingest.php\">" . _("Find/Ingest") . "</a></li>
-          <li><a href=\"$CpanelPath" . "videos/video.php\">" . _("Manually Enter") . "</a></li>
+          <li><a href=\"$CpanelPath" . "videos/\">" . _("Lista actual") . "</a></li>
+          <li><a href=\"$CpanelPath" . "videos/ingest.php\">" . _("Encontrar / ingerir") . "</a></li>
+          <li><a href=\"$CpanelPath" . "videos/video.php\">" . _("Introducir manualmente") . "</a></li>
         </ul>
        </div></li>";
     }
@@ -143,11 +138,11 @@ if ($is_um == TRUE) {
       if ($subcat == "stats") {
         print " class=\"selected\"";
       }
-      print ">" . _("Stats") . "</a>
+      print ">" . _("Estadísticas") . "</a>
       <div>
         <ul>
-          <li><a href=\"$CpanelPath" . "stats/\">" . _("Overview") . "</a></li>
-          <li><a href=\"$CpanelPath" . "stats/ref_stats.php\">" . _("Add Transaction") . "</a></li>
+          <li><a href=\"$CpanelPath" . "stats/\">" . _("Visión de conjunto") . "</a></li>
+          <li><a href=\"$CpanelPath" . "stats/ref_stats.php\">" . _("Agregar transacción") . "</a></li>
         </ul>
        </div></li>";
     }
@@ -163,14 +158,15 @@ if ($is_um == TRUE) {
       print "><a href=\"$CpanelPath" . "admin/\">" . _("Admin") . "</a>
       <div>
     		<ul>
-    			<li><a href=\"$CpanelPath" . "admin/user.php\">" . _("Add New User") . "</a></li>
-          <li><a href=\"$CpanelPath" . "admin/user.php?browse\">" . _("Manage Users") . "</a></li>
-    			<li><a href=\"$CpanelPath" . "admin/manage_guides.php\">" . _("Manage Guides") . "</a></li>
-          <li><a href=\"$CpanelPath" . "admin/guide_collections.php\">" . _("Guide Collections") . "</a></li>
-    			<li><a href=\"$CpanelPath" . "admin/departments.php\">" . _("Departments") . "</a></li>
-    			<li><a href=\"$CpanelPath" . "admin/sources.php\">" . _("Sources") . "</a></li>
-          <li><a href=\"$CpanelPath" . "admin/faq_collections.php\">" . _("FAQ Collections") . "</a></li>          
-    			<li><a href=\"$CpanelPath" . "edit-config.php\">" . _("Config Site") . "</a></li>    			
+    			<li><a href=\"$CpanelPath" . "admin/user.php\">" . _("Agregar nuevo usuario") . "</a></li>
+          <li><a href=\"$CpanelPath" . "admin/user.php?browse\">" . _("Administrar Usuarios") . "</a></li>
+    			<li><a href=\"$CpanelPath" . "admin/manage_guides.php\">" . _("Administrar Guías") . "</a></li>
+          <li><a href=\"$CpanelPath" . "admin/guide_collections.php\">" . _("Colección de Guías") . "</a></li>
+    			<li><a href=\"$CpanelPath" . "admin/departments.php\">" . _("Departamentos") . "</a></li>
+    			<li><a href=\"$CpanelPath" . "admin/sources.php\">" . _("Recursos") . "</a></li>
+          <li><a href=\"$CpanelPath" . "admin/faq_collections.php\">" . _("Colección de Preguntas Frecuentes") . "</a></li>
+          <li><a href=\"$CpanelPath" . "admin/subject_databases.php\">" . _("Bases de datos por tema") . "</a></li>
+    			<li><a href=\"$CpanelPath" . "edit-config.php\">" . _("Configuración del sitio") . "</a></li>    			
     		</ul>
       </div>
 	   </li>";
@@ -179,31 +175,31 @@ if ($is_um == TRUE) {
     // determine our default search/search box text
     switch ($subcat) {
       case "records";
-        $input_text = _("Search records");
+        $input_text = _("Buscar Registros");
         $target_url = "record.php?record_id=";
         break;
       case "guides";
-        $input_text = _("Search guides");
+        $input_text = _("Buscar guías");
         $target_url = "../guides/guide.php?subject_id=";
         break;
       case "faq";
-        $input_text = _("Search faqs");
+        $input_text = _("Buscar preguntas frecuentes");
         $target_url = "faq.php?faq_id=";
         break;
       case "home":
-	$input_text = _("Search all");
+	$input_text = _("Buscar");
         $target_url = "../control/guides/guide.php?subject_id=";
 	break;
       case "talkback";
-        $input_text = _("Search talkback");
+        $input_text = _("Buscar talkback");
         $target_url = "talkback.php?talkback_id=";
         break;
       case "admin";
-        $input_text = _("Search users");
+        $input_text = _("Buscar usuario");
         $target_url = "user.php?staff_id=";
         break;
       default:
-        $input_text = _("Search all");
+        $input_text = _("Buscar");
         $target_url = "guide.php?subject_id=";
         break;
     }

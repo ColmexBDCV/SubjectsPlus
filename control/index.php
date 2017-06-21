@@ -10,7 +10,7 @@ use SubjectsPlus\Control\Staff;
 use SubjectsPlus\Control\Stats;
 use SubjectsPlus\Control\Querier;
 
-$page_title = "SubjectsPlus";
+$page_title = "Inicio";
 $subcat = "home";
     
 include(__DIR__.'/includes/header.php');
@@ -33,11 +33,11 @@ $view_contact_info = "";
 if ($_SESSION['user_type_id'] == '1') {
   // allow user to update their own bio?
   if (isset($user_bio_update) && $user_bio_update == TRUE) {
-    $mod_bio = "<p class=\"star-class\"><a href=\"includes/set_bio.php?staff_id=" . $_SESSION['staff_id'] . "\" class=\"showsmall\">" . _("Update Your Biographical Details") . "</a></p>";
+    $mod_bio = "<p class=\"star-class\"><a href=\"includes/set_bio.php?staff_id=" . $_SESSION['staff_id'] . "\" class=\"showsmall\">" . _("Actualizar los detalles de tu biogrfía") . "</a></p>";
   }
   // allow user to update their own photo?
  if (isset($user_photo_update) && $user_photo_update == TRUE) {
-    $mod_photo = "<p class=\"star-class\"><a href=\"includes/set_picture.php?staff_id=" . $_SESSION['staff_id'] . "\" id=\"load_photo\">" . _("Update Headshot") . "</a></p>";
+    $mod_photo = "<p class=\"star-class\"><a href=\"includes/set_picture.php?staff_id=" . $_SESSION['staff_id'] . "\" id=\"load_photo\">" . _("Editar foto") . "</a></p>";
 
   }
 }
@@ -49,7 +49,7 @@ if (isset($_SESSION["admin"]) || isset($_SESSION["supervisor"])) {
 
 // Unncessary if someone is using shibboleth authentication
 
-$reset_password = "<p class=\"star-class\"><a href=\"includes/set_password.php?staff_id=" . $_SESSION["staff_id"] . "\" id=\"reset_password\">" .  _("Reset Password") . "</a></p>";
+$reset_password = "<p class=\"star-class\"><a href=\"includes/set_password.php?staff_id=" . $_SESSION["staff_id"] . "\" id=\"reset_password\">" .  _("Reestablecer contraseña") . "</a></p>";
 
 if (isset($use_shibboleth)) {
   // $use_shibboleth var exists, but is it set to true?
@@ -69,7 +69,7 @@ if (isset($use_shibboleth)) {
 <div class="pure-u-1-3">  
   <div class="pluslet">
     <div class="titlebar">
-      <div class="titlebar_text"><?php printf(_("Hello %s"), $full_name); ?></div>
+      <div class="titlebar_text"><?php printf(_("Hola %s"), $full_name); ?></div>
       <div class="titlebar_options"></div>
     </div>
     <div class="topimage"></div>
@@ -92,12 +92,12 @@ if (isset($use_shibboleth)) {
   </div>
   <?php 
   $our_faves = "<ul>
-  <li><a href=\"records/record.php\">" . _("Create New Record") . "</a></li>
-  <li><a href=\"guides/metadata.php\">" . _("Create New Guide") . "</a></li>
-  <li><a href=\"faq/faq.php\">" . _("Create New FAQ") . "</a></li>
+  <li><a href=\"records/record.php\">" . _("Crear Nuevo Registro") . "</a></li>
+  <li><a href=\"guides/metadata.php\">" . _("Crear Nueva Guía") . "</a></li>
+  <li><a href=\"faq/faq.php\">" . _("Preguntas Frecuentes") . "</a></li>
   </ul>";
 
-  print makePluslet (_("Favourites"), $our_faves); ?>
+  print makePluslet (_("Favoritos"), $our_faves); ?>
   <div class="pluslet">
     <div class="titlebar">
       <div class="titlebar_text"><?php print _("Background Options"); ?></div>
@@ -129,14 +129,14 @@ $staff_short_forms = $stats->getStaffShortForms($_SESSION['staff_id']);
     <div class="pure-u-2-3" <?php if ($staff_short_forms == null) { echo "style=\"display:none;\""; } ?>>
 	<div class="pluslet no_overlflow">
 	    <div class="titlebar">
-		<div class="titlebar_text">Your Guide Views Last Month</div>
+		<div class="titlebar_text">Las guías vistas en el último mes</div>
 	    </div>
 	    <div class="pluslet_body">
 		<table class="stats-table">
 		    <thead>
 			<tr>
-			    <td>Guide</td>
-			    <td>Number of Views</td>
+			    <td>Guía</td>
+			    <td>Número de vistas</td>
 			</tr>
 		    </thead>
 		    <tbody>
@@ -162,12 +162,12 @@ $staff_short_forms = $stats->getStaffShortForms($_SESSION['staff_id']);
 <div class="pure-u-1-3">  
     <div class="pluslet">
 	<div class="titlebar">
-	    <div class="titlebar_text"><?php print _("Recent Activity"); ?></div>
+	    <div class="titlebar_text"><?php print _("Actividad Reciente"); ?></div>
 	    <div class="titlebar_options"></div>
 	</div>
 	<div class="topimage"></div>
 	<div class="pluslet_body">
-	    <p><?php print _("You have recently added or edited:"); ?></p>
+	    <p><?php print _("Has agregado o editado:"); ?></p>
 	    <?php echo $recent_activity ?>
 	</div>
     </div>

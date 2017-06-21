@@ -84,7 +84,7 @@ h2 {
   
     font-size: 1.2em;
     letter-spacing: 1px;
-    color: #333;
+    color: #fff;
     font-size: 1.3em;
 }
 
@@ -338,7 +338,7 @@ img {
 
 
 .titlebar {
-    color: #333;
+    color: #5E002B;
     position: relative;
     padding: 0;
     margin: 0;
@@ -355,7 +355,7 @@ img {
     margin-top: 0px;
     padding: 10px;
     border:  none;
-    color: #333;
+    color: #5E002B;
     background-color: transparent;
     -webkit-border-top-left-radius: 6px;
     -webkit-border-top-right-radius: 6px;

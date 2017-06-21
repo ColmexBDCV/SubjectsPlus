@@ -57,8 +57,8 @@ if ($faqArray) {
     $faq_list .= "
             <div class=\"striper faq_wrapper $row_colour1\">
                 <div class=\"faq_tools\">
-                <a href=\"faq.php?faq_id=$value[0]&amp;wintype=pop\" class=\"showmedium-reloader\"><i class=\"fa fa-pencil fa-lg\" alt=\"" . _("Edit") . "\"></i></a>
-                &nbsp; &nbsp;<a href=\"" . $FAQPath . "?faq_id=$value[0]\" target=\"_blank\"><i class=\"fa fa-eye fa-lg\" alt=\"" . _("View Live") . "\"></i></a>
+                <a href=\"faq.php?faq_id=$value[0]&amp;wintype=pop\" class=\"showmedium-reloader\"><i class=\"fa fa-pencil fa-lg\" alt=\"" . _("Editar") . "\"></i></a>
+                &nbsp; &nbsp;<a href=\"" . $FAQPath . "?faq_id=$value[0]\" target=\"_blank\"><i class=\"fa fa-eye fa-lg\" alt=\"" . _("Ver en vivo") . "\"></i></a>
                 </div>
                 <div class=\"faq_question\">
                  $short_question <span class=\"faq-short-question\">($last_revised_line)</span>
@@ -69,13 +69,13 @@ if ($faqArray) {
   }
 } else {
 
-  $faq_list = "<p>" . _("No FAQs yet.  Why not dream one up?") . "</p>";
+  $faq_list = "<p>" . _("No hay preguntas frecuentes todavía. ¿Por qué no soñar uno?") . "</p>";
 }
 
-$faq_body = "<p><strong>$row_count1 " . _("FAQs visible");
+$faq_body = "<p><strong>$row_count1 " . _("Preguntas frecuentes visibles");
 
 if (!isset($limit) || $limit != "all") {
-  $faq_body .= " (<a href=\"index.php?limit=all\">" . _("See All") . "</a>)";
+  $faq_body .= " (<a href=\"index.php?limit=all\">" . _("Ver Todas") . "</a>)";
 }
 
 $faq_body .= "</strong></p>" . $faq_list;
@@ -84,13 +84,13 @@ $faq_body .= "</strong></p>" . $faq_list;
 <div class="pure-g">
   <div class="pure-u-2-3">  
 
-<?php makePluslet(_("View FAQs"), $faq_body, "no_overflow"); ?>
+<?php makePluslet(_("Ver preguntas frecuentes"), $faq_body, "no_overflow"); ?>
 
   </div>
   <div class="pure-u-1-3">  
     <div class="pluslet">
       <div class="titlebar">
-        <div class="titlebar_text"><?php print _("Create FAQ"); ?></div>
+        <div class="titlebar_text"><?php print _("Crear FAQ"); ?></div>
         <div class="titlebar_options"></div>
       </div>
       <div class="topimage"></div>
@@ -100,16 +100,16 @@ $faq_body .= "</strong></p>" . $faq_list;
     </div>
     <div class="pluslet">
       <div class="titlebar">
-        <div class="titlebar_text"><?php print _("About FAQs"); ?></div>
+        <div class="titlebar_text"><?php print _("Acerca de  FAQs"); ?></div>
         <div class="titlebar_options"></div>
       </div>
       <div class="topimage"></div>
       <div class="pluslet_body">
-        <p><i class="fa fa-pencil fa-lg" alt=" <?php print _("Edit"); ?>"></i> <?php print _("Edit FAQ"); ?></p>
-        <p><i class="fa fa-eye fa-lg" alt=" <?php print _("View"); ?>"></i> <?php print _("View FAQ on Public Site"); ?></p>
-        <p><?php print _("FAQs may be assigned a subject or a collection.  FAQ collections are groupings that may show up on the sidebar of the public FAQ page:
-        for example, Library Catalog or InterLibrary Loan.  If you assign a subject, you can easily add all FAQs for that subject to a subject guide."); ?></p>
-        <p><?php print _("FAQ collections are created by the site administrator, or someone with the 'admin' privilege in SubjectsPlus."); ?></p>
+        <p><i class="fa fa-pencil fa-lg" alt=" <?php print _("Edit"); ?>"></i> <?php print _("Editar FAQ"); ?></p>
+        <p><i class="fa fa-eye fa-lg" alt=" <?php print _("View"); ?>"></i> <?php print _("Ver preguntas frecuentes sobre el sitio público"); ?></p>
+        <p><?php print _("A las preguntas frecuentes se les puede asignar un tema o una colección. Las colecciones de preguntas frecuentes son agrupaciones que pueden aparecer en la barra lateral de la página de preguntas frecuentes del público:
+         Por ejemplo, el Catálogo de Bibliotecas o el Préstamo Interbibliotecario. Si asigna un tema, puede agregar fácilmente todas las preguntas frecuentes para ese tema a una guía de temas."); ?></p>
+        <p><?php print _("Las colecciones de preguntas frecuentes son creadas por el administrador del sitio o por alguien con el privilegio 'admin' en SubjectsPlus."); ?></p>
       </div>
     </div>
   </div>

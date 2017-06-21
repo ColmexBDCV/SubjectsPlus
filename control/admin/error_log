@@ -1,0 +1,8 @@
+[12-Jun-2017 20:36:26 UTC] PHP Warning:  array_unique() expects parameter 1 to be array, null given in /home/alberto5/public_html/sp/lib/SubjectsPlus/Control/Staff.php on line 1429
+[12-Jun-2017 20:36:26 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/alberto5/public_html/sp/lib/SubjectsPlus/Control/Staff.php on line 1431
+[12-Jun-2017 20:38:57 UTC] PHP Warning:  array_unique() expects parameter 1 to be array, null given in /home/alberto5/public_html/sp/lib/SubjectsPlus/Control/Staff.php on line 1429
+[12-Jun-2017 20:38:57 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/alberto5/public_html/sp/lib/SubjectsPlus/Control/Staff.php on line 1431
+[12-Jun-2017 20:40:38 UTC] PHP Warning:  array_unique() expects parameter 1 to be array, null given in /home/alberto5/public_html/sp/lib/SubjectsPlus/Control/Staff.php on line 1429
+[12-Jun-2017 20:40:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/alberto5/public_html/sp/lib/SubjectsPlus/Control/Staff.php on line 1431
+[12-Jun-2017 20:40:52 UTC] PHP Warning:  array_unique() expects parameter 1 to be array, null given in /home/alberto5/public_html/sp/lib/SubjectsPlus/Control/Staff.php on line 1429
+[12-Jun-2017 20:40:52 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/alberto5/public_html/sp/lib/SubjectsPlus/Control/Staff.php on line 1431

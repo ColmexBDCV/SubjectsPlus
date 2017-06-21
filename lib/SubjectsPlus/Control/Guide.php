@@ -117,7 +117,7 @@ class Guide
                 $this->_debug .= "<p>Subject query: $q1";
                 // Test if these exist, otherwise go to plan B
                 if ($guideArray == FALSE) {
-                    $this->_message = _("There is no active record with that ID.  Why not create a new one?");
+                    $this->_message = _("No hay ningún registro activo con ese ID. ¿Por qué no crear uno nuevo?");
                 } else {
                     $this->_subject = $guideArray[0]["subject"];
                     $this->_shortform = $guideArray[0]["shortform"];
@@ -250,13 +250,13 @@ class Guide
 		if ($wintype == "pop") {
 		$copy_guide = "";
 		} else {
-		$copy_guide = "<a href='guide_copy.php'>" . _("Copy an Existing Guide") . "</a>";
+		$copy_guide = "<a href='guide_copy.php'>" . _("Copiar una guía existente") . "</a>";
 		}
         if ($this->_subject_id) {
-            $guide_title_line = _("Edit Existing Guide Metadata");
+            $guide_title_line = _("Editar los metadatos de la guía existente");
 			
         } else {
-            $guide_title_line = _("Create New Guide");
+            $guide_title_line = _("Crear Nueva Guía ");
         }
 
         echo "
@@ -271,15 +271,15 @@ class Guide
                     </div>
                 <div class=\"pluslet_body\">
 				$copy_guide
-			<label for=\"record_title\">" . _("Guide Title") . "</label>
+			<label for=\"record_title\">" . _("Título de la guía") . "</label>
             <input type=\"text\" name=\"subject\" id=\"record_title\" class=\"pure-input-1-2 required_field\" value=\"" . $this->_subject . "\">
 
-            <label for=\"record_shortform\">" . _("Short Form") . "</label>
+            <label for=\"record_shortform\">" . _("Forma Corta") . "</label>
             <input type=\"text\" name=\"shortform\" id=\"record_shortform\" size=\"20\" class=\"pure-input-1-4 required_field\" value=\"" . $this->_shortform . "\">
 
-            <span class=\"smaller\">* " . _("Short label that shows up in URL--don't use spaces, ampersands, etc.") . "</span>
+            <span class=\"smaller\">* " . _("Etiqueta corta que aparece en la URL - no use espacios, signos, etc.") . "</span>
 
-            <label for=\"type\">" . _("Type of Guide") . "</label>
+            <label for=\"type\">" . _("Tipo de guía") . "</label>
             ";
 
         /////////////////////
@@ -290,7 +290,7 @@ class Guide
         $guide_string = $guideMe->display();
         echo $guide_string;
 
-        echo "<label for=\"header\">" . _("Header Type") . "</label>";
+        echo "<label for=\"header\">" . _("Tipo de encabezado") . "</label>";
 
         /////////////////////
         // Header switcher dropdown
@@ -300,28 +300,28 @@ class Guide
         $header_string = $headerMe->display();
         echo $header_string;
 
-        echo "<span class=\"smaller\">* " . _("If you're not sure, stick with default") . "</span>";
+        echo "<span class=\"smaller\">* " . _("Si no está seguro, mantenga el valor predeterminado") . "</span>";
 
         /////////////////////
         // Is Live
         ////////////////////
 
-        $is_live = "<label for=\"active\">" . _("Visibility") . "</label>
+        $is_live = "<label for=\"active\">" . _("Visibilidad") . "</label>
     <input name=\"active\" type=\"radio\" value=\"1\"";
         if ($this->_active == 1) {
             $is_live .= " checked=\"checked\"";
         }
-        $is_live .= " /> " . _("Public:  Everyone can see") . " <br />
+        $is_live .= " /> " . _("Público:  Todos pueden ver") . " <br />
         <input name=\"active\" type=\"radio\" value=\"0\"";
         if ($this->_active == 0) {
             $is_live .= " checked=\"checked\"";
         }
-        $is_live .= " /> " . _("Hidden:  Not listed, but visible if you have the URL") . " <br />
+        $is_live .= " /> " . _("Oculto:  No aparece, pero es visible si tiene la URL") . " <br />
         <input name=\"active\" type=\"radio\" value=\"2\"";
         if ($this->_active == 2) {
             $is_live .= " checked=\"checked\"";
         }
-        $is_live .= " /> " . _("Suppressed:  Must be logged in to SP to view");
+        $is_live .= " /> " . _("Suprimido: Debe haber iniciado sesión en SP para ver");
 
         print $is_live;
 
@@ -350,7 +350,7 @@ class Guide
         $subject_query = "SELECT subject_id, subject FROM subject WHERE subject_id != '$this->_subject_id'";
         $subjectArray = $querier->query($subject_query);
 
-        $parentMe = new Dropdown("parent_id[]", $subjectArray, "", "50", "--Select--");
+        $parentMe = new Dropdown("parent_id[]", $subjectArray, "", "50", "--Seleccionar--");
         $parent_string = $parentMe->display();
 
         $parenthood = "$parent_string <div id=\"parent_list\">$parents_list</div> <!-- parent guides inserted here -->";
@@ -376,18 +376,18 @@ class Guide
     <!-- right hand column -->
     <div class=\"pure-u-1-2\">";
 
-    $content = "<input type=\"submit\" name=\"submit_record\"  class=\"pure-button pure-button-primary save-guide\" value=\"" . _("Save Now") . "\" />";
+    $content = "<input type=\"submit\" name=\"submit_record\"  class=\"pure-button pure-button-primary save-guide\" value=\"" . _("Guardar") . "\" />";
 
         // if a) it's not a new record, and  b) we're an admin or c) we are listed as a librarian for this guide, show delete button
         // make sure they're allowed to delete
 
     if ($this->_subject_id != "") {
             if (in_array($_SESSION["staff_id"], $this->_ok_staff) || $_SESSION["admin"] == 1) {
-            $content .= " <input type=\"submit\" name=\"delete_record\" class=\"pure-button delete_button pure-button-warning delete-guide\" value=\"" . _("Delete Forever!") . "\" />";
+            $content .= " <input type=\"submit\" name=\"delete_record\" class=\"pure-button delete_button pure-button-warning delete-guide\" value=\"" . _("Borrar!") . "\" />";
         }
     }
     // get edit history
-    $last_mod = _("Last modified: ") . lastModded("guide", $this->_subject_id);
+    $last_mod = _("Última modificación: ") . lastModded("guía", $this->_subject_id);
     $title = "<div id=\"last_edited\">$last_mod</div>";
 
     makePluslet($title, $content, "no_overflow");
@@ -413,7 +413,7 @@ class Guide
         $querierStaff = new Querier();
         $staffArray = $querierStaff->query($qStaff);
 
-        $staffMe = new Dropdown("staff_id[]", $staffArray, "", "50", "--Select--");
+        $staffMe = new Dropdown("staff_id[]", $staffArray, "", "50", "--Seleccionar--");
         $staff_string = $staffMe->display();
 
         /////////////////
@@ -440,7 +440,7 @@ class Guide
             $querierDiscipline = new Querier();
             $disciplineArray = $querierStaff->query($qDiscipline);
 
-            $disciplineMe = new Dropdown("discipline_id[]", $disciplineArray, "", "50", "--Select--");
+            $disciplineMe = new Dropdown("discipline_id[]", $disciplineArray, "", "50", "--Seleccionar--");
             $discipline_string = $disciplineMe->display();
         }
 
@@ -453,12 +453,12 @@ class Guide
         //////////////
 
         $metadata_box = "
-        <label for=\"description\">" . _("Description") . "</label>
+        <label for=\"description\">" . _("Descripción") . "</label>
         <textarea name=\"description\" id=\"record_description\" class=\"\" cols=\"35\" rows=\"2\">" . $this->_description . "</textarea>
 
-        <label for=\"keywords\">" . _("Keywords (separate with commas)") . "</label>
+        <label for=\"keywords\">" . _("Palabras clave (separadas con comas)") . "</label>
         <input type=\"text\" name=\"keywords\" id=\"record_keywords\" size=\"40\" class=\"\" value=\"" . $this->_keywords . "\">
-        <label for=\"record_label\">" . _("Redirect Url (for non-SubjectsPlus content)") . "</label>
+        <label for=\"record_label\">" . _("URL de redireccionamiento)") . "</label>
         <input type=\"text\" name=\"redirect_url\" id=\"record_redirect_url\" size=\"40\" class=\"\" value=\"" . $this->_redirect_url . "\">
         ";
 
@@ -466,7 +466,7 @@ class Guide
 
         $metadata_box .= "<label for=\"discipline_list\">" . _("Parent Disciplines") . "</span><br />
         $discipline_string
-        <div id=\"discipline_list\">$discipliner_list</div> <!-- disciplines inserted here -->
+        <div id=\"discipline_list\">$discipliner_list</div> <!-- inserte disciplinas -->
         </div>";
 
         }

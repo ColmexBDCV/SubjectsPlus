@@ -115,8 +115,8 @@ body {
   font-size: 14px;
   text-align: left;
   line-height: 20px;
-  color: #333;
-  background: #e3e1d9 url(../../assets/images/admin/mission_control_lg.jpg) no-repeat center center fixed;
+  color: #5E002B;
+  background: #5E002B url(../../assets/images/admin/mission_control_lg.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -246,7 +246,7 @@ header {
   padding: .5em 0.5em;
   text-align: left;
   font-size: 18px;
-  color: #858585;
+  color: #661a00;
 }
 
 #topnav li a.profile {padding-right: 0px;}
@@ -317,7 +317,7 @@ header {
 }
 
 #topnav > li > div ul li a:hover {
-  color: #E488B6;
+  color: #f37421;
 }
 
 #topnav > li > div ul li:last-child, .last-item {border: none !important;}
@@ -478,7 +478,7 @@ html, button, input, select, textarea {
   color: #333;
 }
 
-#guide_nav li a:hover {text-decoration: none; color: #e488b6;}
+#guide_nav li a:hover {text-decoration: none; color: #f37421;}
 
 
 #guide_header .icon-edit-guide {
@@ -1434,7 +1434,7 @@ li.fav-box-item:hover::before {color: #C03957;}
 #tabs.ui-tabs .ui-tabs-nav li#expand_tab:hover {border-bottom: 4px solid #444 !important; color: #FFF; background-color: #858585 !important;}
 
 #tabs li .alter_tab { 
-    color: #858585;
+    color: #661a00;
     cursor: pointer;
     display: inline-block;
     font-size: 16px;
@@ -3273,7 +3273,7 @@ div.ctag_list a:hover {
 }
 
 .ctag-on, .aztag-on, .lookup_button {
-  background-color: #C03957;
+  background-color: #5E002B;
   color: #fff;
   margin: 0 2px;
   padding: 1px 2px;
@@ -4069,7 +4069,7 @@ background: url("../images/grid.png") repeat scroll 0 50% #666 !important;
 }
 
 .pure-button-primary, .pure-button-selected, .pure-button-topsearch, a.pure-button-primary, a.pure-button-selected {
-  background-color: #E488B6;
+  background-color: #5E002B;
   background-color: #C03957;
   color: #FFFFFF;
   font-weight: normal;
@@ -4090,7 +4090,7 @@ background: url("../images/grid.png") repeat scroll 0 50% #666 !important;
 
 .pure-button-topsearch {
   font-weight: normal;
-  background-color: #E091B0;
+  background-color: #5E002B;
 
 }
 

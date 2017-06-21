@@ -10,7 +10,7 @@
 use SubjectsPlus\Control\Guide;
 use SubjectsPlus\Control\Dropdown;
 $subcat = "guides";
-$page_title = "Manage Guide Metadata";
+$page_title = "Administrar los metadatos de la guía";
 
 $use_jquery = array("ui_styles");
 
@@ -59,7 +59,7 @@ if (isset($_POST["delete_record"]) || isset($_GET["delete_record"])) {
     // don't display the form again
     $no_form = TRUE;
   } else {
-    $feedback = _("There is no record by that ID.");
+    $feedback = _("No hay registro por ese ID.");
   }
   //exit;
 }
@@ -74,7 +74,7 @@ if (isset($_POST["submit_record"])) {
 
   if ($_POST["shortform"] == "" || $_POST["staff_id"][1] == "" || $_POST["type"][0] == "" || $_POST["subject"] == "") {
 
-    echo "<div class=\"feedback\">" . _("You must have a title, shortform, type, and one associated staff member.  Please go back and fix these omissions.  And turn on JavaScript, for goodness sakes!") . "</div><br /><br />";
+    echo "<div class=\"feedback\">" . _("Debe tener un título, un formulario abreviado, un tipo y un miembro del personal asociado. Vuelva por favor y corrija estas omisiones. Y activar JavaScript, por amor de Dios!") . "</div><br /><br />";
 
     exit;
   }

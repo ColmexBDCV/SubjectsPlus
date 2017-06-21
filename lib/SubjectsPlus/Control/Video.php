@@ -30,7 +30,7 @@ class Video {
     switch ($flag) {
       case "empty":
         $this->_a_from = $_SESSION["staff_id"];
-        $this->_message = _("Have you tried ingesting the data for this video?  Much faster/easier.");
+        $this->_message = _("¿Ha intentado ingerir los datos para este video? Mucho más rápido / más fácil.");
         break;
       case "post":
         // prepare record for insertion or update
@@ -71,7 +71,7 @@ class Video {
         $this->_debug .= "<p>TB query: $q1";
         // Test if these exist, otherwise go to plan B
         if ($vidArray == FALSE) {
-          $this->_message = _("There is no active record with that ID.  Weird.");
+          $this->_message = _("No hay ningún registro activo con ese ID. Extraño.");
         } else {
           $this->_title = $vidArray[0]["title"];
           $this->_description = $vidArray[0]["description"];
@@ -107,7 +107,7 @@ class Video {
     }
 
 
-    $vid_title_line = _("Edit Video Info");
+    $vid_title_line = _("Editar información del video");
 
     echo "
 <form action=\"" . $action . "\" method=\"post\" id=\"new_record\" class=\"pure-form pure-form-stacked\" accept-charset=\"UTF-8\">
@@ -121,10 +121,10 @@ class Video {
       </div>
       <div class=\"pluslet_body\">
 
-<label for=\"title\">" . _("Title") . "</label>
+<label for=\"title\">" . _("Título") . "</label>
 <textarea name=\"title\" rows=\"2\" cols=\"50\">" . stripslashes($this->_title) . "</textarea>
 
-<label for=\"description\">" . _("Description") . "</label>";
+<label for=\"description\">" . _("Descripción") . "</label>";
 
     if ($wysiwyg_desc == 1) {
 		include($CKPath);
@@ -147,13 +147,13 @@ class Video {
         $guide_string = $guideMe->display();
 
     echo "
-    <label for=\"source\">" . _("Video file storage location") . "</label>
+    <label for=\"source\">" . _("Ubicación de almacenamiento de archivos de vídeo") . "</label>
 $guide_string
 
-<label for=\"foreign_id\">" . _("Foreign ID") . "</label>
+<label for=\"foreign_id\">" . _("ID foranea") . "</label>
 <input name=\"foreign_id\" value=\"" . stripslashes($this->_foreign_id) . "\" size=\"15\" />
-  <span class=\"smaller\">* " . ("Enter the embed code id for youtube or vimeo") . "</span><br />
-<label for=\"duration\">" . _("Duration in seconds") . "</label>
+  <span class=\"smaller\">* " . ("Ingresa el ID de código de inserción de youtube o vimeo") . "</span><br />
+<label for=\"duration\">" . _("duración en segundos") . "</label>
 <input name=\"duration\" value=\"" . stripslashes($this->_duration) . "\" size=\"5\" />
 <br />";
 
@@ -188,12 +188,12 @@ $guide_string
 // Is Live
 ////////////////////
 
-    $is_live = "<label for=\"display\">" . _("Live?") . "</label>
+    $is_live = "<label for=\"display\">" . _("En vivo?") . "</label>
 <input name=\"display\" type=\"radio\" value=\"1\"";
     if ($this->_display == 1) {
       $is_live .= " checked=\"checked\"";
     }
-    $is_live .= " /> " . _("Yes") . " &nbsp;&nbsp;&nbsp; <input name=\"display\" type=\"radio\" value=\"0\"";
+    $is_live .= " /> " . _("Si") . " &nbsp;&nbsp;&nbsp; <input name=\"display\" type=\"radio\" value=\"0\"";
     if ($this->_display == 0) {
       $is_live .= " checked=\"checked\"";
     }
@@ -213,12 +213,12 @@ $guide_string
       }else{
           $this->_vid_loc = $AssetPath . "images/video_thumbs/placeholder/_medium.jpg";
       }
-    $thumbnail = "<img src=\"" . $this->_vid_loc . "\" alt=\"" . _("Thumbnail") . "\" />";
+    $thumbnail = "<img src=\"" . $this->_vid_loc . "\" alt=\"" . _("Miniatura") . "\" />";
 
     if ($this->_video_id != "") {
-      $thumbnail .= "<p><a href=\"../includes/set_image.php?video_id=$this->_video_id\" id=\"load_photo\">" . _("Click to update thumbnail") . "</a></p>";
+      $thumbnail .= "<p><a href=\"../includes/set_image.php?video_id=$this->_video_id\" id=\"load_photo\">" . _("Haga clic para actualizar la miniatura") . "</a></p>";
     } else {
-      $thumbnail .= "<p>" . _("You can change the thumbnail after saving.") . "</p>";
+      $thumbnail .= "<p>" . _("Puede cambiar la miniatura después de guardarla.") . "</p>";
     }
     echo "
 
@@ -227,7 +227,7 @@ $guide_string
 </div>
 <!-- right hand column -->";
 
-$last_mod = _("Last modified: ") . lastModded("video", $this->_video_id);
+$last_mod = _("Última modificación: ") . lastModded("video", $this->_video_id);
 $title_save_box = "<div id=\"last_edited\">$last_mod</div>";
 print "<div class=\"pure-u-1-3\">
     <div class=\"pluslet\">
@@ -236,12 +236,12 @@ print "<div class=\"pure-u-1-3\">
         <div class=\"titlebar_options\"></div>
       </div>
       <div class=\"pluslet_body\">
-    <input type=\"submit\" name=\"submit_record\" class=\"button pure-button pure-button-primary\" value=\"" . _("Save Now") . "\" />";
+    <input type=\"submit\" name=\"submit_record\" class=\"button pure-button pure-button-primary\" value=\"" . _("guardar") . "\" />";
 
     // if a) it's not a new record, and  b) we're an admin or c) we are listed as a librarian for this guide, show delete button
     if ($this->_video_id != "") {
       if ($_SESSION["admin"] == "1" || $_SESSION["eresource_mgr"] == "1") {
-        echo "<input type=\"submit\" name=\"delete_record\" class=\"button pure-button delete_button pure-button-warning\" value=\"" . _("Delete Forever!") . "\">";
+        echo "<input type=\"submit\" name=\"delete_record\" class=\"button pure-button delete_button pure-button-warning\" value=\"" . _("Borrar!") . "\">";
       }
     }
 
@@ -252,13 +252,13 @@ print "<div class=\"pure-u-1-3\">
         <div class=\"titlebar_options\"></div>
       </div>
       <div class=\"pluslet_body\">
-            <label for=\"date\">" . _("Create Date") . "</label>
+            <label for=\"date\">" . _("Fecha de creación") . "</label>
             <input type=date name=\"date\" min=2010-09-08 value=\"" . $this->_date . "\" />
             $is_live
             </div></div>
             </form>";
 
-    makePluslet(_("Thumbnail"), $thumbnail, "no_overflow");
+    makePluslet(_("miniatura"), $thumbnail, "no_overflow");
   }
 
   public function deleteRecord() {
@@ -282,9 +282,9 @@ print "<div class=\"pure-u-1-3\">
 
       // message
       if (isset($_GET["wintype"]) && $_GET["wintype"] == "pop") {
-        $this->_message = _("Thy will be done.  Offending video metadata deleted.  Close window to continue.");
+        $this->_message = _("Hágase tu voluntad. Se han suprimido los metadatos de vídeo infractores. Cerrar ventana para continuar.");
       } else {
-        $this->_message = _("Thy will be done.  Offending video metadata deleted.");
+        $this->_message = _("Hágase tu voluntad. Se han suprimido los metadatos de vídeo infractores.");
       }
 
       // /////////////////////
@@ -297,7 +297,7 @@ print "<div class=\"pure-u-1-3\">
       return TRUE;
     } else {
       // message
-      $this->_message = _("There was a problem with your delete.");
+      $this->_message = _("Se ha producido un problema con su eliminación.");
       return FALSE;
     }
   }

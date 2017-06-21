@@ -18,15 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: control/login.php:37
-msgid "Please enter your <strong>login and password</strong> to proceed."
+msgid "introduce tu dirección de correo <strong>login y contraseña</strong> to proceed."
 msgstr ""
 
 #: control/login.php:44
-msgid "Login"
+msgid "Entrar"
 msgstr ""
 
 #: control/login.php:48 control/includes/classes/Staff.php:258
-msgid "Password"
+msgid "Contraseña"
 msgstr ""
 
 #: control/login.php:87
@@ -474,7 +474,7 @@ msgid "See All"
 msgstr ""
 
 #: control/faq/index.php:83
-msgid "Create FAQ"
+msgid "Crear FAQ"
 msgstr ""
 
 #: control/faq/index.php:85

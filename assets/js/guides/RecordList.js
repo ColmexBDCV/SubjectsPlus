@@ -4,7 +4,6 @@ var Record = (function () {
         this.location = settings.location;
         if (settings.tokenString) {
             this.tokenString = settings.tokenString;
-            console.log('tokenString: ' + this.tokenString);
             var splitToken = settings.tokenString.split("{").join('').split("}").join('').split(',');
             this.recordId = splitToken[1];
             this.title = splitToken[2];
@@ -17,8 +16,6 @@ var Record = (function () {
         else {
             this.recordId = settings.recordId;
             this.title = settings.title;
-            this.prefix = settings.prefix;
-            //console.log('prefix: ' + this.prefix);
             this.displayOptions = settings.displayOptions;
             settings.showIcons === undefined ? this.showIcons = 0 : this.showIcons = settings.showIcons;
             settings.showNote === undefined ? this.showNote = 0 : this.showNote = settings.showNote;
@@ -74,7 +71,7 @@ var RecordListSortable = (function () {
         var description_override = '';
 
         $.ajax({
-            url: '../records/helpers/subject_databases_helper.php',
+            url: '../admin/helpers/subject_databases_helper.php',
             type: "GET",
             dataType: "json",
             data: {
@@ -109,8 +106,8 @@ var RecordListSortable = (function () {
         (record.showNote === 1) ? showNotesToggle = this.sortableToggleSpan('include-note-toggle', true, 'Note') : showNotesToggle = this.sortableToggleSpan('include-note-toggle', false, 'Note');
         var liRecordHtml = "<li class='db-list-item-draggable' data-location='" + record.location + "'  \n " +
             "data-record-id='" + record.recordId + "' data-title='" + record.title + "' data-show-icons='" + record.showIcons + "'" +
-            " data-show-note='" + record.showNote + "' data-show-description='" + record.showDescription + "' data-prefix='" + record.prefix + "'>             " +
-            "<span class='db-list-label'>" + record.prefix + " " + record.title + "</span>  " +
+            " data-show-note='" + record.showNote + "' data-show-description='" + record.showDescription + "'>             " +
+            "<span class='db-list-label'>" + record.title + "</span>  " +
              descriptionOverrideButton +
             "<button class=\"db-list-remove-item pure-button pure-button-secondary\" title=\"Remove from list\"><i class='fa fa-remove'></i></button>\n <div>" + showIconToggle + showNotesToggle + " " + showDescriptionToggle + " </div> " +
              textArea + "</span>" +
@@ -139,8 +136,7 @@ var RecordListDisplay = (function () {
     };
     RecordListDisplay.prototype.liDisplayRecord = function (record) {
         var token = record.getRecordToken();
-        console.log('token: ' + token);
-        return "<li data-location='" + record.location + "' data-record-id='" + record.recordId + "' data-title='" + record.title + "' data-show-icons='" + record.showIcons + "'              data-show-description='" + record.showDescription + "' data-show-note='" + record.showNote + "' data-prefix='" + record.prefix + "'>" + token + "</li>";
+        return "<li data-location='" + record.location + "' data-record-id='" + record.recordId + "' data-title='" + record.title + "' data-show-icons='" + record.showIcons + "'              data-show-description='" + record.showDescription + "' data-show-note='" + record.showNote + "' >" + token + "</li>";
     };
     RecordListDisplay.prototype.liDisplayRecordList = function () {
         var liRecordListHtml = '';
@@ -158,7 +154,7 @@ var RecordListSearch = (function () {
         this.recordList = recordList;
     }
     RecordListSearch.prototype.liRecordList = function (record) {
-        return "<li class=\"db-list-item database-listing\" data-location='" + record.location + "' data-record-id='" + record.recordId + "' data-title=\"" + record.title  + "\"   data-show-icons='" + record.showIcons + "'              data-show-note='" + record.showNote + "' data-show-description='" + record.showDescription + "'  data-prefix='" + record.prefix + "'>             <span class=\"list-search-label\" title=\"" + record.title + "\">" + record.title + "</span>\n <button class=\"add-to-list-button pure-button pure-button-secondary\" title=\"Add to list\"> <i class=\"fa fa-plus\"></i></button>                          <div class=\"db-list-item-link\"><a href='" + record.location + "' target='_blank'>" + record.location + "</a></div>             </li>";
+        return "<li class=\"db-list-item database-listing\" data-location='" + record.location + "' data-record-id='" + record.recordId + "' data-title=\"" + record.title + "\" data-show-icons='" + record.showIcons + "'              data-show-note='" + record.showNote + "' data-show-description='" + record.showDescription + "'>             <span class=\"list-search-label\" title=\"" + record.title + "\">" + record.title + "</span>\n <button class=\"add-to-list-button pure-button pure-button-secondary\" title=\"Add to list\"> <i class=\"fa fa-plus\"></i></button>                          <div class=\"db-list-item-link\"><a href='" + record.location + "' target='_blank'>" + record.location + "</a></div>             </li>";
     };
     RecordListSearch.prototype.liDisplayRecordList = function () {
         var liRecordListHtml = '';
@@ -190,14 +186,12 @@ var RecordSearch = (function () {
             "data": { term: searchTerm, collection: collection }
         }).done(function (data) {
             callback(data);
-            console.log(data);
         }).fail(function (data) {
             console.log("Unable to perform search");
         });
     };
     RecordSearch.prototype.searchResultRecord = function (searchResult) {
-        console.log('searchresult: ' + searchResult.prefix);
-        return new Record({ recordId: searchResult.id, title: searchResult.label, prefix: searchResult.prefix, location: searchResult['location_url'] });
+        return new Record({ recordId: searchResult.id, title: searchResult.label, location: searchResult['location_url'] });
     };
     return RecordSearch;
 }());

@@ -497,7 +497,7 @@ class Pluslet {
 
                             }
 
-                            $query = "SELECT location, access_restrictions, format, ctags, helpguide, citation_guide, description, call_number, t.title, display_note, t.pre
+                            $query = "SELECT location, access_restrictions, format, ctags, helpguide, citation_guide, description, call_number, t.title, display_note
                                     FROM location l, location_title lt, title t
                                     WHERE l.location_id = lt.location_id
                                     AND lt.title_id = t.title_id
@@ -573,14 +573,8 @@ class Pluslet {
                                     if (!isset($note)) {
                                     	$note = "";
                                     }
-
-                                    if($myrow['10']) {
-                                        $prefixed_label = $myrow['10'] . ' ' . $myrow['8'];
-                                    } else {
-                                        $prefixed_label = $myrow['8'];
-                                    }
-
-                                    $tokenized.= "<a href=\"$url\" $target>$prefixed_label</a> $icons $description $note";
+                                    
+                                    $tokenized.= "<a href=\"$url\" $target>$myrow[8]</a> $icons $description $note";
                                 } else {
                                     // It's print
                                     $format = "other";

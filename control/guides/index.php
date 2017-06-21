@@ -13,7 +13,7 @@ use SubjectsPlus\Control\Querier;
 
 
 $subcat = "guides";
-$page_title = "Modify Guides in SubjectsPlus";
+$page_title = "Modificar guías";
 
 include("../includes/config.php");
 include("../includes/header.php");
@@ -21,10 +21,10 @@ include("../includes/header.php");
 $db = new Querier;
 
 
-$gear_alt = _("Edit Guide Metadata");
-$eye_alt = _("View Guide on Public Site");
-$linkie_alt = _("Check Guide Links");
-$view_alt = _("View Guide on Public Site");
+$gear_alt = _("Editar los metadatos de la guía");
+$eye_alt = _("Ver guía en el sitio público");
+$linkie_alt = _("Revisar los enlaces de la guía");
+$view_alt = _("Ver guía en el sitio público");
     
 try {
   } catch (Exception $e) {
@@ -33,12 +33,12 @@ try {
 
 $subs_option_boxes = getSubBoxes("guide.php?subject_id=", "", 1);
 
-$dropdown_intro_text = _("Please check with the guide's owner before modifying");
+$dropdown_intro_text = _("Consulte con el propietario de la guía antes de modificarlo.");
 
 $all_guides = "
 <form method=\"post\" action=\"index.php\" name=\"form\">
 <select name=\"item\" id=\"guides\" size=\"1\" onChange=\"window.location=this.options[selectedIndex].value\">
-<option value=\"\">" . _("-- Choose Guide --") . "</option>
+<option value=\"\">" . _("-- Elegir Guía --") . "</option>
 $subs_option_boxes
 </select>
 </form>";
@@ -83,7 +83,7 @@ if ($num_rows > 0) {
     $row_count++;
   }
 } else {
-  $myguides = "<p>" . _("You don't have any guides yet.  Why not create one?") . "</p>";
+  $myguides = "<p>" . _("Aún no tienes guías. ¿Por qué no crear uno?") . "</p>";
 }
 ?>
 
@@ -100,7 +100,7 @@ $('#guides').select2();
   <div class="pure-u-1-3">
     <div class="pluslet">
       <div class="titlebar">
-        <div class="titlebar_text"><?php print _("Edit Your Guides"); ?></div>
+        <div class="titlebar_text"><?php print _("Editar guías"); ?></div>
         <div class="titlebar_options"></div>
       </div>
       <div class="pluslet_body">
@@ -113,7 +113,7 @@ $('#guides').select2();
   <div class="pure-u-1-3">
     <div class="pluslet">
       <div class="titlebar">
-        <div class="titlebar_text"><?php print _("All Guides"); ?></div>
+        <div class="titlebar_text"><?php print _("Todas las guías"); ?></div>
         <div class="titlebar_options"></div>
       </div>
       <div class="pluslet_body">
@@ -129,13 +129,13 @@ $('#guides').select2();
 
     <div class="pluslet">
       <div class="titlebar">
-        <div class="titlebar_text"><?php print _("Create"); ?></div>
+        <div class="titlebar_text"><?php print _("Crear"); ?></div>
         <div class="titlebar_options"></div>
       </div>
       <div class="pluslet_body">
         <ol>
-          <li><?php print _("Make sure the guide doesn't already exist!"); ?></li>
-          <li><a href="metadata.php"><?php print _("Create new guide"); ?></a></li>
+          <li><?php print _("Asegúrese de que la guía no existe!"); ?></li>
+          <li><a href="metadata.php"><?php print _("Crear nueva guía"); ?></a></li>
         </ol>
       </div>
     </div>
@@ -158,10 +158,10 @@ $('#guides').select2();
         <div class="titlebar_options"></div>
       </div>
       <div class="pluslet_body">
-        <p><i class="fa fa-gear fa-lg"  alt="<?php echo $gear_alt; ?>" title="<?php echo $gear_alt; ?>"></i> <?php print _("Edit Guide Metadata"); ?> </p>
-        <p><i class="fa fa-eye fa-lg"  alt="<?php echo $eye_alt; ?>" title="<?php echo $eye_alt; ?>"></i> <?php print _("View Guide on Public Site"); ?></p>
-        <p><i class="fa fa-link fa-lg"  alt="<?php echo $linkie_alt; ?>" title="<?php echo $linkie_alt; ?>"></i> <?php print _("Check Guide Links"); ?></p>
-        <p><?php echo _("Need to delete a guide?  Use the gear icon, and use the Delete button."); ?></p>
+        <p><i class="fa fa-gear fa-lg"  alt="<?php echo $gear_alt; ?>" title="<?php echo $gear_alt; ?>"></i> <?php print _("Editar los metadatos de la guía"); ?> </p>
+        <p><i class="fa fa-eye fa-lg"  alt="<?php echo $eye_alt; ?>" title="<?php echo $eye_alt; ?>"></i> <?php print _("Ver guía en el sitio público"); ?></p>
+        <p><i class="fa fa-link fa-lg"  alt="<?php echo $linkie_alt; ?>" title="<?php echo $linkie_alt; ?>"></i> <?php print _("Revisar los enlaces de la guía"); ?></p>
+        <p><?php echo _("¿Necesita eliminar una guía? Utilice el icono de rueda dentada y utilice el botón Eliminar."); ?></p>
       </div>
     </div>
 

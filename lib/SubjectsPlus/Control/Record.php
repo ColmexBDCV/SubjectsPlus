@@ -40,7 +40,6 @@ class Record {
 	private $_message;
 	private $_locations;
 	private $_helpguide;
-    private $_dbbysub_active;
 	public $_debug;
 
 	public function __construct($record_id="", $flag="") {
@@ -79,7 +78,6 @@ class Record {
         $this->_rank = $_POST["rank"]; // array
         $this->_source = $_POST["source"]; // array
         $this->_description_override = $_POST["description_override"]; // array
-        $this->_dbbysub_active = $_POST["dbbysub_active"]; // array
 
         $this->_subject_count = count($this->_subject); // # of items in above arrays
 
@@ -103,7 +101,7 @@ class Record {
         $this->_debug .= "<p>Title query: $q1";
         // Test if these exist, otherwise go to plan B
         if ($titleArray == FALSE) {
-        	$this->_message = "There is no active record with that ID.  Why not create a new one?";
+        	$this->_message = "No hay ningún registro activo con ese ID. ¿Por qué no crear uno nuevo?";
         } else {
         	$this->_prefix = $titleArray[0]["pre"];
         	$this->_title = $titleArray[0]["title"];
@@ -118,11 +116,10 @@ class Record {
         // ////////////////
 
         $querier2 = new Querier();
-        $q2 = "select rank, rank.subject_id, title_id, so.source_id, rank_id, description_override, subject, source, dbbysub_active
+        $q2 = "select rank, rank.subject_id, title_id, so.source_id, rank_id, description_override, subject, source
         FROM rank, subject, source so
         WHERE rank.subject_id = subject.subject_id
         AND rank.source_id = so.source_id
-        AND dbbysub_active = 1
         AND title_id = " . $this->_record_id . "
         ORDER BY subject";
 
@@ -183,20 +180,20 @@ class Record {
   	<div class=\"pure-u-1-3\">
   	<div class=\"pluslet\">
     <div class=\"titlebar\">
-      <div class=\"titlebar_text\">" . _("Record") . " (ID " . $this->_record_id . ")</div>
+      <div class=\"titlebar_text\">" . _("Registro") . " (ID " . $this->_record_id . ")</div>
       <div class=\"titlebar_options\"></div>
     </div>
     <div class=\"pluslet_body\">
-        <label for=\"prefix\">" . _("Prefix") . "</label>
+        <label for=\"prefix\">" . _("Prefijo") . "</label>
       	<input type=\"text\" name=\"prefix\" id=\"prefix\" class=\"pure-input-1-4\" value=\"" . $this->_prefix . "\" />
 
-        <label for=\"record_title\">" . _("Record Title") . "</label>
+        <label for=\"record_title\">" . _("Título del registro") . "</label>
         <input type=\"text\" name=\"title\" id=\"record_title\" class=\"pure-input-1 required_field\" value=\"" . $this->_title . "\" />
 
-  	<label for=\"alternate_record_title\">" . _("Alternate Title") . "</label>
+  	<label for=\"alternate_record_title\">" . _("Título alternativo") . "</label>
   	<input type=\"text\" name=\"alternate_title\" id=\"alternate_record_title\" class=\"pure-input-1\" value=\"" . $this->_alternate_title . "\" />
 
-  	<label for=\"description\">" . _("Description") . "</label>
+  	<label for=\"description\">" . _("Descripción") . "</label>
 
   	";
 
@@ -216,7 +213,7 @@ class Record {
 		echo "<textarea name=\"description\" id=\"description\" rows=\"4\" cols=\"70\">" . stripslashes($this->_description) . "</textarea>";
 	}
 
-    print "<label for=\"internal_notes\">" . _("Internal Notes") . "</label>
+    print "<label for=\"internal_notes\">" . _("Notas internas") . "</label>
 
     ";
 
@@ -244,7 +241,7 @@ class Record {
 	self::buildLocation();
 
 
-	$add_loc = "<div class=\"add_location\"><button alt=\"add new location\"  class=\"pure-button pure-button-success\" border=\"0\" /> Add another location</div>";
+	$add_loc = "<div class=\"add_location\"><button alt=\"add new location\"  class=\"pure-button pure-button-success\" border=\"0\" /> Agregar otra ubicación</div>";
 
   print $add_loc;
 
@@ -254,17 +251,17 @@ class Record {
 
 
 	$content = "
-	<input type=\"submit\" name=\"submit_record\" class=\"pure-button pure-button-primary\" value=\"" . _("Save Record Now") . "\" />";
+	<input type=\"submit\" name=\"submit_record\" class=\"pure-button pure-button-primary\" value=\"" . _("Guardar registro ") . "\" />";
     // if it's not a new record, and we're authorized, show delete button
 	if ($this->_record_id != "") {
 		if (isset($_SESSION["eresource_mgr"]) && $_SESSION["eresource_mgr"] == "1") {
-			$content .= " <input type=\"submit\" name=\"delete_record\" class=\"pure-button delete_button pure-button-warning\" value=\"" . _("Delete Forever!") . "\" />";
+			$content .= " <input type=\"submit\" name=\"delete_record\" class=\"pure-button delete_button pure-button-warning\" value=\"" . _("Borrar para siempre!") . "\" />";
 		} else {
-			$content .= " <input type=\"submit\" name=\"recommend_delete\" class=\"pure-button pure-button-warning\" value=\"" . _("Recommend Delete") . "\" />";
+			$content .= " <input type=\"submit\" name=\"recommend_delete\" class=\"pure-button pure-button-warning\" value=\"" . _("Recomendar Eliminar") . "\" />";
 		}
 	}
     // get edit history
-	$last_mod = _("Last modified: ") . lastModded("record", $this->_record_id);
+	$last_mod = _("Modificado por última vez: ") . lastModded("record", $this->_record_id);
 	$title = "<div id=\"last_edited\">$last_mod</div>";
 
   makePluslet($title, $content, "no_overflow");
@@ -287,7 +284,7 @@ class Record {
 
 	echo "<div class=\"pluslet\">
     <div class=\"titlebar\">
-      <div class=\"titlebar_text\"><i class=\"fa fa-book\"></i> " . _("Default Source Type") . "</div>
+      <div class=\"titlebar_text\"><i class=\"fa fa-book\"></i> " . _("Tipo de fuente predeterminado") . "</div>
       <div class=\"titlebar_options\"></div>
     </div>
     <div class=\"pluslet_body\">
@@ -326,7 +323,7 @@ class Record {
     </div>
     <div class=\"pluslet_body\">
 	
-	<select id=\"select_subject\"name=\"subject_id[]\"><option value=\"\">" . _("-- Select --") . "</option>
+	<select id=\"select_subject\"name=\"subject_id[]\"><option value=\"\">" . _("-- Selecciona --") . "</option>
 	$subject_string
 	</select>
 	<div id=\"subject_list\">$subject_list</div> <!-- subjects inserted here -->
@@ -465,28 +462,28 @@ class Record {
  	}
 
  	// do we want the checkurl image?
-  $checkurl_text = _("Check URL");
+  $checkurl_text = _("Comprobar URL");
  	$checkurl_icon = "<span class=\"checkurl_img_wrapper\"><i alt=\"$checkurl_text\" title=\"$checkurl_text\" border=\"0\" class=\"fa fa-globe fa-2x clickable\" /></i></span>";
 
    // get appropriate text for format box title line
-   $format_label_text = _("Location (Enter URL)");  // default for new record
+   $format_label_text = _("Ubicación (inserte URL)");  // default for new record
 
  	switch ($this->_format) {
  		case 1:
- 		$format_label_text = _("Location (Enter URL)");
+ 		$format_label_text = _("Ubicación (inserte URL)");
  		break;
  		case 2:
- 		$format_label_text = _("Location (Enter Call Number)");
+ 		$format_label_text = _("Ubicación (inserte número telefónico)");
  		$checkurl_icon = "";
  		break;
  		case 3:
- 		$format_label_text = _("Location (Enter Persistent Catalog URL--include http://)");
+ 		$format_label_text = _("Ubicación (Introduzca la URL del catálogo persistente: incluya http: //)");
  		break;
  	}
  	echo "
  	<div class=\"pluslet location_box\">
     <div class=\"titlebar\">
-      <div class=\"titlebar_text\">" . _("Location") . "</div>
+      <div class=\"titlebar_text\">" . _("Ubicación") . "</div>
       <div class=\"titlebar_options\"></div>
     </div>
     <div class=\"pluslet_body\">
@@ -496,11 +493,11 @@ class Record {
   <input type=\"text\" class=\"record_location check_url pure-input-2-3 required_field \" name=\"location[]\" value=\"{$this->_location}\" />
   $checkurl_icon
  	<span class=\"smaller url_feedback\"></span>
- 	<div class=\"$input_callnum_class\"><span class=\"record_label\">" . _("Call Number") . "</span><br /><input type=\"text\" value=\"{$this->_call_number}\" name=\"call_number[]\" size=\"20\" /></div>
+ 	<div class=\"$input_callnum_class\"><span class=\"record_label\">" . _("Número telefónico") . "</span><br /><input type=\"text\" value=\"{$this->_call_number}\" name=\"call_number[]\" size=\"20\" /></div>
  	<br class=\"clear-both\" />
- 	<div style=\"float: left; margin-right: 1em;\"><label for=\"format[]\">" . _("Format") . "</label>
+ 	<div style=\"float: left; margin-right: 1em;\"><label for=\"format[]\">" . _("Formato") . "</label>
  	{$this->_formats}</div>
- 	<div style=\"float: left; margin-right: 1em;\"><label for=\"format[]\">" . _("Access Restrictions") . "</label>
+ 	<div style=\"float: left; margin-right: 1em;\"><label for=\"format[]\">" . _("Restricciones de acceso") . "</label>
  	{$this->_restrictions}<br /></div>
   <div style=\"float: left; margin-right: 1em;\"><label for=\"record_status[]\">" . _("Status") . "</label>
   {$this->_record_status}<br /></div>
@@ -520,7 +517,7 @@ class Record {
 
  		echo "
  		$a_z_string<br /></div>
- 		<label for=\"display_note[]\">" . _("Display Note") . "</label>";
+ 		<label for=\"display_note[]\">" . _("Mostrar Nota") . "</label>";
 
  		if ($wysiwyg_desc == 1 && $this->_boxcount == 1) {
  			include ($CKPath);
@@ -538,7 +535,7 @@ class Record {
     }
 
     echo "
-    <label for=\"helpguide[]\">" . _("Help Guide Location") . "</label>
+    <label for=\"helpguide[]\">" . _("Ubicación de la guía de ayuda") . "</label>
     <input type=\"text\" value=\"{$this->_helpguide}\" name=\"helpguide[]\" id=\"helpguide[]\"  size=\"60\" class=\"pure-input-2-3\" />
     ";
  } else {
@@ -547,7 +544,7 @@ class Record {
  }
 
  echo "<input type=\"hidden\" name=\"ctags[]\" value=\"" . $this->_ctags . "\" />
- <label for=\"ctags[]\">" . _("Format Tags") . " (ctags)</label> ";
+ <label for=\"ctags[]\">" . _("Etiquetas de formato") . " (ctags)</label> ";
 
  $current_ctags = explode("|", $this->_ctags);
     $tag_count = 0; // added because if you have a lot of ctags, it just stretches the div forever
@@ -566,7 +563,7 @@ class Record {
     	$tag_count++;
     }
 
-    echo "<div class=\"delete_location\">" . _("X Delete this location") . "</div>
+    echo "<div class=\"delete_location\">" . _("X Eliminar esta ubicación") . "</div>
     </div></div>"; // end pluslet_body, end pluslet
  }
 
@@ -597,13 +594,12 @@ class Record {
  	<div class=\"pure-u-1-2\">
  	<input name=\"subject[]\" value=\"$value[1]\" type=\"hidden\" />
  	<input name=\"rank[]\" value=\"$value[0]\" type=\"hidden\" />
- 	<input name=\"dbbysub_active[]\" value=\"$value[8]\" type=\"hidden\" />
  	<input name=\"source[]\" value=\"$value[3]\" id=\"hidden_source-$value[1]-$value[3]\" type=\"hidden\" />
  	$subject_name <span class=\"small_extra\">$source_name</span><br />
  	<textarea style=\"display: none; clear: both;\" class=\"desc_override\" name=\"description_override[]\" rows=\"4\" cols=\"35\">$value[5]</textarea>
  	</div>
  	<div class=\"pure-u-1-2\">
- 	<i class=\"fa fa-lg fa-trash delete_sub clickable\" alt=\"" . _("remove subject") . "\" title=\"" . _("remove subject") . "\"></i>
+ 	<i class=\"fa fa-lg fa-trash delete_sub clickable\" alt=\"" . _("remove subject") . "\" title=\"" . _("Eliminar asunto") . "\"></i>
  	<i class=\"fa fa-lg fa-book $source_fa source_override clickable\" id=\"source_override-$value[1]-$value[3]\" alt=\"" . _("change source type") . "\" title=\"" . _("change source type") . "\" border=\"0\" /></i>
  	<i class=\"fa fa-lg fa-file-text-o $note_fa note_override clickable\" id=\"note_override-$value[1]-$value[3]\" alt=\"" . _("add description override") . "\" title=\"" . _("add description override") . "\" border=\"0\" /></i>
  	</div>
@@ -648,7 +644,7 @@ class Record {
 
         // make sure they're allowed to delete
         if (!isset($_SESSION["eresource_mgr"]) || $_SESSION["eresource_mgr"] != "1") {
-            $this->_debug = _("Permission denied to delete.");
+            $this->_debug = _("Permiso denegado para borrar.");
             return FALSE;
         }
 
@@ -747,7 +743,7 @@ if ($notrack != 1) {
 
 
     // message
-$this->_message = _("Thy Will Be Done.  Record added.");
+$this->_message = _("Registro añadido.");
 }
 
 public function updateRecord($notrack = 0) {
@@ -821,13 +817,12 @@ function modifyRank() {
 	$db = new Querier();
 
 	for ($i = 0; $i < $this->_subject_count; $i++) {
-		$qUpRank = "INSERT INTO rank (rank, subject_id, title_id, source_id, dbbysub_active, description_override) VALUES (
+		$qUpRank = "INSERT INTO rank (rank, subject_id, title_id, source_id, description_override) VALUES (
 			'" . scrubData($this->_rank[$i], "integer") . "', ";
 		//added dgonzalez to check whether the value must be inserted into database as NULL
 		$qUpRank .= scrubData($this->_subject[$i], "integer") != 0 ? "'" . scrubData($this->_subject[$i], "integer") . "'," : "NULL, ";
 		$qUpRank .= scrubData($this->_title_id, "integer") != 0 ? "'" . scrubData($this->_title_id, "integer") . "'," : "NULL, ";
 		$qUpRank .= scrubData($this->_source[$i], "integer") != 0 ? "'" . scrubData($this->_source[$i], "integer") . "'," : "NULL, ";
-        $qUpRank .= scrubData($this->_dbbysub_active[$i], "integer") != 0 ? "'" . scrubData($this->_dbbysub_active[$i], "integer") . "'," : "0, ";
 		$qUpRank .= $db->quote(scrubData($this->_description_override[$i], "richtext")) . ")";
 
 		$rUpRank = $db->exec($qUpRank);
