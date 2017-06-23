@@ -13,7 +13,7 @@ use SubjectsPlus\Control\Config;
 
 //variables required in header and add header
 $subcat = "admin";
-$page_title = "Configuration Editing";
+$page_title = "Edición de configuración";
 $use_jquery = array("ui_styles");
 
 include("includes/header.php");
@@ -32,7 +32,7 @@ $lobjConfig->setConfigPath( $lstrConfigFilePath );
 if(!is_writable($lstrConfigFilePath))
 {
 	?>
-	<p><?php echo _( "Sorry, but I can't write to the <code>config.php</code> file. Please change permissions." ); ?></p>
+	<p><?php echo _( "Lo siento, pero no puedo escribir en el archivo <code> config.php </code>. Por favor, cambie los permisos." ); ?></p>
 	<?php
 
 }else
@@ -49,121 +49,121 @@ if(!is_writable($lstrConfigFilePath))
 	*  hovering over '?' icon and if blank, no icon will appear
 	*/
 	$lobjConfigOptions = array(
-							"omit_user_columns" => array( _( "Columns To OMIT On User Form" ), _( "Tick the fields you would like to OMIT on the user form." ), "array", "right", "ticks", array( _( 'fname' ), _( 'lname' ), _( 'title' ),
+							"omit_user_columns" => array( _( "Columnas a OMIT en formulario de usuario" ), _( "Marque los campos que desea OMIT en el formulario de usuario." ), "array", "right", "ticks", array( _( 'fname' ), _( 'lname' ), _( 'title' ),
 							_( 'department' ), _( 'position_number' ), _( 'classification' ), _( 'priority' ), _( 'supervisor' ), _( 'tel' ), _( 'fax' ), _( 'intercom' ), _( 'room_number' ), _( 'user_type' ),
-							_( 'personal_information' ), _( 'emergency_contact' ) ), _( "The 'User Form' controls who may access SubjectsPlus and what permissions they have.  Some fields are necessary for SubjectsPlus to work; these may be safely turned off if you don't want to capture or display this information." ) ),
+							_( 'personal_information' ), _( 'emergency_contact' ) ), _( "El 'Formulario de usuario' controla quién puede acceder a SubjectsPlus y qué permisos tienen. Algunos campos son necesarios para que JobsPlus funcione; Estos pueden desactivarse de forma segura si no desea capturar o mostrar esta información." ) ),
 
-							"require_user_columns" => array( _( "Columns To Require On User Form" ), _( "Tick the fields you would like to make required on the user form" ), "array", "right", "ticks",
+							"require_user_columns" => array( _( "Columnas a requerir en formulario de usuario" ), _( "Marque los campos que desea hacer necesarios en el formulario de usuario" ), "array", "right", "ticks",
 							array( _( 'title' ), _( 'position_number' ), _( 'classification' ), _( 'priority' ), _( 'tel' ), _( 'fax' ), _( 'intercom' ), _( 'room_number' ), _( 'address' ), _( 'city' ),
-							_( 'state' ), _( 'zip' ), _( 'home_phone' ), _( 'cell_phone' ), _( 'lat_long' ), _( 'emergency_contact' ) ), _( "These fields may be required, i.e., the form cannot be submitted until they are completed." ) ),
+							_( 'state' ), _( 'zip' ), _( 'home_phone' ), _( 'cell_phone' ), _( 'lat_long' ), _( 'emergency_contact' ) ), _( "Estos campos pueden ser requeridos, es decir, el formulario no puede ser enviado hasta que se hayan completado." ) ),
 
-							"guide_container_width" => array( _( "Guide Container Width" ), _( "Assign a width in pixels for your guides. For example, 960px." ), "array", "right", "small", "", _("For example, 960px or 1160px.") ),
+							"guide_container_width" => array( _( "Ancho del contenedor guía" ), _( "Asigne un ancho en píxeles para sus guías. Por ejemplo, 960px." ), "array", "right", "small", "", _("Por ejemplo, 960px o 1160px.") ),
 
-							"google_analytics_ua" => array( _('Google Analytics UA Code'), _('Add your Google Analytics UA Tracking code.'), "string", "right", "medium", "", ""),
+							"google_analytics_ua" => array( _('Código de Google Analytics UA'), _('Agregue su código de seguimiento de Google Analytics UA.'), "string", "right", "medium", "", ""),
 
-							"default_subject_specialist_heading" => array( _( "Default Subject Specialist Pluslet Heading" ), _( "A global heading for the Subject Specialist Pluslet" ), "string", "right", "large", "" , _( "For example Subject Librarians or Liaison Librarians." ) ),
+							"default_subject_specialist_heading" => array( _( "Predeterminado Subject Specialist Pluslet Heading" ), _( "Un encabezado global para el Sujeto Especialista Pluslet" ), "string", "right", "large", "" , _( "Por ejemplo, bibliotecarios o bibliotecarios de enlace." ) ),
 
-							"headshot_thumb_width" => array( _( "Staff Headshot Thumbnail" ), _( "Width for staff headshot thumbnail. Note: If you change this value, it WILL affect previously uploaded headshot images." ), "string", "right", "small", "" , _( "For example: 70, 100." ) ),
+							"headshot_thumb_width" => array( _( "Foto" ), _( "Ancho para la miniatura del headshot del personal. Nota: Si cambia este valor, afectará a las imágenes de headshot previamente subidas." ), "string", "right", "small", "" , _( "Por ejemplo: 70, 100." ) ),
 
-							"headshot_large_width" => array( _( "Staff Headshot Large" ), _( "Width for staff headshot large. Note: If you change this value, it WILL affect previously uploaded headshots." ), "string", "right", "small", "" , _( "For example: 225, 300." ) ),
+							"headshot_large_width" => array( _( "Foto del personal Grande" ), _( "Ancho de la cabeza del personal grande. Nota: Si cambia este valor, afectará los tiros a la cabeza cargados anteriormente." ), "string", "right", "small", "" , _( "Por ejemplo: 225, 300." ) ),
 
-							"guide_types" => array( _( "Guide Types" ), _( "These are the different ways you may organize your guides." ), "array", "right", "large", "", _("You may add new types at any time.  If you change an existing type, you will need to update all items in subjects table by hand/SQL query.") ),
+							"guide_types" => array( _( "Tipos de guía" ), _( "Estas son las diferentes maneras en que puede organizar sus guías." ), "array", "right", "large", "", _("Puede agregar nuevos tipos en cualquier momento. Si cambia un tipo existente, deberá actualizar todos los elementos de la tabla de objetos manualmente / consulta SQL.") ),
 
-			        "use_shibboleth" => array( _( "Use Shibboleth" ), _( "This option controls whether Shibboleth will be used for logging in." ), "boolean", "right", "small", "", _("This checks the staff email with the server variables returned from Shibboleth.") ),
+			        "use_shibboleth" => array( _( "Utilizar Shibboleth" ), _( "Esta opción controla si Shibboleth se utilizará para iniciar sesión." ), "boolean", "right", "small", "", _("Esto verifica el correo electrónico del personal con las variables de servidor devueltas de Shibboleth.") ),
 				
-							"shibboleth_logout" => array( _( "Shibboleth Logout URL" ), _( "This is the URL that logs the user out of a Shibboleth session." ), "string", "right", "large", "", _("This is a URL that logs the user out of a Shibboleth session.") ),
+							"shibboleth_logout" => array( _( "Shibboleth Cerrar sesión URL" ), _( "Esta es la URL que registra al usuario de una sesión Shibboleth." ), "string", "right", "large", "", _("Esta es una URL que registra al usuario de una sesión Shibboleth.") ),
 				
-							"all_ctags" => array( _( "Record Tags" ), _( "These are the tags that a given record location can have associated with it." ), "array", "right", "textarea", "", _("Record tags are a way of slicing and dicing the total set of records.  If you add a new tag, you will need to add new code to deal with items with this tag.  Adding a tag by itself will do nothing except make that tag show up in some places.") ),
+							"all_ctags" => array( _( "Registro de etiquetas" ), _( "Estas son las etiquetas que una ubicación de registro determinada puede asociarse con ella." ), "array", "right", "textarea", "", _("Las etiquetas de registro son una forma de cortar y cortar el conjunto total de registros. Si agrega una nueva etiqueta, deberá agregar un nuevo código para tratar los elementos con esta etiqueta. La adición de una etiqueta por sí sola no hará nada, excepto hacer que la etiqueta aparezca en algunos lugares.") ),
 
-							"all_vtags" => array( _( "Video Tags" ), _( "These are the tags that a given video can have associated with it. These are used for the videos module." ), "array", "right", "large", "", "" ),
+							"all_vtags" => array( _( "Etiquetas de video" ), _( "Estas son las etiquetas que un video determinado puede asociar con él. Estos se utilizan para el módulo de videos." ), "array", "right", "large", "", "" ),
 
-							"all_tbtags" => array( _( "Talkback Site Tag" ), _( "These are the tags associated with TalkBack entries. The default is to email all talkbacks to administrator email. Edit only if you want to change that or add a branch." ),
-							"aarray", "right", "large", "", _( "e.g. To make a main branch sending to admin email and branch1 branch sent to specified email -> 'main=,branch1=example@branch1.edu'" ) ),
+							"all_tbtags" => array( _( "Etiqueta del sitio de Talkback" ), _( "Estas son las etiquetas asociadas a las entradas de TalkBack. El valor predeterminado es enviar por correo electrónico todos los comentarios a correo electrónico del administrador. Edite sólo si desea cambiarlo o agregar una sucursal." ),
+							"aarray", "right", "large", "", _( "p.ej. Para hacer que una rama principal envíe al correo electrónico de administración y la sucursal1 se envíe a un correo electrónico especificado -> 'main =, branch1 = example @ branch1.edu'" ) ),
 
-							"all_cattags" => array( _( "Talkback Topic Tags" ), _( "These are the tags that a given talkback can have associated with it." ), "array", "right", "textarea", "", _("Talkback tags are a way of slicing and dicing the total set of talkbacks.  If you add a new tag, you will need to add new code to deal with items with this tag.  Adding a tag by itself will do nothing except make that tag show up in some places.") ),
+							"all_cattags" => array( _( "Tags del tema de Talkback" ), _( "Estas son las etiquetas que un talkback dado puede haber asociado con él." ), "array", "right", "textarea", "", _("Las etiquetas de Talkback son una forma de cortar y cortar en cuadritos el conjunto total de talkbacks. Si agrega una nueva etiqueta, deberá agregar un nuevo código para tratar los elementos con esta etiqueta. La adición de una etiqueta por sí sola no hará nada, excepto hacer que la etiqueta aparezca en algunos lugares.") ),
 
-							"titlebar_styles" => array( _( "Titlebar Styles" ), _( "These are the styles that can be issued to a pluslet titlebars." ), "aarray", "right", "large", "", _("This allows titlebars to have custom styles with custom keys for subject guide creator to make.") ),
+							"titlebar_styles" => array( _( "Estilos de barra de título" ), _( "Estos son los estilos que se pueden emitir a barras de título pluslet." ), "aarray", "right", "large", "", _("Esto permite que las barras de título tengan estilos personalizados con claves personalizadas para que el creador de la guía de temas realice.") ),
 
-							"pluslets_activated" => array( _( "Pluslet Activated" ), _( "Which Pluslets are activated." ), "array", "right", "ticks", array('Basic', 'LinkList', 'PrimoSearch', 'Heading','Card', 'HTML5Video','SubjectSpecialist', 'BookList', _('4'),'Feed','SocialMedia', 'Chat', 'WorldCat', 'Catalog','ArticlesPlus','GoogleBooks','GoogleScholar','GoogleSearch', 'Related','TOC', _('2'), _('1'), 'GuideSearch', 'GuideSelect',  'NewDBs', 'NewGuides','CollectionList','GuideList','Experts', _('3'), _('5')), _("") ),
+							"pluslets_activated" => array( _( "Pluslet Activado" ), _( "Qué Pluslets están activados." ), "array", "right", "ticks", array('Basic', 'LinkList', 'PrimoSearch', 'Heading','Card', 'HTML5Video','SubjectSpecialist', 'BookList', _('4'),'Feed','SocialMedia', 'Chat', 'WorldCat', 'Catalog','ArticlesPlus','GoogleBooks','GoogleScholar','GoogleSearch', 'Related','TOC', _('2'), _('1'), 'GuideSearch', 'GuideSelect',  'NewDBs', 'NewGuides','CollectionList','GuideList','Experts', _('3'), _('5')), _("") ),
 
-							"use_disciplines" => array( _( "Use SerSol Provided Disciplines" ), _( "Include Serials Solutions disciplines integration." ), "boolean", "right", "small", "" ,
-							_( "If you wish to include your SP guides in Serials Solutions' results--i.e., you have Summon--you need to use their disciplines." ) ),
+							"use_disciplines" => array( _( "Use SerSol Provided Disciplines" ), _( "Incluye integración de disciplinas de Serials Solutions." ), "boolean", "right", "small", "" ,
+							_( "Si desea incluir sus guías SP en los resultados de Serials Solutions, es decir, tiene Invocación, necesita usar sus disciplinas." ) ),
 
-							"api_enabled" => array( _( "Enable the API service (your api key is '" ) . "$api_key')", _( "If turned off, the API will return empty results" ), "boolean", "right", "small", "" , _( "Go to " ) . "<a href=\"../api/\" target=\"_blank\">" . _( "this page" ) . "</a>" . _( " for an explanation of how the API works." ) ),
+							"api_enabled" => array( _( "Habilitar el servicio de API (la clave api es '" ) . "$api_key')", _( "Si está desactivada, la API devolverá los resultados vacíos" ), "boolean", "right", "small", "" , _( "Ir " ) . "<a href=\"../api/\" target=\"_blank\">" . _( "esta página" ) . "</a>" . _( " Para una explicación de cómo funciona el API." ) ),
 
-							"user_bio_update" => array( _( "Enable Users to Edit Bio" ), "", "boolean", "right", "small", "" , "" ),
+							"user_bio_update" => array( _( "Habilitar a los usuarios para editar Bio" ), "", "boolean", "right", "small", "" , "" ),
 
-							"user_photo_update" => array( _( "Enable Users to Edit Headshot Photo" ), "", "boolean", "right", "small", "" , "" ),
+							"user_photo_update" => array( _( "Habilitar a los usuarios para editar foto de Headshot" ), "", "boolean", "right", "small", "" , "" ),
 
-							"target_blank" => array( _( "Have database links show in new tab" ), _("Affects display on databases.php and within subject guides"), "boolean", "right", "small", "" , "" ),
+							"target_blank" => array( _( "Mostrar enlaces de base de datos en una nueva pestaña" ), _("Afecta la visualización en databases.php y dentro de las guías de asignaturas"), "boolean", "right", "small", "" , "" ),
 
-							"guide_headers" => array( _( "Header Switcher" ), _("Have more than one header choice for a guide"), "array", "right", "large", "" , _("Enter a comma separated list of headers.  The header name you put here will correspond to a header file on the server.  E.g., 'chc' would point to subjects/includes/header_chc.php") ),
+							"guide_headers" => array( _( "Conmutador de cabecera" ), _("Tener más de una opción de encabezado para una guía"), "array", "right", "large", "" , _("Introduzca una lista de encabezados separados por comas. El nombre de encabezado que coloque aquí corresponderá a un archivo de encabezado en el servidor. Por ejemplo, 'chc' apunta a los temas / includes / header_chc.php") ),
 
-							"subjects_theme" => array( _( "Use a theme" ), _("Use a child theme to override the default theme.  Enter the directory name that you've created under subjects/themes/"), "string", "right", "small", "" , "" ), 
+							"subjects_theme" => array( _( "Usar un tema" ), _("Utilice un tema secundario para sustituir el tema predeterminado. Introduzca el nombre del directorio que ha creado en temas / temas /"), "string", "right", "small", "" , "" ), 
 
-							"css_override" => array( _( "Use your own CSS" ), _("Not to be comfused with 'Use a Theme.'  This will point at your own CSS instead of the default."), "string", "right", "small", "" , "" ), 
+							"css_override" => array( _( "Usar tu propio CSS" ), _("No debe confundirse con 'Usar un tema'. Esto apuntará a su propio CSS en lugar del predeterminado."), "string", "right", "small", "" , "" ), 
 
-							"guide_index_page" => array( _( "Use a Guide as your index page" ), _("If you want one of your guides to be the splash page at /subjects/ , enter the short form"), "string", "right", "medium", "" , "" ), 
+							"guide_index_page" => array( _( "Usar una guía como página de índice" ), _("Si desea que una de sus guías sea la página de bienvenida en / subjects /, escriba la forma abreviada"), "string", "right", "medium", "" , "" ), 
 
-							"collection_thumbnail" => array( _( "Collection default image" ), _("Set the image that shows by default on a collection page.  You must put this image in /assets/images/guide_thumbs/"), "string", "right", "medium", "" , "" ), 
+							"collection_thumbnail" => array( _( "Imagen por defecto de la colección" ), _("Establezca la imagen que se muestra de forma predeterminada en una página de recopilación. Debe poner esta imagen en / assets / images / guide_thumbs /"), "string", "right", "medium", "" , "" ), 
 
-							"mod_rewrite" => array( _( "Use URL rewrites" ), _( "Make links prettier." ), "boolean", "right", "small", "" , "" ),
+							"mod_rewrite" => array( _( "Utilizar reescrituras de URL" ), _( "Hacer vínculos más bonitos." ), "boolean", "right", "small", "" , "" ),
 
-							"BaseURL" => array( _( "Base URL of your SubjectsPlus Installation" ), _( "e.g. 'http://www.yoursite.edu/library/sp/.' Make sure to include the trailing slash! <strong>If changed, you will need to log back in.</strong>" ), "string", "left", "large", "" ,"" ),
+							"BaseURL" => array( _( "URL base de la instalación de SubjectPlus" ), _( "p.ej. 'Http://www.yoursite.edu/library/sp/.' ¡Asegúrese de incluir la barra inclinada! <strong> Si se cambia, deberá volver a iniciar sesión. </strong>" ), "string", "left", "large", "" ,"" ),
 
-							"resource_name" => array( _( "Name of this Resource" ), _( "e.g. SubjectsPlus, Research Guides" ), "string", "left-bottom", "medium", "" ,"" ),
+							"resource_name" => array( _( "Nombre de este recurso" ), _( "p.ej. SubjectsPlus, Guías de Investigación" ), "string", "left-bottom", "medium", "" ,"" ),
 
-							"institution_name" => array( _( "Institution Name" ), _( "Name of your college/university/institution" ), "string", "left-bottom", "medium", "" ,"" ),
+							"institution_name" => array( _( "Nombre de la Institución" ), _( "Nombre de su universidad / institución" ), "string", "left-bottom", "medium", "" ,"" ),
 
-							"administrator" => array( _( "Name of Library Administrator" ), _( "Name for SubjectsPlus administrator" ), "string", "left-bottom", "medium", "" , _("This will appear in the footer of SP pages.") ),
+							"administrator" => array( _( "Nombre del administrador de la biblioteca" ), _( "Nombre del administrador de SubjectPlus" ), "string", "left-bottom", "medium", "" , _("Esto aparecerá en el pie de página de SP.") ),
 
-							"administrator_email" => array( _( "Library Administrator Email Address" ), _( "Email address for SubjectsPlus administrator" ), "string", "left-bottom", "medium", "" , _("This will appear in footer, and also be used as default email for TalkBack submissions.") ),
+							"administrator_email" => array( _( "Dirección de correo electrónico del administrador de la biblioteca" ), _( "Dirección de correo electrónico del administrador de SubjectsPlus" ), "string", "left-bottom", "medium", "" , _("Esto aparecerá en pie de página y también se utilizará como correo electrónico predeterminado para las presentaciones de TalkBack.") ),
 
-							"email_key" => array( _( "Email Key" ), _( "Ending of campus email addresses, including @ sign" ), "string", "left-bottom", "medium", "" ,_( "This allows for simpler login." ) ),
+							"email_key" => array( _( "Clave de correo electrónico" ), _( "Finalización de las direcciones de correo electrónico del campus, incluyendo @ signo" ), "string", "left-bottom", "medium", "" ,_( "Esto permite una entrada más sencilla." ) ),
 
-							"tel_prefix" => array( _( "Telephone Prefix" ), _( "Prefix to prepend to telephone number for staff. Usually area code." ), "string", "left-bottom", "small", "" , _( "Allows you to put short (non-prefixed) version of phone number on pages where space is limited." ) ),
+							"tel_prefix" => array( _( "Prefijo del Télefono" ), _( "Prefijo de prefijo al número de teléfono para el personal. Usualmente código de área." ), "string", "left-bottom", "small", "" , _( "Le permite poner una versión corta (no prefijada) del número de teléfono en páginas donde el espacio es limitado." ) ),
 
-							"hname" => array( _( "MySQL Hostname" ), _( "This is the ip or url to your MySQL database." ), "string", "left", "medium", "" , _( "host help?" ) ),
+							"hname" => array( _( "Nombre de host de MySQL" ), _( "Este es el ip o url a su base de datos MySQL." ), "string", "left", "medium", "" , _( "Ayuda?" ) ),
 	  
-	  					"db_port" => array( _( "MySQL Port" ), _( "This is the port your MySQL database uses." ), "string", "left", "medium", "" , _( "" ) ),
+	  					"db_port" => array( _( "Puerto MySQL" ), _( "Este es el puerto que usa su base de datos MySQL." ), "string", "left", "medium", "" , _( "" ) ),
 
-							"uname" => array( _( "MySQL Username" ), _( "This is the username to your MySQL database." ), "string", "left", "medium", "" ,"" ),
+							"uname" => array( _( "Nombre de usuario de MySQL" ), _( "Este es el nombre de usuario de su base de datos MySQL" ), "string", "left", "medium", "" ,"" ),
 
-							"pword" => array( _( "MySQL Password" ), _( "This is the password for your MySQL user." ), "pword", "left", "medium", "" ,"" ),
+							"pword" => array( _( "Contraseña MySQL" ), _( "Esta es la contraseña para su usuario de MySQL." ), "pword", "left", "medium", "" ,"" ),
 
-							"dbName_SPlus" => array( _( "MySQL SubjectsPlus Database" ), _( "Name of the SubjectsPlus database" ), "string", "left", "" , _( "database help?" ) ),
+							"dbName_SPlus" => array( _( "Base de datos MySQL SubjectsPlus" ), _( "Nombre de la base de datos SubjectsPlus" ), "string", "left", "" , _( "Ayuda?" ) ),
 
-							"upload_whitelist" => array( _( "List of accepted uploads' file extentions" ), _( "This option contains the coma-separated list of accepted file extensions for file uploads via CKEditor." ), "array", "right", "large", "" , _("If a file isn't in this list, it should not be uploaded.  File uploads only occur via the admin backend, using CKEditor, but this is to stop a user from doing something, uh, foolish.") ),
+							"upload_whitelist" => array( _( "Lista de extensiones de archivos admitidas" ), _( "Esta opción contiene la lista separada por coma de extensiones de archivo aceptadas para cargas de archivos a través de CKEditor." ), "array", "right", "large", "" , _("Si un archivo no está en esta lista, no debe cargarse. Las subidas de archivos sólo se producen a través del backend de administración, usando CKEditor, pero esto es para impedir que un usuario haga algo, uh, tonto.") ),
 
-							"proxyURL" => array( _( "Proxy URL" ), _( "String which should be prepended if you use a proxy server" ), "string", "right-bottom", "large", "" , _( "In the Records tab of SP, if you flag an item as 'restricted,' the proxy string will be prepended." ) ),
+							"proxyURL" => array( _( "Proxy URL" ), _( "Cadena que se debe añadir antes de usar un servidor proxy" ), "string", "right-bottom", "large", "" , _( "En la pestaña Registros de SP, si marca un elemento como 'restringido', la cadena de proxy se agregará previamente." ) ),
 
-							"open_string" => array( _( "Open String" ), _( "Used to create a link to an item in your Catalog. Your subject search term is sandwiched between these two strings" ), "string", "right-bottom", "medium", "" , "" ),
+							"open_string" => array( _( "Cadena abierta" ), _( "Se utiliza para crear un enlace a un elemento de su catálogo. El término de búsqueda de su contenido está intercalado entre estas dos cadenas" ), "string", "right-bottom", "medium", "" , "" ),
 
-							"close_string" => array( _( "Close String" ), _( "If you don't need to close string, leave blank." ), "string", "right-bottom", "medium", "" , "" ),
+							"close_string" => array( _( "Cadena Cerrada" ), _( "Si no necesita cerrar cadena, deje en blanco." ), "string", "right-bottom", "medium", "" , "" ),
 
-							"open_string_kw" => array( _( "Open String Keyword" ), _( "As above, for Keyword search." ), "string", "right-bottom", "medium", "" , "" ),
+							"open_string_kw" => array( _( "Palabra clave de cadena abierta" ), _( "Como arriba, para la búsqueda por palabra clave." ), "string", "right-bottom", "medium", "" , "" ),
 
-							"close_string_kw" => array( _( "Close String Keyword" ), _( "If necessary." ), "string", "right-bottom", "medium", "" , "" ),
+							"close_string_kw" => array( _( "Cerrar palabra clave de cadena" ), _( "Si necesario." ), "string", "right-bottom", "medium", "" , "" ),
 
-							"open_string_cn" => array( _( "Open String Call Number" ), _( "As above, for Call Number search." ), "string", "right-bottom", "medium", "" , "" ),
+							"open_string_cn" => array( _( "Número de llamada de cadena abierta" ), _( "Como anteriormente, para la búsqueda de número de llamada." ), "string", "right-bottom", "medium", "" , "" ),
 
-							"close_string_cn" => array( _( "Close String Call Number" ), _( "If necessary." ), "string", "right-bottom", "medium", "" , "" ),
+							"close_string_cn" => array( _( "Número de llamada de Cadena Cerrada " ), _( "Si necesario" ), "string", "right-bottom", "medium", "" , "" ),
 
-							"open_string_bib" => array( _( "Open String Bib" ), _( "Used to create a link to an item in your Catalog. Your Bib search term is sandwiched between these two strings" ), "string", "right-bottom", "medium", "" , "" ),
+							"open_string_bib" => array( _( "Open String Bib" ), _( "Se utiliza para crear un enlace a un elemento de su catálogo. Su término de búsqueda Bib está intercalado entre estas dos cadenas" ), "string", "right-bottom", "medium", "" , "" ),
 
-							"CKBasePath" => array( _( "Base Path for CKEditor" ), _( "Path to CKEditor files appended to base URL" ), "string", "left", "medium", "" , _( "CKEditor is used to generate the WYSIWYG data entry boxes.  It is bundled with SubjectsPlus under the sp/ root folder.  If you move CKEditor to another location, you will need to change this path." ) ),
+							"CKBasePath" => array( _( "Base Path para CKEditor" ), _( "Ruta de acceso a los archivos de CKEditor agregados a la URL de base" ), "string", "left", "medium", "" , _( "CKEditor se utiliza para generar los cuadros de entrada de datos WYSIWYG. Se incluye con Temas Plus en la carpeta sp / root. Si mueve CKEditor a otra ubicación, deberá cambiar esta ruta." ) ),
 
-							"syndetics_client_code" => array( _( "Syndetics Client Code" ), _( "This option contains the client code required to use Syndetics" ), "string", "right", "medium", "" , ""),
+							"syndetics_client_code" => array( _( "Código de Cliente Syndetics" ), _( "Esta opción contiene el código de cliente necesario para utilizar Syndetics" ), "string", "right", "medium", "" , ""),
 
-							"google_books_api_key" => array( _( "Google Books API Key" ), _( "This option contains the API key required to use Google Books API key in the Book List Pluslet" ), "string", "right", "large", "" , ""),
+							"google_books_api_key" => array( _( "Clave de la API de Google Libros" ), _( "Esta opción contiene la clave de API necesaria para utilizar la clave de la API de Google Libros en la lista de libros Pluslet" ), "string", "right", "large", "" , ""),
 
-							"booklist_primo_domain" => array( _( "Book List Pluslet Primo Domain" ), _( "This option contains the Primo domain for the Book List Pluslet" ), "string", "right", "large", "" , ""),
+							"booklist_primo_domain" => array( _( "Lista de libros Pluslet Primo Domain" ), _( "Esta opción contiene el dominio Primo para la lista de libros Pluslet" ), "string", "right", "large", "" , ""),
 
-							"booklist_primo_institution_code" => array( _( "Book List Pluslet Primo Institution Code" ), _( "This option contains the Primo institution code for the Book List Pluslet" ), "string", "right", "large", "" , ""),
+							"booklist_primo_institution_code" => array( _( "Lista de libros Pluslet Primo Código de la institución" ), _( "Esta opción contiene el código de la institución Primo para Book List Pluslet" ), "string", "right", "large", "" , ""),
 
-							"booklist_primo_vid" => array( _( "Book List Pluslet Primo View" ), _( "This option contains the Primo view for the Book List Pluslet" ), "string", "right", "large", "" , ""),
+							"booklist_primo_vid" => array( _( "Ver Lista de libros Pluslet Primo " ), _( "Esta opción contiene la vista Primo para la lista de libros Pluslet" ), "string", "right", "large", "" , ""),
 
-							"booklist_primo_api_key" => array( _( "Book List PlusletPrimo API Key" ), _( "This option contains the Primo API Key for the Book List Pluslet" ), "string", "right", "large", "" , "")
+							"booklist_primo_api_key" => array( _( "Lista de libros PlusletPrimo API Key" ), _( "Esta opción contiene la clave Primo API para la lista de libros Pluslet" ), "string", "right", "large", "" , "")
 
 	);
 
@@ -200,7 +200,7 @@ if(!is_writable($lstrConfigFilePath))
 				$_SESSION[ 'checkit' ] = md5($_SESSION['email']) . $lobjReturn[1];
 
 				//display message
-				$lobjConfig->displayMessage( _( "Thy will be done." ) );
+				$lobjConfig->displayMessage( _( "Hágase tu voluntad." ) );
 
 				//if the base URL of SubjectsPlus changes, log them out and relocate to new BaseURL
 				if( $lobjConfig->isNewBaseURL() )
@@ -225,7 +225,7 @@ if(!is_writable($lstrConfigFilePath))
 			}else
 			{
 				//error message
-				$lobjConfig->displayMessage( _( "Something went wrong and could not save configurations." ) );
+				$lobjConfig->displayMessage( _( "Algo salió mal y no se pudo guardar las configuraciones." ) );
 			}
 
 			//display edit HTML form with new values
@@ -233,7 +233,7 @@ if(!is_writable($lstrConfigFilePath))
 		}
 	}else if (isset( $_POST['clear_cache_btn'] )){
 		//display message
-		$lobjConfig->displayMessage( _( "Thy will be done." ) );
+		$lobjConfig->displayMessage( _( "Hágase tu voluntad." ) );
 		$lobjConfig->displayEditConfigForm();
 
 		$prefix = explode('control', dirname(__FILE__));

@@ -2571,7 +2571,7 @@
          *    or   string $file Local filename
          * @param  string $lang Optional language code
          */
-        function upload($file, $lang = 'en_GB') {
+        function upload($file, $lang = 'es_ES') {
             
             $this->version            = '0.32';
             
@@ -2660,13 +2660,13 @@
             
             // determines the language
             $this->lang               = $lang;
-            if ($this->lang != 'en_GB' && file_exists(dirname(__FILE__).'/lang') && file_exists(dirname(__FILE__).'/lang/class.upload.' . $lang . '.php')) {
+            if ($this->lang != 'es_ES' && file_exists(dirname(__FILE__).'/lang') && file_exists(dirname(__FILE__).'/lang/class.upload.' . $lang . '.php')) {
                 $translation = null;
                 include(dirname(__FILE__).'/lang/class.upload.' . $lang . '.php');
                 if (is_array($translation)) {
                     $this->translation = array_merge($this->translation, $translation);
                 } else {
-                    $this->lang = 'en_GB';
+                    $this->lang = 'es_ES';
                 }
             }
             

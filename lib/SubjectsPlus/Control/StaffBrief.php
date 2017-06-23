@@ -76,7 +76,7 @@ class Staff {
                 $this->_debug .= "<p class=\"debug\">Staff query: $q1";
                 // Test if these exist, otherwise go to plan B
                 if ($staffArray == FALSE) {
-                    $this->_message = "There is no active record with that ID.  Why not create a new one?";
+                    $this->_message = "No hay ningún registro activo con ese ID. ¿Por qué no crear uno nuevo?";
                 } else {
                     $this->_lname = $staffArray[0]['lname'];
                     $this->_fname = $staffArray[0]['fname'];
@@ -161,9 +161,9 @@ class Staff {
         $headshot = self::getHeadshot($this->_email, "medium");
 
         if ($this->_staff_id != "") {
-            $headshot .= "<div class=\"setStaffPhotoWarning\">" . _("Note: Save changes before updating photo!") . "</div><div><p>&nbsp;&nbsp;<a href=\"../includes/set_picture.php?staff_id=$this->_staff_id\" id=\"load_photo\">" . _("Click to update photo") . "</a></p></div>";
+            $headshot .= "<div class=\"setStaffPhotoWarning\">" . _("Nota: ¡Guarda los cambios antes de actualizar la foto!") . "</div><div><p>&nbsp;&nbsp;<a href=\"../includes/set_picture.php?staff_id=$this->_staff_id\" id=\"load_photo\">" . _("Haz clic para actualizar la foto") . "</a></p></div>";
         } else {
-            $headshot .= "<div class=\"setStaffPhotoWarning\"><p>" . _("You can change the photo after saving.") . "</p></div>";
+            $headshot .= "<div class=\"setStaffPhotoWarning\"><p>" . _("Puede cambiar la foto después de guardarla.") . "</p></div>";
         }
 
         /////////////
@@ -181,54 +181,54 @@ class Staff {
 <input type=\"hidden\" name=\"staff_id\" value=\"" . $this->_staff_id . "\" />
 <div style=\"float: left; margin-right: 20px;\">
 <div class=\"box\">
-        <h2 class=\"bw_head\">" . _("Staff Member") . "</h2>
+        <h2 class=\"bw_head\">" . _("Miembro del equipo") . "</h2>
 
 <div class=\"float-left\">
-<span class=\"record_label\">" . _("First Name ") . "</span><br />
+<span class=\"record_label\">" . _(" Nombre ") . "</span><br />
 <input type=\"text\" name=\"fname\" id=\"fname\" size=\"30\" class=\"required_field\" value=\"" . $this->_fname . "\" />
 </div>
 <div class=\"float-left\">
-<span class=\"record_label\">" . _("Last Name ") . "</span><br />
+<span class=\"record_label\">" . _("Apellido ") . "</span><br />
 <input type=\"text\" name=\"lname\" id=\"lname\" size=\"30\" class=\"required_field\" value=\"" . $this->_lname . "\" />
 </div>
 <br class=\"clear-both\"/><br />
-<span class=\"record_label\">" . _("Title") . "</span><br />
+<span class=\"record_label\">" . _("Título") . "</span><br />
 <input type=\"text\" name=\"title\" id=\"title\" size=\"50\" class=\"required_field\" value=\"" . $this->_title . "\" />
 <br /><br />
 <div class=\"float-left\">
-<span class=\"record_label\">" . _("Department") . "</span><br />
+<span class=\"record_label\">" . _("Departamento") . "</span><br />
 {$this->_departments}
 </div>
 <div style=\"float: left;margin-left: 10px;\">
-<span class=\"record_label\">" . _("Show First in Dept List?") . "</span><br />
+<span class=\"record_label\">" . _("Mostrar primero en la lista de departamento?") . "</span><br />
 <input type=\"text\" name=\"staff_sort\" id=\"staff_sort\" size=\"2\" class=\"required_field\" value=\"" . $this->_staff_sort . "\" />
 </div>
 <br class=\"clear-both\" /><br />
-<span class=\"record_label\">" . _("Telephone") . "</span><br />
+<span class=\"record_label\">" . _("Teléfono") . "</span><br />
 $tel_line
 <br /><br />
-<span class=\"record_label\">" . _("Email (This is the username for logging in to SubjectsPlus)") . "</span><br />
+<span class=\"record_label\">" . _("Email (Este es el nombre de usuario para iniciar sesión en SubjectsPlus)") . "</span><br />
 <input type=\"text\" name=\"email\" id=\"email\" size=\"40\" class=\"required_field\" value=\"" . $this->_email . "\" />
 <br /><br />
 <div class=\"float-left\">
-<span class=\"record_label\">" . _("User Type") . "</span><br />
+<span class=\"record_label\">" . _("Tipo de usuario") . "</span><br />
 {$this->_user_types}
 </div>
 <div style=\"float: left;margin-left: 20px;\">
-<span class=\"record_label\">" . _("Active User?") . "</span><br />
+<span class=\"record_label\">" . _("Usuario activo?") . "</span><br />
 {$this->_active_or_not}
 </div>
 <br /><br />
 </div>
         <div class=\"box no_overflow\">
-<h2 class=\"bw_head\">" . _("Photo") . "</h2>
+<h2 class=\"bw_head\">" . _("Foto") . "</h2>
 
 $headshot
 </div>
         <div class=\"box no_overflow\">
-<h2 class=\"bw_head\">" . _("Biographical Details") . "</h2>
+<h2 class=\"bw_head\">" . _("Detalles biograficos") . "</h2>
 
-<p>" . _("Please only include professional details.") . "</p><br />";
+<p>" . _("Por favor incluya sólo detalles profesionales.") . "</p><br />";
 
         self::outputBioForm();
 
@@ -239,7 +239,7 @@ $headshot
 <!-- right hand column -->
 <div style=\"float: left; max-width: 400px;\">
         <div class=\"box\">
-<h2 class=\"bw_head\">" . _("Permissions") . "</h2>
+<h2 class=\"bw_head\">" . _("Permisos") . "</h2>
 
 ";
 
@@ -254,17 +254,17 @@ $headshot
             }
         }
 
-        echo "<input type=\"hidden\" name=\"ptags\" value=\"$this->_ptags\" /><br class=\"clear-both\" /><p style=\"font-size: smaller\">Select which parts of SubjectsPlus this user may access.
-                <br /><strong>records</strong> allows access to both the Record and Guide tabs.
-                <br /><strong>eresource_mgr</strong> allows the user to see all the information about a Record (and delete it), and quickly see all guides.
-                <br /><strong>admin</strong> allows access to the overall admin of the site.
-                <br /><strong>NOFUN</strong> means user can't modify other peoples' guides, or view records</p>
+        echo "<input type=\"hidden\" name=\"ptags\" value=\"$this->_ptags\" /><br class=\"clear-both\" /><p style=\"font-size: smaller\">Seleccione las partes de SubjectsPlus a las que este usuario puede acceder.
+                 <br /> <strong> registros </ strong> permite el acceso a las fichas Registro y Guía.
+                 <br /> <strong> eresource_mgr </ strong> permite al usuario ver toda la información sobre un registro (y eliminarlo) y ver rápidamente todas las guías.
+                 <br /> <strong> admin </ strong> permite el acceso al administrador general del sitio.
+                 <br /> <strong> NOFUN </ strong> significa que el usuario no puede modificar guías de otras personas ni ver registros</p>
 </div>
         	<div class=\"box\">
-	<h2 class=\"bw_head\">" . _("Password") . "</h2>";
+	<h2 class=\"bw_head\">" . _("Contraseña") . "</h2>";
 
         if ($this->_staff_id != "") {
-            echo "<p  ><a href=\"../includes/set_password.php?staff_id=" . $this->_staff_id . "\" id=\"reset_password\">" . _("The password is hidden.  Reset?") . "</a></p>";
+            echo "<p  ><a href=\"../includes/set_password.php?staff_id=" . $this->_staff_id . "\" id=\"reset_password\">" . _("La contraseña está oculta. ¿Reiniciar?") . "</a></p>";
         } else {
             echo "<input type=\"password\" name=\"password\" size=\"20\" class=\"required_field\" /><br />
 		<p style=\"font-size: smaller\">The password is stored as a hash in the database, but unless you have SSL travels clear text across the internet.</p>";
@@ -273,7 +273,7 @@ $headshot
         echo "
 	</div>
         <div id=\"record_buttons\" class=\"box\">
-	<h2 class=\"bw_head\">" . _("Save") . "</h2>
+	<h2 class=\"bw_head\">" . _("Guardar") . "</h2>
 	
 		<input type=\"submit\" name=\"submit_record\" class=\"button save_button\" value=\"" . _("Save Record Now") . "\" />";
         // if it's not a new record, and we're authorized, show delete button
@@ -325,11 +325,11 @@ $headshot
 
             $updateChangeTable = changeMe("staff", "delete", $this->_staff_id, $this->_title, $_SESSION['staff_id']);
 
-            $this->_message = _("Thy will be done.  Note that any subject guides associated with this user are now orphans.");
+            $this->_message = _("Hágase tu voluntad. Tenga en cuenta que las guías de temas asociados con este usuario ahora son huérfanos.");
             return false;
         } else {
             // message
-            $this->_message = _("There was a problem with your delete.");
+            $this->_message = _("Se ha producido un problema con la eliminación.");
             return FALSE;
         }
     }

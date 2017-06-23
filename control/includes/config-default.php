@@ -264,7 +264,7 @@ $collection_thumbnail_default = "$AssetPath/images/guide_thumbs/" . $collection_
 
 
 // Enter desired language here
-//$language = 'en_EN';
+$language = 'es_ES';
 // This SHOULD compute your path correctly; otherwise, try hard coding:
 //example:  $LocalePath = "/home/myname/www/sp/assets/locale";
 //$LocalePath = dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR . 'locale';

@@ -13,7 +13,7 @@ use SubjectsPlus\Control\Querier;
 
 $subsubcat = "";
 $subcat = "admin";
-$page_title = "Admin FAQ Collections";
+$page_title = "Colecciones de Preguntas Frecuentes";
 
 // print_r($_POST);
 
@@ -36,9 +36,9 @@ if (isset($_POST["add_collection"])) {
     $rInsert = $db->exec($qInsert);
 
     if ($rInsert !== FALSE) {
-        $feedback = _("Thy Will Be Done.  Updated.");
+        $feedback = _("Hágase Tu Voluntad. Actualizado.");
     } else {
-        $feedback = _("Thwarted!  Something has gone wrong with the insert.  Contact the admin.");
+        $feedback = _("Frustrado Algo ha salido mal con el inserto. Póngase en contacto con el administrador.");
     }
 }
 
@@ -81,7 +81,7 @@ if (isset($_POST["update_collections"])) {
     }
 */
 
-    $feedback = _("Thy Will Be Done.  Updated.");
+    $feedback = _("Hágase Tu Voluntad. Actualizado.");
 }
 
 
@@ -97,22 +97,22 @@ $resultArray = $querierDept->query($q);
 if ($resultArray) {
     foreach ($resultArray as $value) {
 
-        $ourlist .= "<p id=\"item-$value[0]\" style=\"margin-bottom: 1em;\"><a id=\"delete-$value[0]\"><i class=\"fa fa-times\" title=\"" . _("Remove") . "\"></i></a> &nbsp; <input type=\"text\" size=\"40\" name=\"name[]\" value=\"$value[1]\" /> <input type=\"hidden\" name=\"faqpage_id[]\" value=\"$value[0]\" /></p>";
+        $ourlist .= "<p id=\"item-$value[0]\" style=\"margin-bottom: 1em;\"><a id=\"delete-$value[0]\"><i class=\"fa fa-times\" title=\"" . _("Remover") . "\"></i></a> &nbsp; <input type=\"text\" size=\"40\" name=\"name[]\" value=\"$value[1]\" /> <input type=\"hidden\" name=\"faqpage_id[]\" value=\"$value[0]\" /></p>";
     }
 }
 
 $collection_box = "<form id=\"sources\" action=\"\" method=\"post\">
-<button class=\"button\" id=\"save_guide\"  class=\"button pure-button pure-button-primary\" style=\"display: block;\" name=\"update_collections\" >" . _("SAVE CHANGES") . "</button>
+<button class=\"button\" id=\"save_guide\"  class=\"button pure-button pure-button-primary\" style=\"display: block;\" name=\"update_collections\" >" . _("Guardar Cambios") . "</button>
 
-<p>" . _("Edit label or delete collection.") . "</p>
+<p>" . _("Editar etiqueta o eliminar la colección.") . "</p>
 $ourlist
 </form>";
 
 $add_collection_box = "<form id=\"new_collection\" action=\"\" method=\"post\">
-<span class=\"record_label\">" . _("Collection Name") . "</span><br />
+<span class=\"record_label\">" . _("Nombre de la colección") . "</span><br />
 <input type=\"text\" name=\"new_coll_name\" id=\"\" size=\"40\" class=\"required_field\" value=\"\">
 <br /><br />
-<button class=\"button pure-button pure-button-primary\" id=\"add_collection\" name=\"add_collection\">" . _("Add New Collection") . "</button>
+<button class=\"button pure-button pure-button-primary\" id=\"add_collection\" name=\"add_collection\">" . _("Agregar Nueva colección") . "</button>
 </form>
 <div>";
 
@@ -127,12 +127,12 @@ print "
   <div class=\"pure-u-2-3\">  
 ";
 
-makePluslet(_("Current Collections"), $collection_box, "no_overflow");
+makePluslet(_("Colecciones actuales"), $collection_box, "no_overflow");
 
 print "</div>"; // close pure-u-2-3
 print "<div class=\"pure-u-1-3\">";
 
-makePluslet(_("Add Collection"), $add_collection_box, "no_overflow");
+makePluslet(_("Agregar colección"), $add_collection_box, "no_overflow");
 
 print "</div>"; // close pure-u-1-3
 print "</div>"; // close pure-g

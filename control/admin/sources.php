@@ -13,7 +13,7 @@ use SubjectsPlus\Control\Querier;
 
 $subsubcat = "";
 $subcat = "admin";
-$page_title = "Admin Source Types";
+$page_title = "Tipos de fuentes de administración";
 //print_r($_POST);
 
 include("../includes/header.php");
@@ -37,7 +37,7 @@ if (isset($_POST["add_source"])) {
 
   $rInsertSource = $db->query($qInsertSource);
 
-  $feedback = _("Thy Will Be Done.  Source list updated.");
+  $feedback = _("Hágase Tu Voluntad. Lista de fuentes actualizada.");
   
 }
 
@@ -77,7 +77,7 @@ if (isset($_POST["update_sources"])) {
   }
 
   
-    $feedback = _("Thy Will Be Done.  Source list updated.");
+    $feedback = _("Hágase Tu Voluntad. Lista de fuentes actualizada.");
   
 }
 
@@ -93,14 +93,14 @@ $sourceArray = $querierDept->query($qSource);
 
 foreach ($sourceArray as $value) {
 
-  $ourlist .= "<li id=\"item-$value[0]\" class=\"sortable_item\" style=\"margin-bottom: .5em;\"><a id=\"delete-$value[0]\"><i class=\"fa fa-times\" title=\"" . _("Remove") . "\"></i></a> &nbsp; <input type=\"text\" size=\"40\" name=\"source[]\" value=\"$value[1]\" /> <input type=\"hidden\" name=\"source_id[]\" value=\"$value[0]\" /></li>";
+  $ourlist .= "<li id=\"item-$value[0]\" class=\"sortable_item\" style=\"margin-bottom: .5em;\"><a id=\"delete-$value[0]\"><i class=\"fa fa-times\" title=\"" . _("Remover") . "\"></i></a> &nbsp; <input type=\"text\" size=\"40\" name=\"source[]\" value=\"$value[1]\" /> <input type=\"hidden\" name=\"source_id[]\" value=\"$value[0]\" /></li>";
 }
 
 $source_box = "
 <form id=\"sources\" action=\"\" method=\"post\">
-<button class=\"button\" id=\"save_guide\"  class=\"button pure-button pure-button-primary\" style=\"display: block;\" name=\"update_sources\" >" . _("SAVE CHANGES") . "</button>
+<button class=\"button\" id=\"save_guide\"  class=\"button pure-button pure-button-primary\" style=\"display: block;\" name=\"update_sources\" >" . _("Guardar Cambios") . "</button>
 
-<p>" . _("Enter source type label.  Drag sources to change sort order.") . "</p>
+<p>" . _("Ingrese la etiqueta del tipo de fuente. Arrastrar fuentes para cambiar el orden de clasificación.") . "</p>
 <br />
 
 <ul id=\"sortable-\" class=\"sortable_list\">
@@ -111,10 +111,10 @@ $ourlist
 
 $add_source_box = "
 <form id=\"new_source\" action=\"\" method=\"post\">
-<span class=\"record_label\">" . _("Source Name") . "</span><br />
+<span class=\"record_label\">" . _("Nombre de la fuente") . "</span><br />
 <input type=\"text\" name=\"source\" id=\"\" size=\"40\" class=\"\" value=\"\">
 <br /><br />
-<button class=\"button\" id=\"add_source\" name=\"add_source\">" . _("Add New Source") . "</button>
+<button class=\"button\" id=\"add_source\" name=\"add_source\">" . _("Agregar nueva fuente") . "</button>
 </form>";
 
 
@@ -129,12 +129,12 @@ print "
   <div class=\"pure-u-2-3\">
 ";
 
-makePluslet(_("Sources"), $source_box, "no_overflow");
+makePluslet(_("Fuentes"), $source_box, "no_overflow");
 
 print "</div>
 <div class=\"pure-u-1-3\">";
 
-makePluslet(_("Add Source"), $add_source_box, "no_overflow");
+makePluslet(_("Agregar Fuentes"), $add_source_box, "no_overflow");
 
 
 print "</div>"; // close pure-u-

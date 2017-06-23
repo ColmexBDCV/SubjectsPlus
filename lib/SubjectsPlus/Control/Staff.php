@@ -141,7 +141,7 @@ class Staff {
         $this->_debug .= "<p class=\"debug\">Staff query: $q1";
         // Test if these exist, otherwise go to plan B
         if ($staffArray == FALSE) {
-          $this->_message = "There is no active record with that email.";
+          $this->_message = "No hay ningún registro activo con ese correo electrónico.";
         } else {
           $this->_staff_id = $staffArray[0]['staff_id'];
           $this->_lname = $staffArray[0]['lname'];
@@ -183,7 +183,7 @@ class Staff {
         // $this->_debug .= "<p class=\"debug\">Staff query: $q1";
         // Test if these exist, otherwise go to plan B
         if ($staffArray == FALSE) {
-          $this->_message = "There is no active record with that ID.  Why not create a new one?";
+          $this->_message = "No hay ningún registro activo con ese ID. ¿Por qué no crear uno nuevo?";
         } else {
           $this->_lname = $staffArray[0]['lname'];
           $this->_fname = $staffArray[0]['fname'];
@@ -323,9 +323,9 @@ class Staff {
     $headshot = self::getHeadshot($this->_email, "medium");
 
     if ($this->_staff_id != "") {
-      $headshot .= "<div class=\"setStaffPhotoWarning\">" . _("Note: Save changes before updating photo!") . "</div><div><p>&nbsp;&nbsp;<a href=\"../includes/set_picture.php?staff_id=$this->_staff_id\" id=\"load_photo\">" . _("Click to update photo") . "</a></p></div>";
+      $headshot .= "<div class=\"setStaffPhotoWarning\">" . _("Nota: ¡Guarda los cambios antes de actualizar la foto!") . "</div><div><p>&nbsp;&nbsp;<a href=\"../includes/set_picture.php?staff_id=$this->_staff_id\" id=\"load_photo\">" . _("Haz clic para actualizar la foto") . "</a></p></div>";
     } else {
-      $headshot .= "<div class=\"setStaffPhotoWarning\"><p>" . _("You can change the photo after saving.") . "</p></div>";
+      $headshot .= "<div class=\"setStaffPhotoWarning\"><p>" . _("Puede cambiar la foto después de guardarla.") . "</p></div>";
     }
 
 
@@ -372,7 +372,7 @@ class Staff {
 <div class=\"pure-u-1-3\">
 <div class=\"pluslet no_overflow\">
     <div class=\"titlebar\">
-      <div class=\"titlebar_text\">" . _("Staff Member") . "</div>
+      <div class=\"titlebar_text\">" . _("Miembro del equipo") . "</div>
       <div class=\"titlebar_options\"></div>
     </div>
     <div class=\"pluslet_body\">";
@@ -384,7 +384,7 @@ class Staff {
       echo "<input type=\"hidden\" name=\"fname\" id=\"fname\" value=\"" . $this->_fname . "\" />";
     } else {
 
-      print "<div style=\"float: left; margin-right: 1em;\"><label for=\"fname\">" . _("First Name") . "</label>
+      print "<div style=\"float: left; margin-right: 1em;\"><label for=\"fname\">" . _("Nombre") . "</label>
     	<input type=\"text\" name=\"fname\" id=\"fname\" class=\"pure-input-1\" value=\"" . $this->_fname . "\" /></div>";
 
     }
@@ -394,7 +394,7 @@ class Staff {
       echo "<input type=\"hidden\" name=\"lname\" id=\"lname\" value=\"" . $this->_lname . "\" /><br style=\"clear:both;\"/>";
     } else {
 
-      print "<div style=\"float: left;\"><label for=\"lname\">" . _("Last Name") . "</label>
+      print "<div style=\"float: left;\"><label for=\"lname\">" . _("Apellido") . "</label>
 	    <input type=\"text\" name=\"lname\" id=\"lname\" class=\"pure-input-1\" value=\"" . $this->_lname . "\" /></div>
 	    <br style=\"clear:both;\"/>";
 
@@ -405,7 +405,7 @@ class Staff {
       echo "<input type=\"hidden\" name=\"title\" id=\"title\" value=\"" . $this->_title . "\" />";
     } else {
 
-      print "<div style=\"float: left; margin-right: 1em;\"><label for=\"title\">" . _("Position Title") . "</label>
+      print "<div style=\"float: left; margin-right: 1em;\"><label for=\"title\">" . _("Título del Puesto") . "</label>
     <input type=\"text\" name=\"title\" id=\"title\" class=\"pure-input-1";
       if ( in_array( _( 'title' ) , $require_user_columns ) ) echo 'required_field';
       print "\" value=\"" . $this->_title . "\" /></div>";
@@ -418,7 +418,7 @@ class Staff {
     }else
     {
 
-      print "<div style=\"float: left;\"><label for=\"position_number\">" . _("Position #") . "</label>
+      print "<div style=\"float: left;\"><label for=\"position_number\">" . _("Posición #") . "</label>
     <input type=\"text\" name=\"position_number\" id=\"position_number\" class=\"pure-input-1-4";
       if ( in_array( _( 'position_number' ) , $require_user_columns ) ) echo 'required_field';
       print "\" value=\"" . $this->_position_number . "\" /></div>";
@@ -434,7 +434,7 @@ class Staff {
       echo "<input type=\"hidden\" name=\"job_classification\" id=\"job_classification\" value=\"" . $this->_job_classification . "\" />";
     } else
     {
-      print "<label for=\"job_classification\">" . _("Job Classification") . "</label>
+      print "<label for=\"job_classification\">" . _("Clasificación de Trabajo") . "</label>
     <input type=\"text\" name=\"job_classification\" id=\"job_classification\" class=\"pure-input-2-3";
       if ( in_array( _( 'job_classification' ) , $require_user_columns ) ) echo 'required_field';
 
@@ -447,7 +447,7 @@ class Staff {
     }else
     {
       echo "
-<div style=\"float: left; margin-right: 1em;\"><label for=\"department_id\">" . _("Department") . "</label>
+<div style=\"float: left; margin-right: 1em;\"><label for=\"department_id\">" . _("Departamentos") . "</label>
 {$this->_departments}
 </div>";
     }
@@ -457,7 +457,7 @@ class Staff {
       echo "<input type=\"hidden\" name=\"staff_sort\" id=\"staff_sort\" value=\"" . $this->_staff_sort . "\" />";
     }else
     {
-      echo "<div style=\"float: left;\"><label for=\"staff_sort\">" . _("Display Priority") . "</label>
+      echo "<div style=\"float: left;\"><label for=\"staff_sort\">" . _("Prioridad de visualización") . "</label>
 
     <input type=\"text\" name=\"staff_sort\" id=\"staff_sort\" class=\"pure-input-1-4";
       if ( in_array( _( 'priority' ) , $require_user_columns ) ) echo 'required_field';
@@ -485,7 +485,7 @@ class Staff {
       echo "<input id=\"tel\" type=\"hidden\" value=\"" . $this->_tel . "\" name=\"tel\">";
     } else {
 
-      print "<div style=\"float: left; margin-right: 1em;\"><label for=\"tel\">" . _("Telephone") . "</label>
+      print "<div style=\"float: left; margin-right: 1em;\"><label for=\"tel\">" . _("Telefóno") . "</label>
     $tel_line
     </div>";
 
@@ -522,7 +522,7 @@ class Staff {
       echo "<input type=\"hidden\" name=\"room_number\" id=\"room_number\" value=\"" . $this->_room_number . "\" />";
     } else {
 
-      print "<div style=\"float: left;\"><label for=\"room_number\">" . _("Room #") . "</label>
+      print "<div style=\"float: left;\"><label for=\"room_number\">" . _("Habitación #") . "</label>
     <input type=\"text\" name=\"room_number\" id=\"room_number\" class=\"pure-input-1-3";
       if ( in_array( _( 'priority' ) , $require_user_columns ) ) echo 'required_field';
       print "\" value=\"" . $this->_room_number . "\" /></div>";
@@ -533,7 +533,7 @@ class Staff {
       echo "<br class=\"clear-both\"/><br />";
     }
 
-    print "<label for=\"email\">" . _("Email (This is the username for logging in to SubjectsPlus)") . "</label>
+    print "<label for=\"email\">" . _("Email (Este es el nombre de usuario para iniciar sesión en SubjectsPlus)") . "</label>
     <input type=\"text\" name=\"email\" id=\"email\" class=\"pure-input-1 required_field\" value=\"" . $this->_email . "\" />";
 
     if ( $isUserTypeOmitted )
@@ -541,13 +541,13 @@ class Staff {
       echo "<input type=\"hidden\" name=\"user_type_id\" id=\"user_type_id\" value=\"1\" />";
     }else
     {
-      echo "<div style=\"float: left; margin-right: 1em;\"><label for=\"user_type\">" . _("User Type") . "</label>
+      echo "<div style=\"float: left; margin-right: 1em;\"><label for=\"user_type\">" . _("Tipo de usuario") . "</label>
 	      {$this->_user_types}
 	      </div>";
     }
 
     echo "
-    <div style=\"float: left; margin-right: 1em;\"><label for=\"active\">" . _("Active User?") . "</label>
+    <div style=\"float: left; margin-right: 1em;\"><label for=\"active\">" . _("Usuario Activo?") . "</label>
     {$this->_active_or_not}
     </div>
     <br style=\"clear: both;\" /><br /></div></div>";
@@ -585,7 +585,7 @@ class Staff {
 
     echo "</div><div class=\"pure-u-1-3\">";
 
-    makePluslet(_("Photo"), $headshot, "no_overflow");
+    makePluslet(_("Foto"), $headshot, "no_overflow");
 
 
     $socialMediaForm = self::outputSocialMediaForm();
@@ -595,11 +595,11 @@ class Staff {
 
     print "<div class=\"pluslet\">
     <div class=\"titlebar\">
-      <div class=\"titlebar_text\">" . _("Staff Member") . "</div>
+      <div class=\"titlebar_text\">" . _("Miembro del equipo") . "</div>
       <div class=\"titlebar_options\"></div>
     </div>
     <div class=\"pluslet_body\">
-<p>" . _("Please only include professional details.") . "</p><br />";
+<p>" . _("Por favor incluya sólo detalles profesionales.") . "</p><br />";
 
     self::outputBioForm();
 
@@ -625,15 +625,15 @@ class Staff {
     }
 
     $our_ptags .= "<input type=\"hidden\" name=\"ptags\" value=\"$this->_ptags\" /><br class=\"clear-both\" /><p style=\"font-size: smaller\">";
-    $our_ptags .= _("Select which parts of SubjectsPlus this user may access.
-                <br /><strong>records</strong> allows access to both the Record and Guide tabs.
-                <br /><strong>eresource_mgr</strong> allows the user to see all the information about a Record (and delete it), and quickly see all guides.
-                <br /><strong>admin</strong> allows access to the overall admin of the site.
-                <br /><strong>librarian</strong> means user shows up in lists of librarians.
-                <br /><strong>supervisor</strong> means user shows up in list of supervisors
-                <br /><strong>view_map</strong> lets user see the map of where everyone lives.  Probably only for muckymucks.");
+    $our_ptags .= _("Seleccione las partes de Temas a las que este usuario puede acceder.
+                 <br/> <strong> registros </strong> permite el acceso a las fichas Registro y Guía.
+                 <br/> <strong> eresource_mgr </strong> permite al usuario ver toda la información sobre un registro (y eliminarlo) y ver rápidamente todas las guías.
+                 <br/> <strong> admin </strong> permite el acceso al administrador general del sitio.
+                 <br/> <strong> bibliotecario </strong> significa que el usuario aparece en las listas de bibliotecarios.
+                 <br/> <strong> supervisor </strong> significa que el usuario aparece en la lista de supervisores
+                 <br/> <strong> view_map </strong> permite al usuario ver el mapa donde vive cada uno. Probablemente sólo para muckymucks.");
 
-    makePluslet("Permissions", $our_ptags, "no_overflow");
+    makePluslet("Permisos", $our_ptags, "no_overflow");
 
     ///////////////
     // Password
@@ -642,11 +642,11 @@ class Staff {
     $make_pwd_box = "false";
     $our_password = "";
 
-    $pwd_text_1 = "<p  ><a href=\"../includes/set_password.php?staff_id=" . $this->_staff_id . "\" id=\"reset_password\">" . _("The password is hidden.  Reset?") . "</a></p>";
+    $pwd_text_1 = "<p  ><a href=\"../includes/set_password.php?staff_id=" . $this->_staff_id . "\" id=\"reset_password\">" . _("La contraseña está oculta. ¿Reiniciar?") . "</a></p>";
 
     $pwd_text_2 = "<input type=\"password\" name=\"password\" size=\"20\" class=\"required_field\" /><br />
-    <p style=\"font-size: smaller\">Pasword must have a special character, a letter, a number, and at least 6 characters.</p>
-    <p style=\"font-size: smaller\">The password is stored as a hash in the database, but unless you have SSL travels clear text across the internet.</p>";
+    <p style=\"font-size: smaller\">La contraseña debe tener un carácter especial, una letra, un número y al menos 6 caracteres.</p>
+    <p style=\"font-size: smaller\">La contraseña se almacena como un hash en la base de datos, pero a menos que tenga SSL viaja texto claro a través de Internet.</p>";
 
     // Don't show this box if they have shibboleth turned on
 
@@ -687,17 +687,17 @@ class Staff {
     // Save/Delete Buttons
     /////////////////
 
-    $our_buttons = "<input type=\"submit\" name=\"submit_record\" class=\"pure-button pure-button-primary\" value=\"" . _("Save Record Now") . "\" />";
+    $our_buttons = "<input type=\"submit\" name=\"submit_record\" class=\"pure-button pure-button-primary\" value=\"" . _("Guardar registro ahora") . "\" />";
     // if it's not a new record, and we're authorized, show delete button
     if ($this->_staff_id != "") {
-      $our_buttons .= " <input style=\"margin-left: 1em;\" type=\"submit\" name=\"delete_record\" class=\"pure-button delete_button pure-button-warning\" value=\"" . _("Delete Forever!") . "\" />";
+      $our_buttons .= " <input style=\"margin-left: 1em;\" type=\"submit\" name=\"delete_record\" class=\"pure-button delete_button pure-button-warning\" value=\"" . _("Eliminar!") . "\" />";
     }
 
     // get edit history
-    $last_mod = _("Last modified: ") . lastModded("staff", $this->_staff_id);
+    $last_mod = _("última modificación: ") . lastModded("staff", $this->_staff_id);
     $our_buttons .= "<div id=\"last_edited\">$last_mod</div>";
 
-    makePluslet("Save Changes", $our_buttons, "no_overflow");
+    makePluslet("Guardar", $our_buttons, "no_overflow");
 
     print "</div></div>
 </form>";
@@ -717,19 +717,19 @@ class Staff {
     if ( in_array( _( 'cell_phone' ) , $require_user_columns ) ) { $cell_phone_required = "required_field"; } else {$cell_phone_required = "";}
 
     $personal_info = "
-    <label for=\"record_title\">" . _("Street Address") . "</label>
+    <label for=\"record_title\">" . _("Dirección") . "</label>
     <input type=\"text\" name=\"street_address\" id=\"street_address\" class=\"pure-input-1 $street_address_required\" value=\"" . $this->_street_address . "\" />
     <br class=\"clear-both\" />
-    <div style=\"float: left; margin-right: 1em;\"><label for=\"city\">" . _("City") . "</label>
+    <div style=\"float: left; margin-right: 1em;\"><label for=\"city\">" . _("Ciudad") . "</label>
     <input type=\"text\" name=\"city\" id=\"city\" class=\"pure-input-1 $city_required\" value=\"" . $this->_city . "\" /></div>
-    <div style=\"float: left; margin-right: 1em;\"><label for=\"state\">" . _("State") . "</label>
+    <div style=\"float: left; margin-right: 1em;\"><label for=\"state\">" . _("Estado") . "</label>
     <input type=\"text\" name=\"state\" id=\"state\" class=\"pure-input-1 $state_required\" value=\"" . $this->_state . "\" /></div>
-    <div style=\"float: left;\"><label for=\"zip\">" . _("Zip") . "</label>
+    <div style=\"float: left;\"><label for=\"zip\">" . _("Código Postal") . "</label>
     <input type=\"text\" name=\"zip\" id=\"zip\" class=\"pure-input-1 $zip_required\" value=\"" . $this->_zip . "\" /></div>
     <br />
-    <div style=\"float: left; margin-right: 1em;\"><label for=\"state\">" . _("Home Phone") . "</label>
+    <div style=\"float: left; margin-right: 1em;\"><label for=\"state\">" . _("Teléfono de casa") . "</label>
     <input type=\"text\" name=\"home_phone\" id=\"home_phone\" class=\"pure-input-1 $home_phone_required\" value=\"" . $this->_home_phone . "\" /></div>
-    <div style=\"float: left;\"><label for=\"cell_phone\">" . _("Cell Phone") . "</label>
+    <div style=\"float: left;\"><label for=\"cell_phone\">" . _("Teléfono móvil") . "</label>
     <input type=\"text\" name=\"cell_phone\" id=\"cell_phone\" class=\"pure-input-1 $cell_phone_required\" value=\"" . $this->_cell_phone . "\" /></div>
     ";
 
@@ -746,16 +746,16 @@ class Staff {
     if ( in_array( _( 'emergency_contact' ) , $require_user_columns ) ) { $emergency_contact_required = "required_field"; } else {$emergency_contact_required = "";}
 
     $emergency_info = "
-    <div style=\"float: left; margin-right: 1em;\"><label for=\"city\">" . _("Emergency Contact") . "</label>
+    <div style=\"float: left; margin-right: 1em;\"><label for=\"city\">" . _("Contacto de Emergencia") . "</label>
     <input type=\"text\" name=\"emergency_contact_name\" id=\"emergency_contact_name\" class=\"pure-input-1 $emergency_contact_required\" value=\"" . $this->_emergency_contact_name . "\" /></div>
-    <div style=\"float: left; margin-right: 1em;\"><label for=\"state\">" . _("Relationship") . "</label>
+    <div style=\"float: left; margin-right: 1em;\"><label for=\"state\">" . _("Relación") . "</label>
     <input type=\"text\" name=\"emergency_contact_relation\" id=\"emergency_contact_relation\" class=\"pure-input-1 $emergency_contact_required\" value=\"" . $this->_emergency_contact_relation . "\" /></div>
-    <div style=\"float: left;\"><label for=\"zip\">" . _("Phone") . "</label>
+    <div style=\"float: left;\"><label for=\"zip\">" . _("Teléfono") . "</label>
     <input type=\"text\" name=\"emergency_contact_phone\" id=\"emergency_contact_phone\" class=\"pure-input-1 $emergency_contact_required\" value=\"" . $this->_emergency_contact_phone . "\" /></div>
     <br />
     ";
 
-    makePluslet (_("Emergency Contact"), $emergency_info, "no_overflow");
+    makePluslet (_("Contacto de Emergencia"), $emergency_info, "no_overflow");
   }
 
   public function outputLatLongForm() {
@@ -769,15 +769,15 @@ class Staff {
     if ( in_array( _( 'lat_long' ) , $require_user_columns ) ) { $lat_long_required = "required_field"; } else {$lat_long_required = "";}
 
     $lat_long = "
-    <div style=\"float: left; margin-right: 1em;\"><label for=\"city\">" . _("Latitude/Longitude") . "</label>
+    <div style=\"float: left; margin-right: 1em;\"><label for=\"city\">" . _("Latitud/Longitud") . "</label>
     <input type=\"text\" name=\"lat_long\" id=\"lat_long\" class=\"pure-input-1 $lat_long_required\" value=\"" . $this->_lat_long . "\" /></div>
 
-    <div style=\"float: left; margin-right: 1em;\"><label for=\"city\">" . _("Get Coordinates") . "</label>
+    <div style=\"float: left; margin-right: 1em;\"><label for=\"city\">" . _("Obtener coordenadas") . "</label>
     <span class=\"lookup_button\" value=\"$full_address\">look up now</span></div>
     <br />
     ";
 
-    makePluslet (_("Add to Map"), $lat_long, "no_overflow");
+    makePluslet (_("Agregar Mapas"), $lat_long, "no_overflow");
 
   }
 
@@ -833,11 +833,11 @@ class Staff {
 
     print "<div class=\"pluslet\">
     <div class=\"titlebar\">
-      <div class=\"titlebar_text\">" . _("Biographical Details") . "</div>
+      <div class=\"titlebar_text\">" . _("Detalles biográficos") . "</div>
       <div class=\"titlebar_options\"></div>
     </div>
     <div class=\"pluslet_body\">
-    <p>" . _("Please only include professional details.") . "</p><br />";
+    <p>" . _("Por favor incluya sólo detalles profesionales.") . "</p><br />";
 
     self::outputBioForm();
 
@@ -845,7 +845,7 @@ class Staff {
 
     print "<div class=\"pluslet\">
     <div class=\"titlebar\">
-      <div class=\"titlebar_text\">" . _("Social Media Accounts") . "</div>
+      <div class=\"titlebar_text\">" . _("Cuentas de medios sociales") . "</div>
       <div class=\"titlebar_options\"></div>
     </div>
     <div class=\"pluslet_body\">";
@@ -866,14 +866,14 @@ class Staff {
       // nothing.  I've done it this way in case someone with an older config.php file doesn't have this $use_shibboleth var set
     } else {
 
-    $password_update = "<p><a href=\"../includes/set_password.php?staff_id=" . $this->_staff_id . "\" id=\"reset_password\">" . _("The password is hidden.  Reset?") . "</a></p>";
+    $password_update = "<p><a href=\"../includes/set_password.php?staff_id=" . $this->_staff_id . "\" id=\"reset_password\">" . _("La contraseña está oculta. ¿Reiniciar?") . "</a></p>";
 
-    makePluslet(_("Change Password?"), $password_update, "no_overflow");
+    makePluslet(_("¿Cambia la contraseña?"), $password_update, "no_overflow");
     }
 
-    $saver = "<input type=\"submit\" name=\"submit_record\" class=\"pure-button pure-button-primary\" value=\"" . _("Update Now!") . "\" />";
+    $saver = "<input type=\"submit\" name=\"submit_record\" class=\"pure-button pure-button-primary\" value=\"" . _("¡Actualizar ahora!") . "\" />";
 
-    makePluslet (_("Save"), $saver, "no_overflow");
+    makePluslet (_("Guardar"), $saver, "no_overflow");
 
     print "</div>"; // close pure-1-3
 
@@ -908,7 +908,7 @@ class Staff {
 
   public function outputPasswordForm() {
     $box = "<div class=\"box no_overflow\">
-		<p>" . _("Enter the new password.  Make it a good one!") . "</p>
+		<p>" . _("Introduzca la nueva contraseña. Que sea una buena!") . "</p>
 		<br />
 		<form name=\"update_password\" method=\"post\" action=\"../includes/set_password.php\" />
 		<input type=\"hidden\" name=\"action\" value=\"password\" />
@@ -944,11 +944,11 @@ class Staff {
   			<form action=\"{$_SERVER['REQUEST_URI']}\" method=\"post\" style=\"font-size: 1em;\">\n
   			<table cellpadding=\"7\" cellspacing=\"0\" border=\"0\" class=\"striped_data\">\n
   			<tr>\n
-  			<td valign=\"top\" class=\"odd\"><strong>" . _("New Password") . "</strong></td>\n
+  			<td valign=\"top\" class=\"odd\"><strong>" . _("Nueva contraseña") . "</strong></td>\n
   			<td valign=\"top\" class=\"odd\" align=\"left\"><input name=\"password\" type=\"password\" size=\"20\" /></td>\n
   			</tr>\n
   			<tr>\n
-  			<td valign=\"top\" class=\"odd\"><strong>" . _("Re-Enter Password") . "</strong></td>\n
+  			<td valign=\"top\" class=\"odd\"><strong>" . _("Escriba la contraseña otra vez") . "</strong></td>\n
   			<td valign=\"top\" class=\"odd\" align=\"left\"><input name=\"password_confirm\" type=\"password\" size=\"20\" /></td>\n
   			</tr>\n
   			<tr>\n
@@ -987,7 +987,7 @@ class Staff {
     
     } else {
       // message
-      $this->_message = _("There was a problem with your delete (stage 1 of 2).");
+      $this->_message = _("Hubo un problema con su eliminación (etapa 1 de 2).");
       return FALSE;
     }
 
@@ -1000,11 +1000,11 @@ class Staff {
 
       $updateChangeTable = changeMe("staff", "delete", $this->_staff_id, $this->_title, $_SESSION['staff_id']);
 
-      $this->_message = _("Thy will be done.  Note that any subject guides associated with this user are now orphans.  Pity the orphans.");
+      $this->_message = _("Hágase tu voluntad. Tenga en cuenta que las guías de temas asociados con este usuario ahora son huérfanos. Lástima los huérfanos.");
       return false;
     } else {
       // message
-      $this->_message = _("There was a problem with your delete.");
+      $this->_message = _("Se ha producido un problema con la eliminación.");
       return FALSE;
     }
   }
@@ -1032,7 +1032,7 @@ class Staff {
         $this->_password = md5($this->_password);
       }else
       {
-        $this->_message = _("Pasword must have a special character, a letter, a number, and at least 6 characters. Insert was not executed.");
+        $this->_message = _("La contraseña debe tener un carácter especial, una letra, un número y al menos 6 caracteres. Se insertó no se ejecutó.");
 
         return;
 
@@ -1044,7 +1044,7 @@ class Staff {
     ///////////////
     if( !$this->isEmailUnique( "insert" ) )
     {
-      $this->_message = _("Email is not unique. Insert was not executed.");
+      $this->_message = _("El correo electrónico no es único. El inserto no se ejecutó.");
 
       return;
     }
@@ -1114,7 +1114,7 @@ class Staff {
         // throw new Exception('cant create directory ' .$mkdirErrorArray['message'], 1);
 
         // message
-        $this->_message = _("Couldn't create directory in /assets/users/. Please check this folder's permissions. ");
+        $this->_message = _("No se pudo crear el directorio en / assets / users /. Compruebe los permisos de esta carpeta. ");
         return;
 
       }  else  {
@@ -1125,7 +1125,7 @@ class Staff {
 
 
         // message
-        $this->_message = _("Thy Will Be Done.  Added.");
+        $this->_message = _("Hágase Tu Voluntad. Adicional.");
       }
     }
 
@@ -1149,7 +1149,7 @@ class Staff {
     if( !$this->isEmailUnique( "update" ) )
     {
       // message
-      $this->_message = _("Email is not unique. Update was not executed.");
+      $this->_message = _("El correo electrónico no es único. La actualización no se ejecutó..");
       return;
     }
 
@@ -1254,7 +1254,7 @@ class Staff {
     $updateChangeTable = changeMe("staff", "update", $this->_staff_id, $this->_email, $_SESSION['staff_id']);
 
     // message
-    $this->_message = _("Thy Will Be Done.  Updated.");
+    $this->_message = _("Hágase Tu Voluntad. Actualizado.");
   }
 
   public function updatePassword($new_pass) {

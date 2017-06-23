@@ -98,7 +98,7 @@ class HTMLPurifier_LanguageFactory
             $code = $this->validator->validate($code, $config, $context);
         }
         if ($code === false) {
-            $code = 'en'; // malformed code becomes English
+            $code = 'es'; // malformed code becomes English
         }
 
         $pcode = str_replace('-', '_', $code); // make valid PHP classname
@@ -114,7 +114,7 @@ class HTMLPurifier_LanguageFactory
             } else {
                 // Go fallback
                 $raw_fallback = $this->getFallbackFor($code);
-                $fallback = $raw_fallback ? $raw_fallback : 'en';
+                $fallback = $raw_fallback ? $raw_fallback : 'es';
                 $depth++;
                 $lang = $this->create($config, $context, $fallback);
                 if (!$raw_fallback) {
@@ -156,12 +156,12 @@ class HTMLPurifier_LanguageFactory
         $filename = $this->dir . '/Language/messages/' . $code . '.php';
 
         // default fallback : may be overwritten by the ensuing include
-        $fallback = ($code != 'en') ? 'en' : false;
+        $fallback = ($code != 'es') ? 'en' : false;
 
         // load primary localisation
         if (!file_exists($filename)) {
             // skip the include: will rely solely on fallback
-            $filename = $this->dir . '/Language/messages/en.php';
+            $filename = $this->dir . '/Language/messages/es.php';
             $cache = array();
         } else {
             include $filename;
@@ -178,7 +178,7 @@ class HTMLPurifier_LanguageFactory
                     $code,
                     E_USER_ERROR
                 );
-                $fallback = 'en';
+                $fallback = 'es';
             }
             $language_seen[$code] = true;
 

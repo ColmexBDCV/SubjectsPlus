@@ -218,9 +218,9 @@ class Config
 			$dsn = 'mysql:dbname=' . $this->lobjNewConfigValues['dbName_SPlus'] . ';host=' . $this->lobjNewConfigValues['hname'] . ';port=' . $this->lobjNewConfigValues['db_port'] . ';charset=utf8';
 			$lobjConnection = new PDO($dsn, $this->lobjNewConfigValues['uname'], $this->lobjNewConfigValues['pword'], array(PDO::ATTR_PERSISTENT => true));
 		} catch (\PDOException $e) {
-			$lstrError .= "<h1>There was a problem connecting to the database.</h1>";
-			$lstrError .= "<p>This is the detailed error:</p>";
-			$lstrError .= 'Connection failed: ' . $e->getMessage();
+			$lstrError .= "<h1>Hubo un problema al conectarse a la base de datos.</h1>";
+			$lstrError .= "<p>Este es el error detallado:</p>";
+			$lstrError .= 'La conexión falló: ' . $e->getMessage();
 		}
 
 		return $lstrError;
@@ -447,8 +447,8 @@ class Config
 					//configurations
 					if( in_array( $lstrKey, array( 'all_tbtags' ) ) )
 					{
-						$lstrHTML .= " disabled />\n<br /><span style=\"font-size: smaller\">**" . _( "This is automatically generated on installation" ) . ".
-										<a onclick=\"javascript: enableTextBox(this);\" style=\"cursor: pointer; color: #C03957; text-decoration: underline;\" >" . _( "Edit?" ) . "</a></span>\n";
+						$lstrHTML .= " disabled />\n<br /><span style=\"font-size: smaller\">**" . _( "Esto se genera automáticamente en la instalación" ) . ".
+										<a onclick=\"javascript: enableTextBox(this);\" style=\"cursor: pointer; color: #C03957; text-decoration: underline;\" >" . _( "Editar?" ) . "</a></span>\n";
 						break;
 					}
 
@@ -460,13 +460,13 @@ class Config
 
 					if( $lobjValues[$lstrKey] )
 					{
-						$lstrHTML .= "<option value=\"TRUE\" selected>" . _( "TRUE" ) . "</option>\n";
-						$lstrHTML .= "<option value=\"FALSE\" >" . _( "FALSE" ) . "</option>\n";
+						$lstrHTML .= "<option value=\"TRUE\" selected>" . _( "Verdadero" ) . "</option>\n";
+						$lstrHTML .= "<option value=\"FALSE\" >" . _( "Falso" ) . "</option>\n";
 					}
 					else
 					{
-						$lstrHTML .= "<option value=\"TRUE\" >" . _( "TRUE" ) . "</option>\n";
-						$lstrHTML .= "<option value=\"FALSE\" selected>" . _( "FALSE" ) . "</option>\n";
+						$lstrHTML .= "<option value=\"TRUE\" >" . _( "Verdadero" ) . "</option>\n";
+						$lstrHTML .= "<option value=\"FALSE\" selected>" . _( "Falso" ) . "</option>\n";
 					}
 
 					$lstrHTML .= "</select>\n";
@@ -511,8 +511,8 @@ class Config
 					//configurations
 					if( in_array( $lstrKey, array( 'BaseURL', 'CKBasePath' ) ) )
 					{
-						$lstrHTML .= " disabled />\n<br /><span style=\"font-size: smaller\">**" . _( "This is automatically generated on installation" ) . ".
-										<a onclick=\"javascript: enableTextBox(this);\" style=\"cursor: pointer; color: #C03957; text-decoration: underline;\" >" . _( "Not right?" ) . "</a></span>\n";
+						$lstrHTML .= " disabled />\n<br /><span style=\"font-size: smaller\">**" . _( "Esto se genera automáticamente en la instalación" ) . ".
+										<a onclick=\"javascript: enableTextBox(this);\" style=\"cursor: pointer; color: #C03957; text-decoration: underline;\" >" . _( "¿No está bien?" ) . "</a></span>\n";
 						break;
 					}
 
@@ -545,7 +545,7 @@ class Config
 				<div class="pure-u-1-3">
 				    <div class="pluslet">
 				        <div class="titlebar">
-				            <div class="titlebar_text"><?php print _("Core Configurations"); ?></div>
+				            <div class="titlebar_text"><?php print _("Configuraciones básicas"); ?></div>
 				        </div>
 				        <div class="pluslet_body">
 				            <?php print $lstrLeftHTML; ?>
@@ -553,7 +553,7 @@ class Config
 				    </div>
 				    <div class="pluslet">
 				        <div class="titlebar">
-				            <div class="titlebar_text"><?php print _("Institutional Configurations"); ?></div>
+				            <div class="titlebar_text"><?php print _("Configuraciones Institucionales"); ?></div>
 				        </div>
 				        <div class="pluslet_body">
 				            <?php print $lstrLeftBottomHTML; ?>
@@ -568,7 +568,7 @@ class Config
 
 				    <div class="pluslet">
 				        <div class="titlebar">
-				            <div class="titlebar_text"><?php print _("Catalog Connections"); ?></div>
+				            <div class="titlebar_text"><?php print _("Conexiones del catálogo"); ?></div>
 				        </div>
 				        <div class="pluslet_body">
 				            <?php echo $lstrRightBottomHTML; ?>
@@ -579,15 +579,15 @@ class Config
 				<div class="pure-u-1-3">
 				    <div class="pluslet">
 				        <div class="titlebar">
-				            <div class="titlebar_text"><?php print _("Save"); ?></div>
+				            <div class="titlebar_text"><?php print _("Guardar"); ?></div>
 				        </div>
 				        <div class="pluslet_body">
-				            <input type="submit" class="button" name="submit_edit_config" value="<?php echo _("Save Config"); ?>" />
+				            <input type="submit" class="button" name="submit_edit_config" value="<?php echo _("Guardar Configuración"); ?>" />
 				        </div>
 				    </div>
 				    <div class="pluslet">
 				        <div class="titlebar">
-				            <div class="titlebar_text"><?php print _("Other Configurations"); ?></div>
+				            <div class="titlebar_text"><?php print _("Otras configuraciones"); ?></div>
 				        </div>
 				        <div class="pluslet_body">
 				            <?php echo $lstrRightHTML; ?>
@@ -595,10 +595,10 @@ class Config
 				    </div>
 					<div class="pluslet">
 						<div class="titlebar">
-							<div class="titlebar_text"><?php print _("Clear the cache"); ?></div>
+							<div class="titlebar_text"><?php print _("Borra la caché"); ?></div>
 						</div>
 						<div class="pluslet_body">
-							<input type="submit" class="button" name="clear_cache_btn" value="<?php echo _("Clear"); ?>" />
+							<input type="submit" class="button" name="clear_cache_btn" value="<?php echo _("Limpiar"); ?>" />
 						</div>
 					</div>
 				</div>
@@ -652,7 +652,7 @@ class Config
 
 				<?php if( $lboolError )
 				{
-					?> <p><?php echo _( "Something went wrong:" ); ?></p><?php
+					?> <p><?php echo _( "Algo salió mal:" ); ?></p><?php
 				}
 				?>
 				<p><?php echo $lstrReason; ?></p>
@@ -676,14 +676,14 @@ class Config
             <div class="box" name="error_page">
             <h2 class="bw_head"><?php echo _( "Welcome!" ); ?></h2>
 
-				<p><?php echo _( "Before getting started, we need some information about the database, You will need to know the following: " ); ?></p><br />
+				<p><?php echo _( "Antes de comenzar, necesitamos alguna información sobre la base de datos, necesitará saber lo siguiente: " ); ?></p><br />
 				<ul>
-					<li><?php echo _( "Database host" ); ?></li>
-					<li><?php echo _( "Database username" ); ?></li>
-					<li><?php echo _( "Database password" ); ?></li>
-					<li><?php echo _( "Database name" ); ?></li>
+					<li><?php echo _( "Host de base de datos" ); ?></li>
+					<li><?php echo _( "Nombre de usuario de la base de datos" ); ?></li>
+					<li><?php echo _( "Contraseña de la base de datos" ); ?></li>
+					<li><?php echo _( "Nombre de la base de datos " ); ?></li>
 				</ul><br />
-				<p><?php echo _( "If for any reason this automatic file creation does not work, you can simply open <code>config-default.php</code> in a text editor and fill in your information and then save it as <code>config.php</code>." ); ?></p>
+				<p><?php echo _( "Si por alguna razón esta creación automática de archivos no funciona, simplemente puede abrir <code> config-default.php </code> en un editor de texto y rellenar su información y luego guardarla como <code> config.php <code>." ); ?></p>
 				<br />
 				<a href="setup-config.php">Continue</a>
 			</div>
@@ -891,8 +891,8 @@ class Config
 					//configurations
 					if( in_array( $lstrKey, array( 'all_tbtags' ) ) )
 					{
-						$lstrHTML .= " disabled />\n<br /><span style=\"font-size: smaller\">**" . _( "This is automatically generated on installation" ) . ".
-										<a onclick=\"javascript: enableTextBox(this);\" style=\"cursor: pointer; color: #C03957; text-decoration: underline;\" >" . _( "Edit?" ) . "</a></span>\n";
+						$lstrHTML .= " disabled />\n<br /><span style=\"font-size: smaller\">**" . _( "Esto se genera automáticamente en la instalación" ) . ".
+										<a onclick=\"javascript: enableTextBox(this);\" style=\"cursor: pointer; color: #C03957; text-decoration: underline;\" >" . _( "Editar?" ) . "</a></span>\n";
 						break;
 					}
 
@@ -904,13 +904,13 @@ class Config
 
 					if( $lobjValues[$lstrKey] )
 					{
-						$lstrHTML .= "<option value=\"TRUE\" selected>" . _( "TRUE" ) . "</option>\n";
-						$lstrHTML .= "<option value=\"FALSE\" >" . _( "FALSE" ) . "</option>\n";
+						$lstrHTML .= "<option value=\"TRUE\" selected>" . _( "Verdadero" ) . "</option>\n";
+						$lstrHTML .= "<option value=\"FALSE\" >" . _( "Falso" ) . "</option>\n";
 					}
 					else
 					{
-						$lstrHTML .= "<option value=\"TRUE\" >" . _( "TRUE" ) . "</option>\n";
-						$lstrHTML .= "<option value=\"FALSE\" selected>" . _( "FALSE" ) . "</option>\n";
+						$lstrHTML .= "<option value=\"TRUE\" >" . _( "Verdadero" ) . "</option>\n";
+						$lstrHTML .= "<option value=\"FALSE\" selected>" . _( "Falso" ) . "</option>\n";
 					}
 
 					$lstrHTML .= "</select>\n";
@@ -936,8 +936,8 @@ class Config
 					//configurations
 					if( in_array( $lstrKey, array( 'BaseURL', 'CKBasePath' ) ) )
 					{
-						$lstrHTML .= " disabled />\n<br /><span style=\"font-size: smaller\">**" . _( "This is automatically generated on installation" ) . ".
-										<a onclick=\"javascript: enableTextBox(this);\" style=\"cursor: pointer; color: #C03957; text-decoration: underline;\" >" . _( "Not right?" ) . "</a></span>\n";
+						$lstrHTML .= " disabled />\n<br /><span style=\"font-size: smaller\">**" . _( "Esto se genera automáticamente en la instalación" ) . ".
+										<a onclick=\"javascript: enableTextBox(this);\" style=\"cursor: pointer; color: #C03957; text-decoration: underline;\" >" . _( "¿No está bien?" ) . "</a></span>\n";
 						break;
 					}
 
@@ -955,14 +955,14 @@ class Config
 			<div id="maincontent" style="max-width: 800px; margin-right: auto; margin-left: auto;">
 				<form id="config_form" action="setup-config.php" method="POST">
                     <div class="box required_field">
-					<h2 class="bw_head"><?php echo _( "Database Configurations" ); ?></h2>
+					<h2 class="bw_head"><?php echo _( "Configuraciones de base de datos" ); ?></h2>
 
 						<?php echo $lstrHTML; ?>
 					</div>
                     <div class="box" align="center">
-					<h2 class="bw_head"><?php echo _( "Save" ); ?></h2>
+					<h2 class="bw_head"><?php echo _( "Guardar" ); ?></h2>
 
-						<input type="submit" class="button" name="submit_setup_db_config" value="<?php echo _("Save Config"); ?>" />
+						<input type="submit" class="button" name="submit_setup_db_config" value="<?php echo _("Guardar Configuración?"); ?>" />
 					</div>
 				</form>
 			</div>

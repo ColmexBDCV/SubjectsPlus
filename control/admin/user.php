@@ -13,7 +13,7 @@ use SubjectsPlus\Control\Staff;
 use SubjectsPlus\Control\Querier;
   
 $subcat = "admin";
-$page_title = "Admin::Users";
+$page_title = "Admin::Usuarios";
 
 // init
 $feedback = "";
@@ -43,12 +43,12 @@ if (isset($_GET["browse"])) {
 
 //Do we want to show inactive users?
     if (isset($_GET["show"]) && $_GET["show"] == "all") {
-        $active_inactive = _("Show only active users"); 
+        $active_inactive = _("Mostrar sólo usuarios activos"); 
         $active_inactive_url = "";
         $wantactive = "";
-        $about_that_star = "<br />" . _("* = inactive user");
+        $about_that_star = "<br />" . _("* = usuario inactivo");
     } else {
-        $active_inactive = _("Show inactive users"); 
+        $active_inactive = _("Mostrar usuarios inactivos"); 
         $active_inactive_url = "&show=all";
         $wantactive = "AND active = '1'";
         $about_that_star = "";
@@ -75,10 +75,10 @@ if (isset($_GET["browse"])) {
 
         // if there are no results
         if (!$staffArray) {
-            $staff_list .= "<p>" . _("None registered.  Just as well.  They're going to rise up against us someday.") . "</p>";
+            $staff_list .= "<p>" . _("Ninguno registrado. Igual de bien. Van a levantarse contra nosotros algún día.") . "</p>";
         } else {
 
-            $staff_list .= "<p>" . _("Click on a name to update details and privileges.") . " $about_that_star</p>";
+            $staff_list .= "<p>" . _("Haga clic en un nombre para actualizar detalles y privilegios.") . " $about_that_star</p>";
 
             // set up striping
             $row_count = 0;
@@ -101,7 +101,7 @@ if (isset($_GET["browse"])) {
                 }
                 $row_colour = ($row_count % 2) ? $colour1 : $colour2;
    
-                $button = "<button id=\"save_changes-$staff[0]\" rel=\"\" style=\"display: none;\">" . _("Update Permissions") . "</button>"   ;         
+                $button = "<button id=\"save_changes-$staff[0]\" rel=\"\" style=\"display: none;\">" . _("Permisos de actualización") . "</button>"   ;         
 
                 // put star if inactive
                 $inactive_clue = "";
@@ -137,23 +137,23 @@ if (isset($_GET["browse"])) {
     <span class=\"onoffswitch-inner\"></span>
     <span class=\"onoffswitch-switch\"></span>
     </label>
-    <span class=\"settings-label-text\" style=\"color: #333; font-weight: bold;\">Hide Inactive Users</span>
+    <span class=\"settings-label-text\" style=\"color: #333; font-weight: bold;\">Ocultar usuarios inactivos</span>
     </div>";
 
     
     $config_box = "<p><a href=\"user.php?browse$active_inactive_url\">$active_inactive</a></p>";
 
-    makePluslet(_("Options"), $config_box, "no_overflow");
+    makePluslet(_("Opciones"), $config_box, "no_overflow");
 
     // time to give some help
-    $privs_blurb = _("Select which parts of SubjectsPlus this user may access.
-                <p><strong>records</strong> allows access to both the Record and Guide tabs.
-                <p><strong>eresource_mgr</strong> allows the user to see all the information about a Record (and delete it), and quickly see all guides.
-                <p><strong>admin</strong> allows access to the overall admin of the site.
-                <p><strong>librarian</strong> means user shows up in lists of librarians.
-                <p><strong>supervisor</strong> means user shows up in list of supervisors
-                <p><strong>view_map</strong> lets user see the map of where everyone lives.  Probably only for muckymucks.  Might not be implemented on your site; check wiki for help.
-                <p><strong>allguides</strong> lets user edit any guides, even if they are not listed as an owner.
+    $privs_blurb = _("Seleccione las partes de Temas a las que este usuario puede acceder.
+                 <p> <strong> registros </strong> permite el acceso a las fichas Registro y Guía.
+                 <p> <strong> eresource_mgr </strong> permite al usuario ver toda la información sobre un registro (y eliminarlo) y ver rápidamente todas las guías.
+                 <p> <strong> admin </strong> permite el acceso al administrador general del sitio.
+                 <p> <strong> bibliotecario </strong> significa que el usuario aparece en listas de bibliotecarios.
+                 <p> <strong> supervisor </strong> significa que el usuario aparece en la lista de supervisores
+                 <p> <strong> view_map </strong> permite al usuario ver el mapa de donde vive todo el mundo. Probablemente sólo para muckymucks. Puede que no se implemente en su sitio; Revise el wiki para obtener ayuda.
+                 <p> <strong> allguides </strong> permite al usuario editar cualquier guía, incluso si no aparece como propietario.
                 ");
 
     makePluslet(_("On Privilege"), $privs_blurb, "no_overflow");
@@ -237,7 +237,7 @@ if (isset($_POST["delete_record"]) || isset($_GET["delete_record"])) {
 
         // Make form empty
     } else {
-        $feedback = _("There is no record by that ID.");
+        $feedback = _("No hay registro por ese ID.");
     }
 }
 
@@ -293,7 +293,7 @@ echo "<div class=\"feedback\">$feedback</div><br /><br />";
 
 // Don't show a form
 if (isset($_POST["delete_record"]) || isset($_GET["delete_record"])) {
-    print "<div class=\"box\"><p>" . _("We're really going to miss that staff person.  Search above to delete someone else!") . "</p></div>";
+    print "<div class=\"box\"><p>" . _("Realmente vamos a extrañar a esa persona del personal. ¡Busque encima para eliminar a alguien más!") . "</p></div>";
 } else {
     $record->outputForm($wintype);
 }
@@ -373,7 +373,7 @@ include("../includes/footer.php");
 
             // Popup warning if required fields not complete
             if (alerter == 1) {
-                alert("<?php print _("You must complete all required form fields."); ?>");
+                alert("<?php print _("Debe completar todos los campos de formulario necesarios."); ?>");
                 return false;
             }
 

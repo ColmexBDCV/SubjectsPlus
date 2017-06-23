@@ -14,7 +14,7 @@ use SubjectsPlus\Control\Querier;
     
 $subsubcat = "";
 $subcat = "admin";
-$page_title = "Subject/Librarian Associations";
+$page_title = "Asignaturas / Bibliotecarios";
 
 include("../includes/header.php");
 
@@ -79,10 +79,10 @@ $staffArray = $querier2->query($q2);
 
 // Two dropdowns, one for viewing, one for dealing with ticked items
 $staff_drop_base = "<select name=\"filter_staff_id\" id=\"filter_by_staff\">\n
-<option value=\"All\">" . _("All") . "</option>\n";
+<option value=\"All\">" . _("Todo") . "</option>\n";
 
 $staff_drop_ticks = "<select name=\"filter_staff_id\" id=\"filter_by_staff_ticked\">\n
-<option value=\"\">" . _("Select") . "</option>\n";
+<option value=\"\">" . _("Seleccionar") . "</option>\n";
 
 $staff_drop_vals = "";
 
@@ -99,15 +99,15 @@ $staff_dropdown_ticks = $staff_drop_ticks . $staff_drop_vals . $staff_drop_close
 // Get all the guide types into a dropdown
 
 $type_drop_base = "<select name=\"filter_type_id\" id=\"filter_by_type\">\n
-<option value=\"All\">" . _("All") . "</option>\n";
+<option value=\"All\">" . _("Todo") . "</option>\n";
 $type_drop_ticks = "<select name=\"filter_type_id\" id=\"filter_by_type_ticked\">\n";
 
 $type_drop_vals = "
-<option value=\"\" class=\"guide-status\">" . _("~~Guide Status~~") . "</option>\n
-<option value=\"Public\">" . _("Public") . "</option>\n
-<option value=\"Hidden\">" . _("Hidden") . "</option>\n
-<option value=\"Suppressed\">" . _("Suppressed") . "</option>\n
-<option value=\"\" class=\"guide-status\">" . _("~~Guide Types~~") . "</option>\n";
+<option value=\"\" class=\"guide-status\">" . _("~~Estado de la Guía~~") . "</option>\n
+<option value=\"Public\">" . _("Público") . "</option>\n
+<option value=\"Hidden\">" . _("Oculto") . "</option>\n
+<option value=\"Suppressed\">" . _("Suprimido") . "</option>\n
+<option value=\"\" class=\"guide-status\">" . _("~~Tipos de guía~~") . "</option>\n";
 
   foreach ($guide_types as $key=>$value) {
 	  $type_drop_vals .= "<option value=\"$key\">$value</option>\n";
@@ -121,13 +121,13 @@ $type_dropdown_ticks = $type_drop_ticks . $type_drop_vals . $type_drop_close;
 $mg_box = "
 
 <div class=\"tick-wrap\"  style=\"padding: 1em 10px;\">
-	<span class=\"filter\" style=\"display: none;\" id=\"ticked_label\">" . _("Ticked Guides") . "</span>
-	<span class=\"filter\">" . _("Show Guides By") . " $staff_dropdown</span>
-	<span class=\"filter\">" . _("Show") . " $type_dropdown</span>
+	<span class=\"filter\" style=\"display: none;\" id=\"ticked_label\">" . _("Guías") . "</span>
+	<span class=\"filter\">" . _("Mostrar guías por") . " $staff_dropdown</span>
+	<span class=\"filter\">" . _("Mostrar") . " $type_dropdown</span>
 </div>
 
 
-<div id=\"tickzone\" style=\"display: none;padding: 1em 10px;\"><span class=\"filter_ticks\" >" . _("Assign to ") . " $staff_dropdown_ticks</span><span class=\"filter_ticks\" > Change To $type_dropdown_ticks</span><span class=\"filter_ticks\" id=\"tick_forget\">Never Mind</span></div>
+<div id=\"tickzone\" style=\"display: none;padding: 1em 10px;\"><span class=\"filter_ticks\" >" . _("Asignar a ") . " $staff_dropdown_ticks</span><span class=\"filter_ticks\" > Change To $type_dropdown_ticks</span><span class=\"filter_ticks\" id=\"tick_forget\">Never Mind</span></div>
 </div>
 <div id=\"listing_space\" style=\" \">
 $staff_list
@@ -139,7 +139,7 @@ print "
 <div class=\"pure-g\">
   <div class=\"pure-u-2-3\">";
 
-makePluslet(_("Manage Guides"), $mg_box, "no_overflow");    
+makePluslet(_("Administrar guías"), $mg_box, "no_overflow");    
 
 print "</div></div>";
 

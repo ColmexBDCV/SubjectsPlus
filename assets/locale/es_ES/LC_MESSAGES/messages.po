@@ -3,95 +3,92 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#: control/includes/classes/sp_Pluslet.php:295
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-04-21 13:45-0600\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2017-06-21 14:37-0500\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"X-Generator: Poedit 2.0.2\n"
 
 #: control/login.php:37
-msgid "introduce tu dirección de correo <strong>login y contraseña</strong> to proceed."
-msgstr ""
+msgid "Please enter your <strong>login and password</strong> to proceed."
+msgstr "Ingresa tu <strong> nombre de usuario y contraseÃ±a </ strong> para continuar."
 
 #: control/login.php:44
-msgid "Entrar"
-msgstr ""
+msgid "Login"
+msgstr "Iniciar sesiÃ³n"
 
 #: control/login.php:48 control/includes/classes/Staff.php:258
-msgid "Contraseña"
-msgstr ""
+msgid "Password"
+msgstr "ContraseÃ±a"
 
 #: control/login.php:87
 msgid ""
-"Please check your login and password and try again.  (Note that login "
-"attempts are logged.)"
+"Please check your login and password and try again.  (Note that login attempts are "
+"logged.)"
 msgstr ""
 
 #: control/guides/metadata.php:55 control/admin/user.php:111
 msgid "There is no record by that ID."
-msgstr ""
+msgstr "No hay registro por ese ID."
 
 #: control/guides/metadata.php:68
 msgid ""
-"You must have a title, shortform, type, and one associated staff member.  "
-"Please go back and fix these omissions.  And turn on JavaScript, for "
-"goodness sakes!"
+"You must have a title, shortform, type, and one associated staff member.  Please go "
+"back and fix these omissions.  And turn on JavaScript, for goodness sakes!"
 msgstr ""
 
 #: control/guides/metadata.php:169
 msgid "Thwarted!  You must have at least one staff member for a guide."
-msgstr ""
+msgstr "Frustrado Usted debe tener al menos un miembro del personal para una guÃ­a."
 
 #: control/guides/metadata.php:189 control/records/record.php:495
 msgid "You must have at least one subject."
-msgstr ""
+msgstr "Debe tener al menos un tema."
 
 #: control/guides/metadata.php:219 control/faq/faq.php:138
 #: control/records/record.php:525 control/talkback/talkback.php:138
 #: control/admin/user.php:240
 msgid "You must complete all required form fields."
-msgstr ""
+msgstr "Debe completar todos los campos de formulario necesarios."
 
 #: control/guides/metadata.php:246
 msgid "There is already a guide with that short form!  Try again."
-msgstr ""
+msgstr "Ya hay una guÃ­a con esa forma corta! IntÃ©ntalo de nuevo."
 
 #: control/guides/helpers/fck_get_tokens.php:35
 msgid "<strong>Search</strong> for a resource saved in SubjectsPlus"
-msgstr ""
+msgstr "<strong> Buscar </ strong> para un recurso guardado en SubjectsPlus"
 
 #: control/guides/helpers/fck_get_tokens.php:36
 msgid ""
-"<strong>Tick</strong> the button next to the desired resource and click OK "
-"(bottom)"
+"<strong>Tick</strong> the button next to the desired resource and click OK (bottom)"
 msgstr ""
 
-#: control/guides/helpers/fck_get_tokens.php:42
-#: control/guides/helpers/discover.php:56
+#: control/guides/helpers/fck_get_tokens.php:42 control/guides/helpers/discover.php:56
 msgid "Go!"
-msgstr ""
+msgstr "ir!"
 
 #: control/guides/helpers/fck_get_tokens.php:43
 msgid "Include icons?"
-msgstr ""
+msgstr "Incluir icons?"
 
 #: control/guides/helpers/fck_get_tokens.php:73
 #: control/guides/helpers/find_pluslets.php:50
 msgid "There were no results matching your query."
-msgstr ""
+msgstr "No se han encontrado resultados"
 
 #: control/guides/helpers/fck_get_tokens.php:88
 #: control/guides/helpers/fck_get_assets.php:85
 msgid "Never mind"
-msgstr ""
+msgstr "No importa"
 
 #: control/guides/helpers/fck_get_faqs.php:28
 #: control/includes/classes/sp_BuildNav.php:68
@@ -111,8 +108,8 @@ msgstr ""
 #: control/guides/helpers/fck_get_faqs.php:61
 #: control/guides/helpers/fck_get_faqs.php:97
 msgid ""
-"<strong>Tick</strong> the boxes of any FAQs you want to include in your "
-"pluslet and hit <strong>OK</strong>."
+"<strong>Tick</strong> the boxes of any FAQs you want to include in your pluslet and "
+"hit <strong>OK</strong>."
 msgstr ""
 
 #: control/guides/helpers/fck_get_faqs.php:53
@@ -126,9 +123,8 @@ msgstr ""
 
 #: control/guides/helpers/fck_get_faqs.php:95
 msgid ""
-"You don't have any FAQs associated with this subject yet.  Maybe click "
-"Browse by Subject or Browse by Collection, above, to see what else is out "
-"there."
+"You don't have any FAQs associated with this subject yet.  Maybe click Browse by "
+"Subject or Browse by Collection, above, to see what else is out there."
 msgstr ""
 
 #: control/guides/helpers/guide_data.php:121
@@ -160,8 +156,7 @@ msgid "There was a problem with your update."
 msgstr ""
 
 #: control/guides/helpers/fck_get_cat.php:46
-msgid ""
-"Select the type of link you wish to create, and click <em>Create Link</em>."
+msgid "Select the type of link you wish to create, and click <em>Create Link</em>."
 msgstr ""
 
 #: control/guides/helpers/fck_get_cat.php:49
@@ -176,19 +171,18 @@ msgstr ""
 msgid "LC Subject Heading"
 msgstr ""
 
-#: control/guides/helpers/fck_get_cat.php:54
-#: control/guides/helpers/fck_get_cat.php:67
+#: control/guides/helpers/fck_get_cat.php:54 control/guides/helpers/fck_get_cat.php:67
 #: control/guides/helpers/fck_get_cat.php:76
 msgid "Create Link"
 msgstr ""
 
 #: control/guides/helpers/fck_get_cat.php:56
 msgid ""
-"<strong>Examples</strong> (the unlinked text is from the optional Prefix "
-"text box):</p>\r\n"
+"<strong>Examples</strong> (the unlinked text is from the optional Prefix text box):</"
+"p>\r\n"
 "\t<blockquote>\r\n"
-"\tPN 1997 - Screenplays - see <span class=\"linkie\">Motion picture plays</"
-"span><br />\r\n"
+"\tPN 1997 - Screenplays - see <span class=\"linkie\">Motion picture plays</span><br /"
+">\r\n"
 "\tTR 899 <span class=\"linkie\">Motion Pictures--Editing<span>\r\n"
 "\t</blockquote>"
 msgstr ""
@@ -221,11 +215,8 @@ msgstr ""
 msgid "2. Your Catalog Link (Keywords):"
 msgstr ""
 
-#: control/guides/helpers/fck_get_cat.php:97
-#: control/guides/helpers/fck_get_cat.php:108
-msgid ""
-"If the link looks good, hit the OK button to insert the token into the "
-"pluslet."
+#: control/guides/helpers/fck_get_cat.php:97 control/guides/helpers/fck_get_cat.php:108
+msgid "If the link looks good, hit the OK button to insert the token into the pluslet."
 msgstr ""
 
 #: control/guides/helpers/fck_get_cat.php:106
@@ -263,8 +254,8 @@ msgstr ""
 #: control/guides/helpers/fck_get_assets.php:96
 #: control/guides/helpers/fck_get_assets.php:100
 msgid ""
-"C. Add Link Text</strong> for your document.  (If you leave it blank, it "
-"will be the file name.)"
+"C. Add Link Text</strong> for your document.  (If you leave it blank, it will be the "
+"file name.)"
 msgstr ""
 
 #: control/guides/delish_url.php:19
@@ -308,14 +299,14 @@ msgstr ""
 #: control/includes/classes/sp_Pluslet_Feed.php:59
 #: control/includes/classes/sp_Talkback.php:163
 msgid "Yes"
-msgstr ""
+msgstr "Si"
 
 #: control/guides/delish_url.php:37 control/includes/header.php:69
 #: control/includes/classes/sp_Guide.php:168
 #: control/includes/classes/sp_Pluslet_Feed.php:60
 #: control/includes/classes/sp_Talkback.php:167
 msgid "No"
-msgstr ""
+msgstr "No"
 
 #: control/guides/delish_url.php:41
 msgid "Generate Delicious URL"
@@ -323,8 +314,8 @@ msgstr ""
 
 #: control/guides/delish_url.php:51
 msgid ""
-"This is a way to generate a URL that displays data from your delicious "
-"account. You can point users to a\r\n"
+"This is a way to generate a URL that displays data from your delicious account. You "
+"can point users to a\r\n"
 "    page of results that looks like a regular page of your website.  Or your "
 "SubjectsPlus installation, anyway."
 msgstr ""
@@ -391,8 +382,8 @@ msgstr ""
 
 #: control/guides/guide.php:51
 msgid ""
-"You do not have permission to edit this guide.  Ask the guide's creator to "
-"add you as a co-editor."
+"You do not have permission to edit this guide.  Ask the guide's creator to add you "
+"as a co-editor."
 msgstr ""
 
 #: control/guides/guide.php:150
@@ -435,13 +426,11 @@ msgstr ""
 
 #: control/guides/manage_items.php:120
 msgid ""
-"There do not seem to be any resources associated with this guide.  To add "
-"new resources, go to the Records tab, select that resource, and then add "
-"your subject."
+"There do not seem to be any resources associated with this guide.  To add new "
+"resources, go to the Records tab, select that resource, and then add your subject."
 msgstr ""
 
-#: control/guides/manage_items.php:131
-#: control/includes/classes/sp_BuildNav.php:53
+#: control/guides/manage_items.php:131 control/includes/classes/sp_BuildNav.php:53
 msgid "Organize Resources"
 msgstr ""
 
@@ -474,7 +463,7 @@ msgid "See All"
 msgstr ""
 
 #: control/faq/index.php:83
-msgid "Crear FAQ"
+msgid "Create FAQ"
 msgstr ""
 
 #: control/faq/index.php:85
@@ -546,8 +535,7 @@ msgstr ""
 msgid "Search Results"
 msgstr ""
 
-#: control/includes/functions_legacy.php:50
-#: control/includes/functions_legacy.php:269
+#: control/includes/functions_legacy.php:50 control/includes/functions_legacy.php:269
 msgid "required"
 msgstr ""
 
@@ -555,10 +543,8 @@ msgstr ""
 msgid "Are you sure you wish to <strong>delete this item forever</strong>?"
 msgstr ""
 
-#: control/includes/functions_legacy.php:333
-#: control/includes/classes/Staff.php:275
-#: control/includes/classes/sp_Record.php:180
-#: control/includes/classes/sp_FAQ.php:168
+#: control/includes/functions_legacy.php:333 control/includes/classes/Staff.php:275
+#: control/includes/classes/sp_Record.php:180 control/includes/classes/sp_FAQ.php:168
 #: control/includes/classes/sp_Guide.php:209
 #: control/includes/classes/sp_Talkback.php:183
 msgid "Delete Forever!"
@@ -624,8 +610,7 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: control/includes/classes/StaffDisplay.php:176
-#: control/includes/classes/Staff.php:193
+#: control/includes/classes/StaffDisplay.php:176 control/includes/classes/Staff.php:193
 msgid "Title"
 msgstr ""
 
@@ -705,15 +690,12 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: control/includes/classes/Staff.php:272
-#: control/includes/classes/sp_Record.php:176
+#: control/includes/classes/Staff.php:272 control/includes/classes/sp_Record.php:176
 msgid "Save Record Now"
 msgstr ""
 
-#: control/includes/classes/Staff.php:278
-#: control/includes/classes/sp_Record.php:186
-#: control/includes/classes/sp_FAQ.php:173
-#: control/includes/classes/sp_Guide.php:211
+#: control/includes/classes/Staff.php:278 control/includes/classes/sp_Record.php:186
+#: control/includes/classes/sp_FAQ.php:173 control/includes/classes/sp_Guide.php:211
 #: control/includes/classes/sp_Talkback.php:186
 msgid "Last modified: "
 msgstr ""
@@ -724,12 +706,11 @@ msgstr ""
 
 #: control/includes/classes/Staff.php:322
 msgid ""
-"Thy will be done.  Note that any subject guides associated with this user "
-"are now orphans."
+"Thy will be done.  Note that any subject guides associated with this user are now "
+"orphans."
 msgstr ""
 
-#: control/includes/classes/Staff.php:326
-#: control/includes/classes/sp_Talkback.php:232
+#: control/includes/classes/Staff.php:326 control/includes/classes/sp_Talkback.php:232
 msgid "There was a problem with your delete."
 msgstr ""
 
@@ -737,10 +718,9 @@ msgstr ""
 msgid "Thy Will Be Done.  Added."
 msgstr ""
 
-#: control/includes/classes/Staff.php:429
-#: control/includes/classes/sp_FAQ.php:440
-#: control/includes/classes/sp_Talkback.php:304
-#: control/admin/faq_collections.php:38 control/admin/faq_collections.php:76
+#: control/includes/classes/Staff.php:429 control/includes/classes/sp_FAQ.php:440
+#: control/includes/classes/sp_Talkback.php:304 control/admin/faq_collections.php:38
+#: control/admin/faq_collections.php:76
 msgid "Thy Will Be Done.  Updated."
 msgstr ""
 
@@ -760,8 +740,7 @@ msgstr ""
 msgid "Location"
 msgstr ""
 
-#: control/includes/classes/sp_Record.php:182
-#: control/includes/classes/sp_FAQ.php:170
+#: control/includes/classes/sp_Record.php:182 control/includes/classes/sp_FAQ.php:170
 msgid "Recommend Delete"
 msgstr ""
 
@@ -817,8 +796,7 @@ msgstr ""
 msgid "add description override"
 msgstr ""
 
-#: control/includes/classes/sp_Record.php:449
-#: control/includes/classes/sp_FAQ.php:307
+#: control/includes/classes/sp_Record.php:449 control/includes/classes/sp_FAQ.php:307
 #: control/includes/classes/sp_Guide.php:294
 msgid "There was a problem with your delete (stage 1 of 2)."
 msgstr ""
@@ -827,8 +805,7 @@ msgstr ""
 msgid "Thy will be done.  Offending record deleted."
 msgstr ""
 
-#: control/includes/classes/sp_Record.php:467
-#: control/includes/classes/sp_Guide.php:316
+#: control/includes/classes/sp_Record.php:467 control/includes/classes/sp_Guide.php:316
 msgid "There was a problem with your delete (stage 2 of 2)."
 msgstr ""
 
@@ -848,13 +825,11 @@ msgstr ""
 msgid "There is no active record with that ID.  Weird.  Why not make one?"
 msgstr ""
 
-#: control/includes/classes/sp_FAQ.php:137
-#: control/includes/classes/sp_Talkback.php:119
+#: control/includes/classes/sp_FAQ.php:137 control/includes/classes/sp_Talkback.php:119
 msgid "Question"
 msgstr ""
 
-#: control/includes/classes/sp_FAQ.php:140
-#: control/includes/classes/sp_Talkback.php:125
+#: control/includes/classes/sp_FAQ.php:140 control/includes/classes/sp_Talkback.php:125
 msgid "Answer"
 msgstr ""
 
@@ -862,8 +837,7 @@ msgstr ""
 msgid "Keywords (comma separated please)"
 msgstr ""
 
-#: control/includes/classes/sp_FAQ.php:163
-#: control/includes/classes/sp_Guide.php:202
+#: control/includes/classes/sp_FAQ.php:163 control/includes/classes/sp_Guide.php:202
 #: control/includes/classes/sp_Talkback.php:178
 msgid "Save Now"
 msgstr ""
@@ -888,8 +862,8 @@ msgstr ""
 msgid "There was a problem with your delete, stage 2 of 2."
 msgstr ""
 
-#: control/includes/classes/sp_FAQ.php:375
-#: control/includes/classes/sp_Guide.php:373 control/admin/admin_bits.php:48
+#: control/includes/classes/sp_FAQ.php:375 control/includes/classes/sp_Guide.php:373
+#: control/admin/admin_bits.php:48
 msgid "Thy Will Be Done."
 msgstr ""
 
@@ -997,18 +971,16 @@ msgstr ""
 
 #: control/includes/classes/sp_Guide.php:301
 msgid ""
-"Thy will be done.  Offending Guide (and associated boxes) deleted.  Close "
-"window to continue."
+"Thy will be done.  Offending Guide (and associated boxes) deleted.  Close window to "
+"continue."
 msgstr ""
 
 #: control/includes/classes/sp_Guide.php:303
 msgid "Thy will be done.  Offending Guide (and associated boxes) deleted."
 msgstr ""
 
-#: control/includes/classes/sp_Guide.php:327
-#: control/includes/classes/sp_Guide.php:382
-msgid ""
-"There is already a guide with this SHORTFORM.  The shortform must be unique."
+#: control/includes/classes/sp_Guide.php:327 control/includes/classes/sp_Guide.php:382
+msgid "There is already a guide with this SHORTFORM.  The shortform must be unique."
 msgstr ""
 
 #: control/includes/classes/sp_Guide.php:373
@@ -1052,8 +1024,9 @@ msgid "There is no active record with that ID.  Weird."
 msgstr ""
 
 #: control/includes/classes/sp_Talkback.php:111
+#, fuzzy
 msgid "Edit TalkBack"
-msgstr ""
+msgstr "Editar TalkBack"
 
 #: control/includes/classes/sp_Talkback.php:122
 msgid "Question By"
@@ -1068,8 +1041,7 @@ msgid "Live?"
 msgstr ""
 
 #: control/includes/classes/sp_Talkback.php:217
-msgid ""
-"Thy will be done.  Offending Talkback deleted.  Close window to continue."
+msgid "Thy will be done.  Offending Talkback deleted.  Close window to continue."
 msgstr ""
 
 #: control/includes/classes/sp_Talkback.php:219
@@ -1353,8 +1325,8 @@ msgstr ""
 
 #: control/includes/linkchecker.php:29
 msgid ""
-"The link report can take a few minutes to run, depending on how many links "
-"you have on the page.  So be patient."
+"The link report can take a few minutes to run, depending on how many links you have "
+"on the page.  So be patient."
 msgstr ""
 
 #: control/includes/linkchecker.php:32
@@ -1391,8 +1363,8 @@ msgstr ""
 
 #: control/includes/set_password.php:63
 msgid ""
-"You cannot leave the password box blank.  Close this window if you don't "
-"want to change the password."
+"You cannot leave the password box blank.  Close this window if you don't want to "
+"change the password."
 msgstr ""
 
 #: control/includes/set_password.php:68
@@ -1405,9 +1377,9 @@ msgstr ""
 
 #: control/includes/set_picture.php:69
 msgid ""
-"Upload the new you.  Once you click upload, the current image will be "
-"replaced.  <strong>Note:</strong>  Your image will be scaled to <strong>70px "
-"wide</strong>.  Using a square image is best."
+"Upload the new you.  Once you click upload, the current image will be replaced.  "
+"<strong>Note:</strong>  Your image will be scaled to <strong>70px wide</strong>.  "
+"Using a square image is best."
 msgstr ""
 
 #: control/includes/set_picture.php:135
@@ -1511,9 +1483,8 @@ msgstr ""
 
 #: control/talkback/index.php:157
 msgid ""
-"TalkBack questions come via the web form on the public TalkBack page. An "
-"email should be sent to the admin when a new one arrives, and they may be "
-"answered here."
+"TalkBack questions come via the web form on the public TalkBack page. An email "
+"should be sent to the admin when a new one arrives, and they may be answered here."
 msgstr ""
 
 #: control/talkback/index.php:160
@@ -1521,13 +1492,11 @@ msgid "TalkBack Public Page"
 msgstr ""
 
 #: control/admin/faq_collections.php:40
-msgid ""
-"Thwarted!  Something has gone wrong with the insert.  Contact the admin."
+msgid "Thwarted!  Something has gone wrong with the insert.  Contact the admin."
 msgstr ""
 
 #: control/admin/faq_collections.php:78
-msgid ""
-"Thwarted!  Something has gone wrong with the update.  Contact the admin."
+msgid "Thwarted!  Something has gone wrong with the update.  Contact the admin."
 msgstr ""
 
 #: control/admin/faq_collections.php:108
@@ -1576,8 +1545,8 @@ msgstr ""
 
 #: control/admin/admin_bits.php:146
 msgid ""
-"Your request cannot be completed:  There are one or more librarians "
-"associated with this subject"
+"Your request cannot be completed:  There are one or more librarians associated with "
+"this subject"
 msgstr ""
 
 #: control/admin/admin_bits.php:156 control/admin/departments.php:40
@@ -1587,8 +1556,7 @@ msgstr ""
 
 #: control/admin/admin_bits.php:172
 msgid ""
-"Your request cannot be completed:  There are one or more records linked to "
-"this item."
+"Your request cannot be completed:  There are one or more records linked to this item."
 msgstr ""
 
 #: control/admin/admin_bits.php:182
@@ -1597,8 +1565,8 @@ msgstr ""
 
 #: control/admin/admin_bits.php:197
 msgid ""
-"Your request cannot be completed:  There are one or more records linked to "
-"this source"
+"Your request cannot be completed:  There are one or more records linked to this "
+"source"
 msgstr ""
 
 #: control/admin/admin_bits.php:207 control/admin/sources.php:39
@@ -1625,8 +1593,8 @@ msgstr ""
 
 #: control/admin/departments.php:138
 msgid ""
-"Enter department name and telephone number.  Drag departments to change "
-"display order."
+"Enter department name and telephone number.  Drag departments to change display "
+"order."
 msgstr ""
 
 #: control/admin/departments.php:147
@@ -1698,8 +1666,7 @@ msgid "Add New Source"
 msgstr ""
 
 #: control/admin/user.php:56
-msgid ""
-"None registered.  Just as well.  They're going to rise up against us someday."
+msgid "None registered.  Just as well.  They're going to rise up against us someday."
 msgstr ""
 
 #: control/admin/user.php:59
@@ -1708,8 +1675,7 @@ msgstr ""
 
 #: control/admin/user.php:160
 msgid ""
-"We're really going to miss that staff person.  Search above to delete "
-"someone else!"
+"We're really going to miss that staff person.  Search above to delete someone else!"
 msgstr ""
 
 #: subjects/staff.php:64 subjects/staff_details.php:139
@@ -1726,8 +1692,8 @@ msgstr ""
 
 #: subjects/databases.php:16
 msgid ""
-"library, research, electronic journals, databases, electronic resources, "
-"full text, online, magazine, articles, paper, assignment"
+"library, research, electronic journals, databases, electronic resources, full text, "
+"online, magazine, articles, paper, assignment"
 msgstr ""
 
 #: subjects/databases.php:55
@@ -1776,10 +1742,10 @@ msgstr ""
 
 #: subjects/faq.php:25
 msgid ""
-"<p>You can <strong>search</strong> the FAQs, <strong>browse</strong> them "
-"<strong>by subject</strong>, see <strong>collections</strong> of FAQs (i.e., "
-"different groupings of FAQs for different purposes/audiences), or browse the "
-"Basic FAQs, below.</p>"
+"<p>You can <strong>search</strong> the FAQs, <strong>browse</strong> them <strong>by "
+"subject</strong>, see <strong>collections</strong> of FAQs (i.e., different "
+"groupings of FAQs for different purposes/audiences), or browse the Basic FAQs, below."
+"</p>"
 msgstr ""
 
 #: subjects/faq.php:195
@@ -1816,8 +1782,8 @@ msgstr ""
 
 #: subjects/talkback.php:31
 msgid ""
-"Thank you for your feedback.  We will try to post a response within the next "
-"three business days."
+"Thank you for your feedback.  We will try to post a response within the next three "
+"business days."
 msgstr ""
 
 #: subjects/talkback.php:38
@@ -1850,18 +1816,23 @@ msgstr ""
 
 #: subjects/talkback.php:213
 msgid ""
-"Sorry, you must answer the Skill Testing Question correctly.  It's an anti-"
-"spam measure . . . ."
+"Sorry, you must answer the Skill Testing Question correctly.  It's an anti-spam "
+"measure . . . ."
 msgstr ""
 
 #: subjects/talkback.php:232
 msgid ""
-"<p><strong>Talk Back</strong> is where you can <strong>ask a question</"
-"strong> or <strong>make a suggestion</strong> about library services.</p>\r\n"
+"<p><strong>Talk Back</strong> is where you can <strong>ask a question</strong> or "
+"<strong>make a suggestion</strong> about library services.</p>\r\n"
 "\r\n"
-"        <p>So, please let us know what you think, and we will post your "
-"suggestion and an answer from one of our helpful staff members</p>"
+"        <p>So, please let us know what you think, and we will post your suggestion "
+"and an answer from one of our helpful staff members</p>"
 msgstr ""
+"<p><strong>TalkBack</strong> es donde se puede <strong>hacer una pregunta</strong> o "
+"<strong>hacer una sugerencia</strong> sobre los servicios de biblioteca.</p>\r\n"
+"\r\n"
+"        <p>Así, por favor háganoslo saber lo que piensas, y publicaremos tu "
+"sugerencia y la respuesta de uno de nuestros miembros de personal</p>"
 
 #: subjects/talkback.php:243
 msgid "Tell Us What You Think"

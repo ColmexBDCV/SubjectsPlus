@@ -34,7 +34,7 @@ CKEDITOR.editorConfig = function( config ) {
 	// need to have in the Standard(s) toolbar.
 	config.removeButtons = 'Underline';
 
-	config.language = 'en';
+	config.language = 'es';
 
 	//added by dgonzalez
 	config.toolbar_SubsPlus_Narrow =
