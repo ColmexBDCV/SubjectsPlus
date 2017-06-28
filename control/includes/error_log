@@ -3,3 +3,15 @@
 [16-Jun-2017 18:45:37 UTC] PHP Warning:  preg_match(): Compilation failed: invalid range in character class at offset 7 in /home/alberto5/public_html/sp/control/includes/upload/class.upload.php on line 2966
 [16-Jun-2017 18:45:37 UTC] PHP Warning:  preg_match(): Compilation failed: invalid range in character class at offset 7 in /home/alberto5/public_html/sp/control/includes/upload/class.upload.php on line 2993
 [16-Jun-2017 18:45:37 UTC] PHP Warning:  preg_match(): Compilation failed: invalid range in character class at offset 7 in /home/alberto5/public_html/sp/control/includes/upload/class.upload.php on line 3011
+[23-Jun-2017 23:00:38 UTC] PHP Warning:  preg_match(): Compilation failed: invalid range in character class at offset 7 in /home/alberto5/public_html/sp/control/includes/upload/class.upload.php on line 2899
+[23-Jun-2017 23:00:38 UTC] PHP Warning:  preg_match(): Compilation failed: invalid range in character class at offset 7 in /home/alberto5/public_html/sp/control/includes/upload/class.upload.php on line 2966
+[23-Jun-2017 23:00:38 UTC] PHP Warning:  preg_match(): Compilation failed: invalid range in character class at offset 7 in /home/alberto5/public_html/sp/control/includes/upload/class.upload.php on line 2993
+[23-Jun-2017 23:00:38 UTC] PHP Warning:  preg_match(): Compilation failed: invalid range in character class at offset 7 in /home/alberto5/public_html/sp/control/includes/upload/class.upload.php on line 3011
+[23-Jun-2017 23:01:58 UTC] PHP Warning:  preg_match(): Compilation failed: invalid range in character class at offset 7 in /home/alberto5/public_html/sp/control/includes/upload/class.upload.php on line 2899
+[23-Jun-2017 23:01:58 UTC] PHP Warning:  preg_match(): Compilation failed: invalid range in character class at offset 7 in /home/alberto5/public_html/sp/control/includes/upload/class.upload.php on line 2966
+[23-Jun-2017 23:01:58 UTC] PHP Warning:  preg_match(): Compilation failed: invalid range in character class at offset 7 in /home/alberto5/public_html/sp/control/includes/upload/class.upload.php on line 2993
+[23-Jun-2017 23:01:58 UTC] PHP Warning:  preg_match(): Compilation failed: invalid range in character class at offset 7 in /home/alberto5/public_html/sp/control/includes/upload/class.upload.php on line 3011
+[23-Jun-2017 23:05:31 UTC] PHP Warning:  preg_match(): Compilation failed: invalid range in character class at offset 7 in /home/alberto5/public_html/sp/control/includes/upload/class.upload.php on line 2899
+[23-Jun-2017 23:05:31 UTC] PHP Warning:  preg_match(): Compilation failed: invalid range in character class at offset 7 in /home/alberto5/public_html/sp/control/includes/upload/class.upload.php on line 2966
+[23-Jun-2017 23:05:31 UTC] PHP Warning:  preg_match(): Compilation failed: invalid range in character class at offset 7 in /home/alberto5/public_html/sp/control/includes/upload/class.upload.php on line 2993
+[23-Jun-2017 23:05:31 UTC] PHP Warning:  preg_match(): Compilation failed: invalid range in character class at offset 7 in /home/alberto5/public_html/sp/control/includes/upload/class.upload.php on line 3011
